@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 李尚坤的个人网站</title>
+    <link>https://shangkunli.github.io/post/</link>
+    <description>Recent content in Posts on 李尚坤的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>可重构计算-第5章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</guid>
+      <description>第5章 动态重构与部分重构 5.1 动态重构与部分重构的概念 5.1.1 静态重构 比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间 5.1.2 动态重</description>
+    </item>
+    
+    <item>
+      <title>可重构计算-第4章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/</guid>
+      <description>第4章 可重构计算处理器编译系统 输入应用程序，生成可重构计算处理器控制的控制码和数据通路的配置信息 4.1 可重构计算处理器编译框架与流程 编译器首先对</description>
+    </item>
+    
+    <item>
+      <title>可重构计算-第3章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/</link>
+      <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/</guid>
+      <description>第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态</description>
+    </item>
+    
+    <item>
+      <title>可重构计算-第1章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/</guid>
+      <description>第1章 计算技术发展史 1.1 计算技术引言 进位概念推动了计数法的发展 1.1.1 史前时代——电子计算机之前 1.1.2 第一代电子计算机——电子管计算机 1.1.3 第二代电子计算机</description>
+    </item>
+    
+    <item>
+      <title>可重构计算-第2章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter2/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter2/</guid>
+      <description>第2章 可重构计算 2.1 可重构计算基本概念和原理 概念：能够实现算法到计算引擎的空间映射，并在被制造成集成电路后还具备定制能力的计算组织形式被称为可</description>
+    </item>
+    
+    <item>
+      <title>可重构计算-第0章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter0/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter0/</guid>
+      <description>第0章 绪论 0.1 计算与集成电路 0.1.1 计算机与冯诺依曼体系 0.1.2 集成电路与摩尔定律 摩尔定律 迪纳德定律 目前影响集成电路集成度和性能进一步提升的主要因素：集成</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Differentiation and Intergration</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</guid>
+      <description>介绍 这一章节主要介绍数值微分与积分的方法 Computational Physics: Differentiation and Intergration 求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: FFT</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</guid>
+      <description>介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Find Root</title>
+      <link>https://shangkunli.github.io/post/comp_phys/find_root/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/find_root/</guid>
+      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法） Computational Physics: Find Root 求解问题 题目说明 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Interpolation</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</guid>
+      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等 Computational Physics: Interpolation 求解问题 题目说明 Newton interpolation of: (i) 10 equal spacing points of cos x within $[0, π]$, (ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$. Compare the results</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Matrix</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Monte Carlo simulations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</guid>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Ordinary Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
+      <description>介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Partial Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\</description>
+    </item>
+    
+    <item>
+      <title>Computational Physics Guide</title>
+      <link>https://shangkunli.github.io/post/comp_phys/comp_phys/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
+      <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
+    </item>
+    
+    <item>
+      <title>Verilog笔记_Guide</title>
+      <link>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
+      <description>说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第1章 介绍</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      <description>CHAPTER 1 1.1 Vrilog介绍</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第2章 基础语法及数据</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第3章 赋值与时延</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
+      <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第4章 结构与控制</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</guid>
+      <description>CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia</description>
+    </item>
+    
+  </channel>
+</rss>

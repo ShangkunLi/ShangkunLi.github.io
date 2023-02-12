@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on 李尚坤的个人网站</title>
+    <link>https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on 李尚坤的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 20 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CompPhys: Differentiation and Intergration</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</guid>
+      <description>介绍 这一章节主要介绍数值微分与积分的方法 Computational Physics: Differentiation and Intergration 求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: FFT</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</guid>
+      <description>介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Find Root</title>
+      <link>https://shangkunli.github.io/post/comp_phys/find_root/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/find_root/</guid>
+      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法） Computational Physics: Find Root 求解问题 题目说明 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Interpolation</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</guid>
+      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等 Computational Physics: Interpolation 求解问题 题目说明 Newton interpolation of: (i) 10 equal spacing points of cos x within $[0, π]$, (ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$. Compare the results</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Matrix</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Monte Carlo simulations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</guid>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Ordinary Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
+      <description>介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as</description>
+    </item>
+    
+    <item>
+      <title>CompPhys: Partial Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\</description>
+    </item>
+    
+    <item>
+      <title>Computational Physics Guide</title>
+      <link>https://shangkunli.github.io/post/comp_phys/comp_phys/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
+      <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
+    </item>
+    
+    <item>
+      <title>Verilog笔记_Guide</title>
+      <link>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
+      <description>说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第1章 介绍</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      <description>CHAPTER 1 1.1 Vrilog介绍</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第2章 基础语法及数据</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第3章 赋值与时延</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
+      <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第4章 结构与控制</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</guid>
+      <description>CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第5章 模块</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/</guid>
+      <description>CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块</description>
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第6章 函数</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/</guid>
+      <description>CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块 不含延迟、时序或时序逻辑控制 至少一个输入变量</description>
+    </item>
+    
+  </channel>
+</rss>

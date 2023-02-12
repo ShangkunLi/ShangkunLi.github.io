@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>李尚坤的个人网站</title>
+    <link>https://shangkunli.github.io/</link>
+    <description>Recent content on 李尚坤的个人网站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 Feb 2023 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://shangkunli.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>可重构计算-第5章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</guid>
+      
+        <description>&lt;h1 id=&#34;第5章-动态重构与部分重构&#34;&gt;第5章 动态重构与部分重构&lt;/h1&gt;
+&lt;h2 id=&#34;51-动态重构与部分重构的概念&#34;&gt;5.1 动态重构与部分重构的概念&lt;/h2&gt;
+&lt;h3 id=&#34;511-静态重构&#34;&gt;5.1.1 静态重构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;512-动态重构&#34;&gt;5.1.2 动态重构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;比如CGRA，CGRA粒度大配置信息量小，可以在短时间内完成功能重构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;513-部分重构&#34;&gt;5.1.3 部分重构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据通路在空间上被划分为多个区域， 每个区域被重构成特定的功能引擎来执行特定的计算任务
+&lt;ul&gt;
+&lt;li&gt;静态部分重构：重构时非配置区要停下来&lt;/li&gt;
+&lt;li&gt;动态部分重构：重构时非配置区可正常执行（CGRA）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;52-配置信息的组织管理与高速缓存&#34;&gt;5.2 配置信息的组织、管理与高速缓存&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;配置粒度&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一次配置完成的可重构数据通路中被划分出的区域规模&lt;/li&gt;
+&lt;li&gt;细粒度配置：一次只完成一个运算单元的配置&lt;/li&gt;
+&lt;li&gt;中粒度配置：一次完成一块区域的配置（一行、一列，1/2阵列等）&lt;/li&gt;
+&lt;li&gt;粗粒度配置：一次完成整个阵列的配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;521-细粒度配置中配置信息的组织管理与缓存&#34;&gt;5.2.1 细粒度配置中配置信息的组织、管理与缓存&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;配置链结构：按固定的顺序，从配置接口开始链接各个运算单元内的配置寄存器，配置信息在配置链中逐级传递，直到匹配目标运算单元&lt;/li&gt;
+&lt;li&gt;配置链结构的重构时间取决于配置信息传到距离接口最远的配置单元的传输时间&lt;/li&gt;
+&lt;li&gt;垂直配置链+水平配置链：先匹配行，再匹配列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;522-中粒度配置中配置信息的组织管理与缓存&#34;&gt;5.2.2 中粒度配置中配置信息的组织、管理与缓存&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;以运算阵列中的行为单位，依次配置&lt;/li&gt;
+&lt;li&gt;可以方便地实现DFG图到阵列的映射&lt;/li&gt;
+&lt;li&gt;配置流程：
+&lt;ul&gt;
+&lt;li&gt;读出步配置信息，缓存在步寄存器中&lt;/li&gt;
+&lt;li&gt;行配置信息对步配置信息到行配置信息的载入进行控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;523-粗粒度配置中配置信息的组织管理与缓存&#34;&gt;5.2.3 粗粒度配置中配置信息的组织、管理与缓存&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;配置信息从配置存储器中读出后，直接被写入运算单元内的配置寄存器中&lt;/li&gt;
+&lt;li&gt;完全动态重构：运算单元阵列在运算的过程中每一时钟周期都对阵列功能进行重构&lt;/li&gt;
+&lt;li&gt;完全动态重构产生较高的配置功耗，占40%左右。可以通过压缩连续周期执行相同算子的配置，来减少配置功耗&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;53-计算数据的组织管理与高速缓存&#34;&gt;5.3 计算数据的组织、管理与高速缓存&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;数据传输面临存储墙问题&lt;/li&gt;
+&lt;li&gt;现代通用处理器采用处理器与内存之间的多级cache结构&lt;/li&gt;
+&lt;li&gt;可重构系统面临的存储墙问题更加严峻，因为并行计算能力更强&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;531-细粒度可重构阵列的管理与缓存结构&#34;&gt;5.3.1 细粒度可重构阵列的管理与缓存结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;以FPGA为例，FPGA的结构中可以采用少量多块的离散数据缓存结构，提高数据访问速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;532-粗粒度可重构阵列的管理与缓存结构&#34;&gt;5.3.2 粗粒度可重构阵列的管理与缓存结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据预取：可以将数据传输与阵列配置 or 计算过程并行执行&lt;/li&gt;
+&lt;li&gt;随着计算速度的提高，数据预取成为了流水线中的关键路径&lt;/li&gt;
+&lt;li&gt;有的采用与通用处理器类似的方法，增加多层数据缓存结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;533-层次化数据缓存结构&#34;&gt;5.3.3 层次化数据缓存结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;计算数据的有效组织与管理可以提高数据吞吐量，减小外村带宽对阵列计算效率的制约&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可重构系统的存储结构：片外主存，阵列之间的全局存储，阵列独享的共享存储，阵列内的运算单元独享的局部存储&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE11.png&#34; alt=&#34;截屏2023-02-10 21.21.41&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;片外主存：存储输入数据，中间结果，最终结果&lt;/li&gt;
+&lt;li&gt;全局存储：存储阵列之间的交互数据，存储可重构阵列与系统访存控制器（DMAC）之间的交互数据&lt;/li&gt;
+&lt;li&gt;共享存储：存储阵列的可重构结果及少量中间结果&lt;/li&gt;
+&lt;li&gt;局部存储：避免访存冲突，保证确定的访存时延，保证阵列的计算流水线不会被不确定的访存时延打断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>可重构计算-第4章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/</link>
+      <pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/</guid>
+      
+        <description>&lt;h1 id=&#34;第4章-可重构计算处理器编译系统&#34;&gt;第4章 可重构计算处理器编译系统&lt;/h1&gt;
+&lt;p&gt;输入应用程序，生成可重构计算处理器控制的控制码和数据通路的配置信息&lt;/p&gt;
+&lt;h2 id=&#34;41-可重构计算处理器编译框架与流程&#34;&gt;4.1 可重构计算处理器编译框架与流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;编译器首先对代码进行变换和优化，生成中间表达式IR，然后将中间表达式映射到可重构计算阵列上。再对任务进行时域划分，最后生成控制码和配置信息&lt;/li&gt;
+&lt;li&gt;三项关键技术：&lt;strong&gt;代码变化及优化&lt;/strong&gt;，&lt;strong&gt;任务时域划分&lt;/strong&gt;，&lt;strong&gt;映射配置的生成&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;42-可重构计算处理器代码变化及优化&#34;&gt;4.2 可重构计算处理器代码变化及优化&lt;/h2&gt;
+&lt;h3 id=&#34;421-指令级变换&#34;&gt;4.2.1 指令级变换&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;树高度缩减&lt;/p&gt;
+&lt;p&gt;对运算重新排序，减少运算树的高度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运算强度缩减&lt;/p&gt;
+&lt;p&gt;将一种运算转化为一系列成本更低的运算。比如乘法转换为移位或加减操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代码转移：上移与下移&lt;/p&gt;
+&lt;p&gt;把同种表达式或者子表达式的重复运算放在常用路径上，缩减代码规模&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;422-循环级变换&#34;&gt;4.2.2 循环级变换&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;减少循环开销的同时增加指令级并行的可能性&lt;/li&gt;
+&lt;li&gt;循环展开的两种策略：
+&lt;ul&gt;
+&lt;li&gt;循环完全展开，只适用小循环&lt;/li&gt;
+&lt;li&gt;最内层循环展开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;43-可重构计算处理器任务划分&#34;&gt;4.3 可重构计算处理器任务划分&lt;/h2&gt;
+&lt;h3 id=&#34;431-任务划分概述&#34;&gt;4.3.1 任务划分概述&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;当某个任务所需的计算资源超过目标硬件所能提供的计算资源时，需要对该任务进行划分&lt;/li&gt;
+&lt;li&gt;本书中指的主要是时域划分&lt;/li&gt;
+&lt;li&gt;划分的原则：
+&lt;ul&gt;
+&lt;li&gt;完整性：划分前后功能一致&lt;/li&gt;
+&lt;li&gt;独立性：划分不存在死锁，比如两个部分的数据存在相互依赖&lt;/li&gt;
+&lt;li&gt;有效性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;432-时域划分算法的相关研究&#34;&gt;4.3.2 时域划分算法的相关研究&lt;/h3&gt;
+&lt;p&gt;需要一个控制器来实现对配置信息流的控制，并且需要一定的机制来使不同配置信息进行数据通信&lt;/p&gt;
+&lt;h2 id=&#34;44-可重构计算处理器任务调度&#34;&gt;4.4 可重构计算处理器任务调度&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;将运算操作在时间和硬件资源上进行安排&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;45-可重构计算处理器映射配置生成&#34;&gt;4.5 可重构计算处理器映射配置生成&lt;/h2&gt;
+&lt;h3 id=&#34;451-寄存器分配&#34;&gt;4.5.1 寄存器分配&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;并非所有变量都要寄存器，部分可以通过连线来实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;452-运算到硬件资源的映射&#34;&gt;4.5.2 运算到硬件资源的映射&lt;/h3&gt;
+&lt;h3 id=&#34;453-内存映射优化&#34;&gt;4.5.3 内存映射优化&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;数组到内存资源的映射及划分&lt;/p&gt;
+&lt;p&gt;将不同的数据分布到不同的内存中，可以提升每个时钟内循环操作的数目&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存访问并行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存控制器的定制&lt;/p&gt;
+&lt;p&gt;创建专门的硬件产生地址和对数据打包、拆包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据项的打包和拆包&lt;/p&gt;
+&lt;p&gt;可以在非标准的数据类型格式下定义操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>可重构计算-第3章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/</link>
+      <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/</guid>
+      
+        <description>&lt;h1 id=&#34;第3章-可重构计算处理器硬件架构&#34;&gt;第3章 可重构计算处理器硬件架构&lt;/h1&gt;
+&lt;h2 id=&#34;31-可重构数据通路设计&#34;&gt;3.1 可重构数据通路设计&lt;/h2&gt;
+&lt;h3 id=&#34;311-可重构计算单元设计&#34;&gt;3.1.1 可重构计算单元设计&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;粒度选择&lt;/p&gt;
+&lt;p&gt;FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态配置。粒度越小越灵活，但需要付出更大的面积和配置时间；粒度越小则配置速度越快，但影响算法映射&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;寄存选择&lt;/p&gt;
+&lt;p&gt;合理的寄存器位置有利于实现流水线等算法加速执行手段&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算功能选择&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;算术：加减乘除&lt;/li&gt;
+&lt;li&gt;比较：大于小于等于大于等于&lt;/li&gt;
+&lt;li&gt;逻辑：与或非异或同或&lt;/li&gt;
+&lt;li&gt;移位：逻辑左右移，算术左右移&lt;/li&gt;
+&lt;li&gt;异构：一个大而全的计算单元中，一些功能的使用率很低，这种情况下应该对单元进行适当裁剪以得到基本计算单元的异构形式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;312-可重构路由单元设计&#34;&gt;3.1.2 可重构路由单元设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;各种输入输出的选择单元，构成了可重构路由单元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;313-阵列接口单元的设计&#34;&gt;3.1.3 阵列接口单元的设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可重构阵列面临存储墙的问题：存储器的接口带宽有限&lt;/li&gt;
+&lt;li&gt;减少接口带宽的需求，在阵列内部设计缓存，数据不再频繁通过外部接口&lt;/li&gt;
+&lt;li&gt;提高接口带宽上限，可以压缩数据：比如输入数据位宽小于接口时，可以将多个数据拼接共用接口&lt;/li&gt;
+&lt;li&gt;合理的FIFO值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;314-可重构阵列缓存设计&#34;&gt;3.1.4 可重构阵列缓存设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;存储系统的好坏决定并行系统吞吐量计算的性能，&lt;strong&gt;分布式存储&lt;/strong&gt;是提升可重构计算处理器吞吐效率的方法之一&lt;/li&gt;
+&lt;li&gt;在外部存储器和计算阵列FIFO之间，设计缓存结构
+&lt;ul&gt;
+&lt;li&gt;按照数据变化的频率分类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;常数和立即数缓存结构&lt;/p&gt;
+&lt;p&gt;常数和立即数倍存到阵列专门设置的缓存结构中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变量的堆寄存器结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;短变量在每个周期变化时反复使用；长变量则相隔数个周期再用到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以增加额外的数据通路，实现阵列扩展：可以通过堆寄存器将前一次结果存下来，后面一起输出，这样输出结果会大于阵列宽度，相当于扩大了阵列宽度&lt;/li&gt;
+&lt;li&gt;缓存中间数据，在两次配置之间传递数据&lt;/li&gt;
+&lt;li&gt;插入空拍，提高流水线效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变量的边界存储结构&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变量的阵列外部缓存结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在外部寄存器和计算阵列接口之间放入的缓存单元&lt;/li&gt;
+&lt;li&gt;针对规则的数据变换使用存储器和控制逻辑可以提高性能&lt;/li&gt;
+&lt;li&gt;多种数据变换操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;32-可重构控制器设计&#34;&gt;3.2 可重构控制器设计&lt;/h2&gt;
+&lt;h3 id=&#34;321-配置结构定义&#34;&gt;3.2.1 配置结构定义&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置系统的层次化设计&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE9.png&#34; alt=&#34;截屏2023-01-28 20.15.46&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;算子功能编码研究&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;固定码长，码长由操作的总数目决定&lt;/li&gt;
+&lt;li&gt;为了降低电路的功耗，对运算单元内部各主要模块做门控电源或时钟&lt;/li&gt;
+&lt;li&gt;为了降低配置端翻转次数，根据算子的转移概率进行huffman编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;阵列时序模型研究&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;阵列同步配置信息&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;阵列的两种同步方式
+&lt;ul&gt;
+&lt;li&gt;在每个子单元的子任务序列中最后一个任务结束后，需要对各个子单元进行同步，以便执行下一个综合任务&lt;/li&gt;
+&lt;li&gt;子任务之间存在数据时序依赖关系，需要对某几个任务进行同步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;子单元的两种同步时机
+&lt;ul&gt;
+&lt;li&gt;后同步&lt;/li&gt;
+&lt;li&gt;前同步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;同步控制涉及模块
+&lt;ul&gt;
+&lt;li&gt;子单元配置字缓存起&lt;/li&gt;
+&lt;li&gt;同步控制器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;同步信息的描述方式和同步流程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;322-配置执行方式&#34;&gt;3.2.2 配置执行方式&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE10.png&#34; alt=&#34;截屏2023-01-28 20.36.41&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;323-配置缓存设计&#34;&gt;3.2.3 配置缓存设计&lt;/h3&gt;
+&lt;h2 id=&#34;33-可重构数据通路与控制器的耦合关系&#34;&gt;3.3 可重构数据通路与控制器的耦合关系&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;嵌入模式：数据通路在控制器内部实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;协处理器模式：数据通路和控制器同一个芯片内连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;独立芯片模式：数据通路在控制器芯片外实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般情况，离控制器越远，对算法的加速效果越好，但是配置的代价也越大&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://shangkunli.github.io/about/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/about/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E7%AE%80%E4%BB%8B/IMG_0001.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;你好！我是李尚坤，欢迎来到我的个人主页。我是复旦大学物理学系的本科生，虽然专业是物理学，但我的研究兴趣主要在数字电路设计方面。我通过选修及旁听课程，阅读书籍，项目实践积累了微电子相关的知识，目前在复旦大学微电子学院老师的指导下从事科研实习，方向主要为EDA、可重构计算。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这是我的个人简历：（This is my CV）&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/%E7%AE%80%E4%BB%8B/%E4%B8%AD%E6%96%87%E7%89%88CV.pdf&#34;&gt;中文版简历&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/%E7%AE%80%E4%BB%8B/CV_English_Version.pdf&#34;&gt;CV-English Version&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;关于我的报道&#34;&gt;关于我的报道&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://news.fudan.edu.cn/2023/0205/c5a133834/page.htm&#34;&gt;复旦大学：本科生如何开启科研之路？复旦标兵们这样做→&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://news.fudan.edu.cn/2021/0831/c5a109937/page.htm&#34;&gt;复旦大学：重要物理赛事捷报频传 复旦大学物理学系师生合力获佳绩&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/5L9K5NGK-5G6w1R6nhbJTA&#34;&gt;复旦大学物理学系：学生集体及个人标兵称号&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>可重构计算-第1章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/</guid>
+      
+        <description>&lt;h1 id=&#34;第1章-计算技术发展史&#34;&gt;第1章 计算技术发展史&lt;/h1&gt;
+&lt;h2 id=&#34;11-计算技术引言&#34;&gt;1.1 计算技术引言&lt;/h2&gt;
+&lt;p&gt;进位概念推动了计数法的发展&lt;/p&gt;
+&lt;h3 id=&#34;111-史前时代电子计算机之前&#34;&gt;1.1.1 史前时代——电子计算机之前&lt;/h3&gt;
+&lt;h3 id=&#34;112-第一代电子计算机电子管计算机&#34;&gt;1.1.2 第一代电子计算机——电子管计算机&lt;/h3&gt;
+&lt;h3 id=&#34;113-第二代电子计算机晶体管计算机&#34;&gt;1.1.3 第二代电子计算机——晶体管计算机&lt;/h3&gt;
+&lt;h3 id=&#34;114-第三代电子计算机集成电路计算机&#34;&gt;1.1.4 第三代电子计算机——集成电路计算机&lt;/h3&gt;
+&lt;h3 id=&#34;115-第四代电子计算机大规模集成电路计算机&#34;&gt;1.1.5 第四代电子计算机——大规模集成电路计算机&lt;/h3&gt;
+&lt;h2 id=&#34;12-经典计算体系结构&#34;&gt;1.2 经典计算体系结构&lt;/h2&gt;
+&lt;p&gt;计算分为通用计算，如Intel i3/5/7，和专用计算，如显卡芯片，MP3解码芯片等&lt;/p&gt;
+&lt;h3 id=&#34;121-计算体系结构设计因素&#34;&gt;1.2.1 计算体系结构设计因素&lt;/h3&gt;
+&lt;p&gt;体系结构的设计要考虑技术、性能、功耗和成本等因素&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;技术因素&lt;/p&gt;
+&lt;p&gt;硅工艺。芯片面积决定成本；特征尺寸决定及程度、延时和功耗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;性能因素&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;功耗因素&lt;/p&gt;
+&lt;p&gt;翻转功耗，漏电功耗和短路功耗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;面积因素&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;122-冯诺依曼体系和哈佛体系结构&#34;&gt;1.2.2 冯诺依曼体系和哈佛体系结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;冯诺依曼体系将运算器与存储器分开，导致运算器与存储器之间的流量与存储器相比非常小&lt;/li&gt;
+&lt;li&gt;在运算器和存储器间的快取内存缓解了冯诺依曼瓶颈的问题&lt;/li&gt;
+&lt;li&gt;分支预测算法的建立也帮助缓和了问题&lt;/li&gt;
+&lt;li&gt;哈佛体系将程序指令存储与数据存储分开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;123-并行计算体系结构&#34;&gt;1.2.3 并行计算体系结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;指令并行，循环并行，线程并行，程序并行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;SISD结构（单指令流单数据流）&lt;/li&gt;
+&lt;li&gt;SIMD结构（单指令流多数据流）&lt;/li&gt;
+&lt;li&gt;MISD结构（多指令流单数据流）&lt;/li&gt;
+&lt;li&gt;MIMD结构（多指令流多数据流）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;124-多核和阿姆达尔定律&#34;&gt;1.2.4 多核和阿姆达尔定律&lt;/h3&gt;
+&lt;p&gt;多核绕开了单核频率墙的问题&lt;/p&gt;
+&lt;h2 id=&#34;13-半导体技术发展的挑战&#34;&gt;1.3 半导体技术发展的挑战&lt;/h2&gt;
+&lt;h3 id=&#34;131-芯片复用技术需求&#34;&gt;1.3.1 芯片复用技术需求&lt;/h3&gt;
+&lt;p&gt;芯片的工艺线成本和设计费用在不断增加&lt;/p&gt;
+&lt;h3 id=&#34;132-低功耗技术需求&#34;&gt;1.3.2 低功耗技术需求&lt;/h3&gt;
+&lt;p&gt;当芯片特征尺寸缩小，漏电急剧增加，功耗密度上升，存在&lt;strong&gt;功耗墙&lt;/strong&gt;的问题&lt;/p&gt;
+&lt;h3 id=&#34;133-存储技术瓶颈&#34;&gt;1.3.3 存储技术瓶颈&lt;/h3&gt;
+&lt;p&gt;DRAM的提高速度远小于处理器速度提升速度。出现&lt;strong&gt;存储墙&lt;/strong&gt;问题&lt;/p&gt;
+&lt;h2 id=&#34;14-可重构计算技术的历史背景&#34;&gt;1.4 可重构计算技术的历史背景&lt;/h2&gt;
+&lt;p&gt;强调资源的复用，在静态情况下，采用类似ASIC的设计追求高性能；在动态情况下，通过改变功能配置，适应不同应用的要求&lt;/p&gt;
+&lt;p&gt;在基于近平衡态物理的硅微电子技术发展速度明显放缓，摩尔定律失效，硅微电子的创新将主要依赖于芯片设计方法学的进步&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>可重构计算-第2章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter2/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter2/</guid>
+      
+        <description>&lt;h1 id=&#34;第2章-可重构计算&#34;&gt;第2章 可重构计算&lt;/h1&gt;
+&lt;h2 id=&#34;21-可重构计算基本概念和原理&#34;&gt;2.1 可重构计算基本概念和原理&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;概念&lt;/strong&gt;：能够实现算法到计算引擎的空间映射，并在被制造成集成电路后还具备定制能力的计算组织形式被称为可重构计算&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可重构计算的特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;硅实现以后计算功能仍旧可以按需改变，区别于传统的专用集成电路&lt;/li&gt;
+&lt;li&gt;能实现很大程度的算法到计算引擎的空间映射&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1986年xilnix开发出第一块FPGA芯片，但FPGA的资源浪费比较严重，所需的编程数据较多，用它实现的一些功能模块性能难以满足要求，逐渐出现了粗粒度的处理单元&lt;/p&gt;
+&lt;h2 id=&#34;22-可重构计算特征与分类&#34;&gt;2.2 可重构计算特征与分类&lt;/h2&gt;
+&lt;h3 id=&#34;221-可重构计算特征与分类&#34;&gt;2.2.1 可重构计算特征与分类&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE5.png&#34; alt=&#34;截屏2023-01-27 10.55.29&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;传统处理器是时域计算，具有通用、固定的结构，听从指令的命令并执行相应的操作&lt;/li&gt;
+&lt;li&gt;可以改进为专用指令集处理器ASIP处理，加速处理过程&lt;/li&gt;
+&lt;li&gt;如图b所示，在硬件上执行该算法，可以大大加速该计算过程&lt;/li&gt;
+&lt;li&gt;如果要计算问题1和问题2，则需要改变硬件的接线结构。FPGA必是静态重构的，需要重新上电；动态可重构计算可以在运行时改变硬件功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;222-可重构计算的分类&#34;&gt;2.2.2 可重构计算的分类&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;多数可重构计算处理器具有以下特征
+&lt;ul&gt;
+&lt;li&gt;硬件结构上由可重构数据通路和可重构控制器组成。可重构数据通路多采用基本运算单元组成的阵列式结构&lt;/li&gt;
+&lt;li&gt;处理器的控制流与数据流分离&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;分类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按应用范围划分
+&lt;ul&gt;
+&lt;li&gt;领域定制可重构计算处理器：针对特定应用范围定制的可重构计算处理器。目前的主要研究成果&lt;/li&gt;
+&lt;li&gt;通用可重构计算处理器：支持通用计算的可重构计算处理器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按粒度划分
+&lt;ul&gt;
+&lt;li&gt;粒度是指可重构计算处理器数据通路中运算单元的数据位宽度&lt;/li&gt;
+&lt;li&gt;粒度越大可重构计算处理器所需的配置信息就越少，处理器的重构速度就越快，但功能灵活性也相应越低&lt;/li&gt;
+&lt;li&gt;细粒度：不超过4比特 FPGA——1比特&lt;/li&gt;
+&lt;li&gt;粗粒度：大于等于4比特 CGRA——8～16比特&lt;/li&gt;
+&lt;li&gt;中粒度：这一说法不常见&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按重构的时间特性划分
+&lt;ul&gt;
+&lt;li&gt;静态重构：只能在可重构计算处理器的数据通路进行计算之前对其进行功能重构。FPGA&lt;/li&gt;
+&lt;li&gt;动态重构：可重构计算处理器的数据通路在计算过程中也能进行功能重构。CGRA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按重构的空间特性划分
+&lt;ul&gt;
+&lt;li&gt;部分重构：数据通路可以在空间上划分为多个区域，每个区域可以重构成特定的功能引擎，而不会影响其他区域的当前状态&lt;/li&gt;
+&lt;li&gt;整体重构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;23-可重构计算处理器模型&#34;&gt;2.3 可重构计算处理器模型&lt;/h2&gt;
+&lt;h3 id=&#34;231-可重构计算处理器硬件架构组成&#34;&gt;2.3.1 可重构计算处理器硬件架构组成&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;可重构数据通路 RCD&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE6.png&#34; alt=&#34;截屏2023-01-27 11.27.24&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;配置接口从RCC获取控制信号和配置信息：解析配置信息，配置运算单元阵列，调度任务&lt;/li&gt;
+&lt;li&gt;运算单元阵列：像ASIC一样由数据流驱动执行&lt;/li&gt;
+&lt;li&gt;数据接口：对外部数据的访问和写回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可重构控制器 RCC&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE7.png&#34; alt=&#34;截屏2023-01-27 11.33.03&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;配置接口：用于给可重构数据通路发送配置信息和控制信号&lt;/li&gt;
+&lt;li&gt;配置管理单元：接受来自外部的配置信息，解析得到控制信号和配置字&lt;/li&gt;
+&lt;li&gt;存储器：存储内部配置信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;232-可重构计算处理器编译器结构&#34;&gt;2.3.2 可重构计算处理器编译器结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;编译器提供RCC中运行的控制码和RCD的配置信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可重构计算处理器编译技术：将应用程序通过任务划分、代码变化、任务调度及映射过程，将应用程序生成可重构计算处理器中可重构控制器的控制码和可重构硬件的配置信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE8.png&#34; alt=&#34;截屏2023-01-27 10.55.29&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对输入的应用程序进行代码分析，将代码划分为软件运行代码和硬件执行代码。针对各部分程序代码进行编译处理，生成RCC的控制码和RCD的配置信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;24-可重构计算处理器发展现状与趋势&#34;&gt;2.4 可重构计算处理器发展现状与趋势&lt;/h2&gt;
+&lt;h3 id=&#34;241-可重构计算处理器硬件架构研究&#34;&gt;2.4.1 可重构计算处理器硬件架构研究&lt;/h3&gt;
+&lt;p&gt;目前在高能效计算：多媒体领域、软件无线电领域、密码学领域都有应用&lt;/p&gt;
+&lt;h3 id=&#34;242-可重构计算处理器编译器研究&#34;&gt;2.4.2 可重构计算处理器编译器研究&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;LEAP编译工具：面向LEAP粗粒度可重构阵列处理器的编译工具。仅针对特定的循环进行编译&lt;/li&gt;
+&lt;li&gt;国内任务编译关键技术点研究：国内尚处于起步阶段&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>可重构计算-第0章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter0/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter0/</guid>
+      
+        <description>&lt;h1 id=&#34;第0章-绪论&#34;&gt;第0章 绪论&lt;/h1&gt;
+&lt;h2 id=&#34;01-计算与集成电路&#34;&gt;0.1 计算与集成电路&lt;/h2&gt;
+&lt;h3 id=&#34;011-计算机与冯诺依曼体系&#34;&gt;0.1.1 计算机与冯诺依曼体系&lt;/h3&gt;
+&lt;h3 id=&#34;012-集成电路与摩尔定律&#34;&gt;0.1.2 集成电路与摩尔定律&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;摩尔定律&lt;/li&gt;
+&lt;li&gt;迪纳德定律&lt;/li&gt;
+&lt;li&gt;目前影响集成电路集成度和性能进一步提升的主要因素：集成工艺，功耗和由此产生的热&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;02-计算架构&#34;&gt;0.2 计算架构&lt;/h2&gt;
+&lt;h3 id=&#34;021-冯-诺伊曼体系架构的变形&#34;&gt;0.2.1 冯-诺伊曼体系架构的变形&lt;/h3&gt;
+&lt;p&gt;​	如果一个系统的运行受到程序的控制，就是广义的处理器；如果不受程序的控制，就是专用处理器&lt;/p&gt;
+&lt;h3 id=&#34;022-通用计算架构&#34;&gt;0.2.2 通用计算架构&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE1.png&#34; alt=&#34;截屏2023-01-22 20.38.13&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	控制器在外部时钟的控制下，依据数据通路回送的状态和程序，决定向数据通路发送什么样的控制向量。数据通路根据控制器发来的控制向量决定要进行的运算，运算过程会使用输入的数据并将产生的结果送到系统外输出。
+​    1. &lt;strong&gt;专用集成电路架构&lt;/strong&gt;：与上面相比，这一架构的最大差别是系统的行为都确定，控制向量确定
+​        2. &lt;strong&gt;通用处理器架构&lt;/strong&gt;：控制向量根据状态和程序实时产生&lt;/p&gt;
+&lt;h2 id=&#34;03-数字系统的高层次综合技术&#34;&gt;0.3 数字系统的高层次综合技术&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;高层次综合的目标：将不同工程师写的HDL描述统一到某个优化架构上，从而保证设计的优化程度&lt;/li&gt;
+&lt;li&gt;高层次综合的核心理念：将硬件描述映射到一个优化的架构，从而获得更优的设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;031-基本概念&#34;&gt;0.3.1 基本概念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;数据从寄存器出发，经过运算再回到寄存器的过程被称为寄存器传输。使用HDL进行的电路设计又称为寄存器传输级设计（Register transfer level），即RTL设计。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据流图DFG与控制流图CFG&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;资源复用的概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;032-数据通路设计&#34;&gt;0.3.2 数据通路设计&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;算子调度&lt;/strong&gt;：确定每个操作执行的时间位置，以及所需的运算资源的类型和数量。算子调度直接关系到设计电路系统的性能和代价，曾是高层次综合研究的重点。提出了多种算法，可划分为尝试型算法和穷举型算法。力量引导调度算法：算子调度的实质是将各个控制步中同一类运算的数量尽可能平均，以达到运算资源复用最大化，进而减少资源的使用量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源分配&lt;/strong&gt;：为每个操作指定一个具体的运算资源，为每个变量分配一个存储单元，并提供存储单元与资源之间的连接网络
+&lt;ul&gt;
+&lt;li&gt;寄存器优化：核心目标是减少寄存器的数量。如果一个寄存器的存活时间与其他一个或多个寄存器的死亡时间重叠，则该寄存器的功能可以被其他寄存器替代&lt;/li&gt;
+&lt;li&gt;运算资源分配：因为每个算子可能会涉及多个运算资源，因此我们需要对每个算子分配具体的运算资源，不同的分配方案对应的连线网络结构和代价不同。资源分配也产生过多种算法，包括贪婪算法，全通图算法，基于距离的资源分配算法。&lt;/li&gt;
+&lt;li&gt;连线网络生成：连线网络提供存储单元与运算资源之间的信号通路
+&lt;ol&gt;
+&lt;li&gt;总线架构：优点是灵活性与可扩展性，缺点是延迟时间对系统性能提升不明显&lt;/li&gt;
+&lt;li&gt;点对点架构：牺牲灵活性和可扩展性换来更低的整体延迟，在ASIC中被更多地采用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;控制码生成与优化：控制码由控制器提供，数据通路按照控制器提供的控制码运行。微码压缩问题
+1. 控制码生成：首先对多路选择开关控制端进行编码，然后按照控制步一步一步生成
+2. 控制码优化：减少控制码的量，从而减少所需存储器的容量，降低控制器的复杂度。可以减少码字数量，或者缩短码长。减少码字数量：找出相同的码字；缩短码长：通过全过程中不同端口步之间的关系将端口连接起来&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;033-控制器设计&#34;&gt;0.3.3 控制器设计&lt;/h3&gt;
+&lt;p&gt;控制器是一个FSM&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;控制器的FSM：状态的定义不同，设计出的FSM不同&lt;/li&gt;
+&lt;li&gt;基于状态的控制码：将状态码与对应状态关联起来&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;034-小结&#34;&gt;0.3.4 小结&lt;/h3&gt;
+&lt;p&gt;了解了高层次综合方法的脉络：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从硬件的行为设计描述出发&lt;/li&gt;
+&lt;li&gt;通过算子调度、资源分配、控制码生成等步骤&lt;/li&gt;
+&lt;li&gt;得到一个运算资源优化的数据通路&lt;/li&gt;
+&lt;li&gt;确定控制器的架构并完成设计&lt;/li&gt;
+&lt;li&gt;数据通路和控制器构成系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;04-可重构计算技术&#34;&gt;0.4 可重构计算技术&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE2.png&#34; alt=&#34;图2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如图所示，将数据通路和控制器设想为完全可编程的，也就是说，从任意一个存储器的输出端出发，经过输入端连接线网络可以到达任意一个ALU的输入端，ALU的结果可以经过输出端网络到达任意一个存储器。这样的ALU网络就是完全可重构的。控制器对应的FSM也是受外部程序控制的，可编程的&lt;/p&gt;
+&lt;p&gt;FPGA的特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;它是静态重构，即FPGA的内部结构取决于上电时读取的配置信息，运行过程中不能改变&lt;/li&gt;
+&lt;li&gt;FPGA的LUT（look-up table）不可以被复用&lt;/li&gt;
+&lt;li&gt;FPGA能提供给用户使用的有效逻辑门数量不过50-100万个，而规模却有上千万个逻辑门&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过构建可重构数据通路和可编程控制器，可以有效克服FPGA的缺点，实现运行过程中的实时重构，允许资源复用&lt;/p&gt;
+&lt;h3 id=&#34;041-可重构计算处理器&#34;&gt;0.4.1 可重构计算处理器&lt;/h3&gt;
+&lt;p&gt;一个可重构数据通路RCD可以按找软件的要求，变换成与之相适应的硬件网络，并实现其功能，这被称为可重构计算&lt;/p&gt;
+&lt;p&gt;可重构计算也要求控制器时可编程或可重构的，即可重构控制器RCC，即可编程有限状态机PFSM&lt;/p&gt;
+&lt;p&gt;控制数据通路的控制码也要求随时生成，因此还需要一个编译器，根据软件生成控制码和控制流程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;可重构计算处理器架构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;RCD与基于PFSM的RCC一起构成了可重构计算处理器(RCP)。&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE3.png&#34; alt=&#34;截屏2023-01-24 17.09.43&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE4.png&#34; alt=&#34;截屏2023-01-24 17.09.43&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RCD与基于PFSM的RCC一起构成了可重构计算处理器(RCP)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一个软件经过编译器编译，就可以产生配置信息，用于生成PFSM&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在多个ALU的系统中，指令系统限制了灵活性。因此RCP不再依赖指令，而是生成软件配置信息，再由RCC通过配置信息对RCD控制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一个理想的RCD应拥有尽可能多的ALU，且这些ALU之间的互连架构可以改变&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算阵列&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有一维、二维、三维的ALU阵列架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ALU阵列的计算过程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在RCD中，如果使用一维ALU阵列，则ALU向量可以逐步执行软件。软件的各操作在编译器中实现算子调度、寄存器优化、资源分配，并生成数据通路架构和控制码（配置信息）&lt;/li&gt;
+&lt;li&gt;一个具备N行ALU的阵列可以并行地支持N个任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可重构计算中不需要物理上生成数据通路，但是仍然要依据RCD结构，构建一个虚拟的数据通路VD，VD包含RCD中用到的元件&lt;/li&gt;
+&lt;li&gt;运行给定的软件，还需要由RCC向RCD提供一个FSM，因此，编译器还需要生成一个虚拟FSM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PFSM&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RCC包含状态机和存储器两个部分。状态机包含当前状态，下一个状态以及转移条件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;042-可重构计算处理器的编译技术&#34;&gt;0.4.2 可重构计算处理器的编译技术&lt;/h3&gt;
+&lt;p&gt;编译器：将高级编程语言写成的程序/软件翻译成计算机的执行码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可重构计算处理器的编译器架构
+&lt;ul&gt;
+&lt;li&gt;可重构计算处理器的编译器将程序/软件翻译成配置信息，包含数据流、控制流和配置信息&lt;/li&gt;
+&lt;li&gt;高级语言的大部分功能在现有可重构计算处理器的编译器上都支持，但递归调用与指针的实现还在摸索中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;代码优化
+&lt;ul&gt;
+&lt;li&gt;优化的关键是保证代码的正确性，故对代码的语义分析必须正确。因此针对可重构计算处理器时需要加一些特殊语句来指导编译&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;任务划分
+&lt;ul&gt;
+&lt;li&gt;编译器要根据ALU阵列的大小对程序进行划分，形成一系列的子任务，让可重构计算处理器逐块完成运算&lt;/li&gt;
+&lt;li&gt;任务划分的一个难点是处理分支，防止死锁&lt;/li&gt;
+&lt;li&gt;另一个要求是子任务间的通信尽可能减少，也就是不同子任务间的连线数量最小化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;任务调度与资源分配
+&lt;ul&gt;
+&lt;li&gt;如果可重构计算处理器中包含多个ALU阵列，任务调度就要确定哪些任务可以并行，以便确定要同时运行的ALU阵列数量&lt;/li&gt;
+&lt;li&gt;然后进行资源分配，当存在多个ALU时，需要确定每个子任务使用的是哪个ALU阵列。这将影响数据传送的代价以及对ALU阵列配置过程产生影响，导致功耗增加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;子任务中的算子调度和资源分配
+&lt;ul&gt;
+&lt;li&gt;在一定条件下，一个ALU也可以被其他子任务TASK共享，从而提高资源的使用效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VFSM的生成
+&lt;ul&gt;
+&lt;li&gt;如果将任务划分产生的一系列子任务TASK作为状态，则可以构建一个以子任务为状态、子任务间依赖关系为边的FSM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;043-小结&#34;&gt;0.4.3 小结&lt;/h3&gt;
+&lt;p&gt;可重构计算借用了许多高层次综合的概念与方法。&lt;/p&gt;
+&lt;p&gt;探索可重构计算的原因主要为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进一步提高计算性能的需求。 通常的冯诺依曼架构采用指令，而执行一条指令的时间中只有很小一部分用于真正计算，所以人们期望改变架构，减少指令执行中准备计算的时间&lt;/li&gt;
+&lt;li&gt;在提升性能的同时降低功耗，提升计算效能，即提升单位功耗下的性能&lt;/li&gt;
+&lt;li&gt;经济因素。在22nm之后，随着其他成本，比如研发费用的增加，单个逻辑门的成本下降空间非常有限。这将导致专用集成电路的发展受阻。因此，通过编程或者重构来实现不同功能的通用处理芯片就成为一个必然的选择&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Differentiation and Intergration</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要介绍数值微分与积分的方法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-differentiation-integration-4.pdf&#34;&gt;Computational Physics: Differentiation and Intergration&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to estimate the derivative with six significant decimal digits. Output the Richardson table.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Radial wave function of the 3s orbital is:&lt;/p&gt;
+&lt;p&gt;$R_{3s} = \frac{1}{9√3} ×(6−6ρ+ρ^2)×Z^{3/2}×e^{-\rho/2}$&lt;/p&gt;
+&lt;p&gt;· r = radius expressed in atomic units (1 Bohr radius = 52.9 pm)&lt;/p&gt;
+&lt;p&gt;· e = 2.71828 approximately&lt;/p&gt;
+&lt;p&gt;· Z = effective nuclear charge for that orbital in that atom&lt;/p&gt;
+&lt;p&gt;· ρ = 2Zr/n where n is the principal quantum number (3 for the 3s orbital)&lt;/p&gt;
+&lt;p&gt;Compute $∫_0^{40}|R_{3s}|^2r^2dr $for Si atom (Z = 14) with Simpson’s rule using two different radial grids:&lt;/p&gt;
+&lt;p&gt;(1)Equalspacinggrids: $r[i]=(i−1)h$  ;  $i=1,···,N$ (trydifferentN)&lt;/p&gt;
+&lt;p&gt;(2) A nonuniform integration grid, more finely spaced at small r than at large r:&lt;/p&gt;
+&lt;p&gt;$r[i] = r_0(e^{t[i]} − 1)$; $t[i] = (i − 1)h$;$ i = 1,· · · , N$ (One typically choose$ r_0 = 0.0005$ a.u., try different N)&lt;/p&gt;
+&lt;p&gt;(3) Find out which one is more eﬀicient, and discuss the reason.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_05.pdf&#34;&gt;Differentiation and Intergration Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2005&#34;&gt;Differentiation and Intergration Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: FFT</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要介绍傅立叶变换的相关算法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-FFT-5.pdf&#34;&gt;CompPhys: FFT&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$.
+Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$&lt;/p&gt;
+&lt;p&gt;$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun for each month since January 1749.&lt;/p&gt;
+&lt;p&gt;Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $|c_k|^2$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal. You should see that there is a noticeable peak in the power spectrum at a nonzero value of k. Find the approximate value of k to which the peak corresponds. What is the period of the sine wave with this value of k?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_06.pdf&#34;&gt;FFT Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2006&#34;&gt;FFT Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Find Root</title>
+      <link>https://shangkunli.github.io/post/comp_phys/find_root/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/find_root/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法）&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-find-root-1.pdf&#34;&gt;Computational Physics: Find Root&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:系数𝑎, 𝑏, 𝑐为程序执行时键盘输入，𝑎, 𝑏, 𝑐为任意实数，所有的解均输出到屏幕。&lt;/li&gt;
+&lt;li&gt;24 点游戏是儿时玩的主要益智类游戏之一，玩法为:从一副扑克中抽取 4 张牌，对 4 张牌使用加减乘除中的任何方法，使计算结果为 24。例如， 2,3,4,6，通过(((4+6)-2)*3) =24，最快算出24者胜。请 采用 Fortran90 编程求解 24 点游戏的解。&lt;/li&gt;
+&lt;li&gt;Sketch the function $𝑥^2−5𝑥+3=0$:
+(1) Determine the two positive roots to 4 decimal places using the bisection method.
+(2) Take the two roots that you found in the previous question (accurate to 4 decimals) and “polish them up” to 14 decimal places using the Newton-Raphson method.
+(3) Determine the two positive roots to 14 decimal places using the hybrid method.&lt;/li&gt;
+&lt;li&gt;Search for the minimum of the function 𝑔(𝑥, 𝑦) = sin(𝑥 + 𝑦) + cos (𝑥 + 2𝑦) in the whole place&lt;/li&gt;
+&lt;li&gt;Determine 𝑚(𝑡) the reduced magnetization as a function of reduced temperature for simple materials. $𝑚(𝑡) = 𝑡𝑎𝑛h(𝑚(𝑡)/𝑡)$
+For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_01.pdf&#34;&gt;Find Root Documentation1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_02.pdf&#34;&gt;Find Root Documentation1&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2001&#34;&gt;Find Root Source Code1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2002&#34;&gt;Find Root Source Code1&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Interpolation</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-Interpolation-3.pdf&#34;&gt;Computational Physics: Interpolation&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Newton interpolation of:&lt;/p&gt;
+&lt;p&gt;(i) 10 equal spacing points of cos x within $[0, π]$,&lt;/p&gt;
+&lt;p&gt;(ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$.&lt;/p&gt;
+&lt;p&gt;Compare the results with the cubic spline interpolation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The table below gives the temperature T along a metal rod whose ends are kept at fixed constant temperature. The temperature is a function of the distance x along the rod.&lt;/p&gt;
+&lt;p&gt;(1)Compute a least-squares, straight-line fit to these data using$ T (x) = a + bx $&lt;/p&gt;
+&lt;p&gt;(2)Compute a least-squares, parabolic-line fit to these data using$ T(x) = a+bx+cx^2$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;x/cm&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;1.0&lt;/th&gt;
+&lt;th&gt;2.0&lt;/th&gt;
+&lt;th&gt;3.0&lt;/th&gt;
+&lt;th&gt;4.0&lt;/th&gt;
+&lt;th&gt;5.0&lt;/th&gt;
+&lt;th&gt;6.0&lt;/th&gt;
+&lt;th&gt;7.0&lt;/th&gt;
+&lt;th&gt;8.0&lt;/th&gt;
+&lt;th&gt;9.0&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;T/c&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;14.6&lt;/td&gt;
+&lt;td&gt;18.5&lt;/td&gt;
+&lt;td&gt;36.6&lt;/td&gt;
+&lt;td&gt;30.8&lt;/td&gt;
+&lt;td&gt;58.2&lt;/td&gt;
+&lt;td&gt;60.1&lt;/td&gt;
+&lt;td&gt;62.2&lt;/td&gt;
+&lt;td&gt;79.4&lt;/td&gt;
+&lt;td&gt;99.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_04.pdf&#34;&gt;Interpolation Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2004&#34;&gt;Interpolation Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Matrix</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-matrix-2.pdf&#34;&gt;Computational Physics: Matrix&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write a general code to transform a n×m matrix into the REDUCED ROW ECHE-&lt;/p&gt;
+&lt;p&gt;LON FORM, and use the code to obtain the RREF of the following matrix.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solve the 1D Schrodinger equation with the potential (i) $V (x) = x^2$; (ii) $V (x) = x^4 − x^2 $with the variational approach using a Gaussian basis (either fixed widths or fixed centers). Consider the three lowest energy eigenstates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_03.pdf&#34;&gt;Matrix Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2003&#34;&gt;Matrix Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Monte Carlo simulations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要偏微分方程的数值求解方法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-MC-8.pdf&#34;&gt;CompPhys: Monte Carlo simulations&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and then calculate the volume for $d=4$ and $d=5$, compare your results with the exact results.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write a MC code for a 3D Face-Centered Cubic lattice using the Heisenberg spin model (adopt periodic boundary condition). Estimate the ferromagnetic Curie temperature.&lt;/p&gt;
+&lt;p&gt;​        $$H=-J \sum\limits_{&amp;lt;i,j&amp;gt;_{NN}}\vec{S_i}\cdot\vec{S_j},\ J=1,\ |\vec{S_i}|=1$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_09.pdf&#34;&gt;Monte Carlo simulations Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2009&#34;&gt;Monte Carlo simulations Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Ordinary Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要常微分方程的数值求解方法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-ODE-6.pdf&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write a code to numerically solves radial Schrödinger equation for:&lt;/p&gt;
+&lt;p&gt;$$  \left[-\frac{1}{2}\nabla^2+V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$&lt;/p&gt;
+&lt;p&gt;​    (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)&lt;/p&gt;
+&lt;p&gt;​    (2) $Z_{ion}=0.4000000, C_1=-14.0093922$&lt;/p&gt;
+&lt;p&gt;​		 $C_2=9.5099073, C_3=-1.7532723, C_4=0.0834586$&lt;/p&gt;
+&lt;p&gt;​        $$ V(r)=-\frac{Z_{ion}}{r}erf\left(\frac{r}{\sqrt{2}r_{loc}}\right)+exp\left[-\frac{1}{2}\left(\frac{r}{r_{loc}}\right)^2\right]$$&lt;/p&gt;
+&lt;p&gt;​					$$\times\left[C_1+C_2\left(\frac{r}{r_{loc}}\right)^2+C_3\left(\frac{r}{r_{loc}}\right)^4+C_4\left(\frac{r}{r_{loc}}\right)^6\right]\nonumber $$&lt;/p&gt;
+&lt;p&gt;​    Compute and plot the first three eigenstates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_07.pdf&#34;&gt;Ordinary Differential Equations Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2007&#34;&gt;Ordinary Differential Equations Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CompPhys: Partial Differential Equations</title>
+      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
+      
+        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;这一章节主要偏微分方程的数值求解方法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-PDE-7.pdf&#34;&gt;CompPhys: Partial Differential Equations&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
+&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Consider the Poisson equation:&lt;/p&gt;
+&lt;p&gt;​        $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$&lt;/p&gt;
+&lt;p&gt;from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:&lt;/p&gt;
+&lt;p&gt;(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$&lt;/p&gt;
+&lt;p&gt;(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left.&lt;/p&gt;
+&lt;p&gt;Gaussian initial state:$\Psi(x,0)=\sqrt{\frac{1}{\pi}}exp(ik_0x-\frac{(x-\xi)^2}{2})$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prove the stability condition of the explicit scheme of the 1D wave equation by performing Von Neumann stability analysis:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial^2u}{\partial t^2}=c^2\frac{\partial^2u}{\partial x^2}$$&lt;/p&gt;
+&lt;p&gt;If $\frac{c\Delta t}{\Delta x}\le1$, the explicit scheme is stable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_08.pdf&#34;&gt;Partial Differential Equations Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2008&#34;&gt;Partial Differential Equations Source Code&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Computational Physics Guide</title>
+      <link>https://shangkunli.github.io/post/comp_phys/comp_phys/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
+      
+        <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;这是我个人学习Computational Physics的资料笔记整理&lt;/li&gt;
+&lt;li&gt;我的主要开发语言是Python及C/C++&lt;/li&gt;
+&lt;li&gt;每一部分章节的内容包括对应的slides，问题及Documentation，源码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;computational-physcis-note&#34;&gt;Computational Physcis Note&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/find_root/&#34;&gt;CompPhys: Find Root&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/&#34;&gt;CompPhys: Matrix&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/&#34;&gt;CompPhys: Interpolation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/&#34;&gt;CompPhys: Differentiation and Intergration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/&#34;&gt;CompPhys: FFT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/&#34;&gt;CompPhys: Partial Differential Equations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/&#34;&gt;CompPhys: Monte Carlo simulations&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Verilog笔记_Guide</title>
+      <link>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
+      
+        <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;这是我个人学习Verilog的路径整理以及资料笔记整理&lt;/li&gt;
+&lt;li&gt;入门阶段
+&lt;ul&gt;
+&lt;li&gt;我主要通过&lt;a href=&#34;https://hdlbits.01xz.net/wiki/Main_Page&#34;&gt;HDLBits&lt;/a&gt;进行代码练习和知识点理解&lt;/li&gt;
+&lt;li&gt;阅读&lt;a href=&#34;https://www.runoob.com/w3cnote/verilog-tutorial.html&#34;&gt;这一部分教程&lt;/a&gt;也在一定程度上帮助了我，这一部分教程的阅读笔记整理在了下面的文档中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;verilog入门笔记&#34;&gt;Verilog入门笔记&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/&#34;&gt;Verilog入门笔记：第1章 介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/&#34;&gt;Verilog入门笔记：第2章 基础语法及数据&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/&#34;&gt;Verilog入门笔记：第3章 赋值与时延&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilg%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/&#34;&gt;Verilog入门笔记：第4章 结构与控制&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/&#34;&gt;Verilog入门笔记：第5章 模块&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilg%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/&#34;&gt;Verilog入门笔记：第6章 函数&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第1章 介绍</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      
+        <description>&lt;h1 id=&#34;chapter-1&#34;&gt;CHAPTER 1&lt;/h1&gt;
+&lt;h2 id=&#34;11-vrilog介绍&#34;&gt;1.1 Vrilog介绍&lt;/h2&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第2章 基础语法及数据</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      
+        <description>&lt;h1 id=&#34;chapter-2&#34;&gt;CHAPTER 2&lt;/h1&gt;
+&lt;h2 id=&#34;21-verilog基础语法&#34;&gt;2.1 Verilog基础语法&lt;/h2&gt;
+&lt;h3 id=&#34;代码格式&#34;&gt;代码格式&lt;/h3&gt;
+&lt;p&gt;格式与C代码相近，以分号&lt;code&gt;;&lt;/code&gt;结尾&lt;/p&gt;
+&lt;h3 id=&#34;注释&#34;&gt;注释&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;单行注释&lt;code&gt;//&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多行注释&lt;code&gt;/*&lt;/code&gt; 与 &lt;code&gt;*/&lt;/code&gt;结合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;标识符与关键词&#34;&gt;标识符与关键词&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;标识符：由字母，数字，&lt;code&gt;$&lt;/code&gt; ，&lt;code&gt;_&lt;/code&gt;组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写&lt;/li&gt;
+&lt;li&gt;关键字：类似C语言，是verilog用于预定义语言用的标识符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;22-verilog数值表示&#34;&gt;2.2 Verilog数值表示&lt;/h2&gt;
+&lt;h3 id=&#34;布尔数值表示&#34;&gt;布尔数值表示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;0：逻辑假/低电平&lt;/li&gt;
+&lt;li&gt;1：逻辑真/高电平&lt;/li&gt;
+&lt;li&gt;x/X：未知&lt;/li&gt;
+&lt;li&gt;z/Z：高阻态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;整数数值表示&#34;&gt;整数数值表示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;十进制 d，十六进制 h，八进制 o，二进制 b&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指明位宽&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;#39;b1011&lt;/span&gt;         &lt;span style=&#34;color:#75715e&#34;&gt;// 4bit 数值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;32&amp;#39;h3022&lt;/span&gt;_c0de   &lt;span style=&#34;color:#75715e&#34;&gt;// 32bit 的数值，下划线为增加可读性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;也可不指明位宽，且直接写数字时默认为十进制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负数直接在表示位宽的数字前加负号&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;字符串表示&#34;&gt;字符串表示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;用&amp;quot;&amp;ldquo;括起来的字符队列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;23-verilog数据类型&#34;&gt;2.3 Verilog数据类型&lt;/h2&gt;
+&lt;h3 id=&#34;线网wire&#34;&gt;线网(wire)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;wire类型表示硬件单元之间的物理连线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;寄存器reg&#34;&gt;寄存器(reg)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;reg类型用来表示存储单元&lt;/li&gt;
+&lt;li&gt;整数、实数、时间等数据类型属于reg类型
+&lt;ul&gt;
+&lt;li&gt;整数（&lt;code&gt;integer&lt;/code&gt;）：reg为无符号数，integer为有符号数&lt;/li&gt;
+&lt;li&gt;实数（&lt;code&gt;real&lt;/code&gt;）：可用十进制/科学计数法表示&lt;/li&gt;
+&lt;li&gt;时间（&lt;code&gt;time&lt;/code&gt;）：对仿真时间进行保存，通过调用&lt;code&gt;$time&lt;/code&gt;获取当前仿真时间&lt;/li&gt;
+&lt;li&gt;字符串：每一个字符占8bit，有转义字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数组&#34;&gt;数组&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;integer&lt;/span&gt;          flag [&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] ; &lt;span style=&#34;color:#75715e&#34;&gt;//8个整数组成的数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt;  [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]       counter [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] ; &lt;span style=&#34;color:#75715e&#34;&gt;//由4个4bit计数器组成的数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]       addr_bus [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] ; &lt;span style=&#34;color:#75715e&#34;&gt;//由4个8bit wire型变量组成的数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;             data_bit[&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] ; &lt;span style=&#34;color:#75715e&#34;&gt;//声明1bit wire型变量的二维数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]       data_4d[&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] ; &lt;span style=&#34;color:#75715e&#34;&gt;//声明4维的32bit数据变量数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;数组由&lt;strong&gt;多个元件&lt;/strong&gt;组成，向量是一个&lt;strong&gt;元件&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储器：一种寄存器数组，可用来描述RAM和ROM&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt;               membit[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt;] ;  &lt;span style=&#34;color:#75715e&#34;&gt;//256bit的1bit存储器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt;  [&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]        mem[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1023&lt;/span&gt;] ;    &lt;span style=&#34;color:#75715e&#34;&gt;//1Kbyte存储器，位宽8bit
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;mem[&lt;span style=&#34;color:#ae81ff&#34;&gt;511&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;#39;b0&lt;/span&gt; ;                  &lt;span style=&#34;color:#75715e&#34;&gt;//令第512个8bit的存储单元值为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;向量&#34;&gt;向量&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;当位宽大于1时，wire或reg类型可以声明为向量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]      counter ;    &lt;span style=&#34;color:#75715e&#34;&gt;//声明4bit位宽的寄存器counter
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]  gpio_data;   &lt;span style=&#34;color:#75715e&#34;&gt;//声明32bit位宽的线型变量gpio_data
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]     addr ;       &lt;span style=&#34;color:#75715e&#34;&gt;//声明7bit位宽的线型变量addr，位宽范围为8:2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;]     data ;       &lt;span style=&#34;color:#75715e&#34;&gt;//声明32bit位宽的寄存器变量data, 最高有效位为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verilog支持可变的向量域选择&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]     data1 ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;reg&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]      byte1 [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;];&lt;span style=&#34;color:#75715e&#34;&gt;//byte1变量的每一个元素都为一个8bit宽的寄存器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;integer&lt;/span&gt; j ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;always&lt;/span&gt;@&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;begin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (j&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; j&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;;j&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;j&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;begin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        byte1[j] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; data1[(j&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; j&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;]; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//把data1[7:0]…data1[31:24]依次赋值给byte1[0][7:0]…byte[3][7:0]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Verillog 还支持指定 bit 位后固定位宽的向量域选择访问&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[bit+: width]&lt;/strong&gt; : 从起始 bit 位开始递增，位宽为 width&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[bit-: width]&lt;/strong&gt; : 从起始 bit 位开始递减，位宽为 width&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verilog可以利用大括号&lt;code&gt;{}&lt;/code&gt;进行数据拼接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]    temp1, temp2 ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; temp1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {byte1[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], data1[&lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;]};  &lt;span style=&#34;color:#75715e&#34;&gt;//数据拼接
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; temp2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&amp;#39;b0&lt;/span&gt;}};  &lt;span style=&#34;color:#75715e&#34;&gt;//赋值32位的数值0  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;参数parameter&#34;&gt;参数（parameter）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;localparam可以声明局部参数，值不能改变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;24-verilog表达式&#34;&gt;2.4 Verilog表达式&lt;/h2&gt;
+&lt;h3 id=&#34;表达式操作符操作数&#34;&gt;表达式（操作符+操作数）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;操作数：常数，整数，实数，线网，寄存器，时间，位选，域选，存储器及函数调用等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作符：算术、关系、等价、逻辑、按位、归约、移位、拼接、条件（与C语言类似）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;算术&lt;/strong&gt;：加(+)，减(-)，乘(*)，除(/)，幂(**)，模(%)。如果操作数的某一位为x，则计算结构全部为x。&lt;strong&gt;位宽&lt;/strong&gt;：无符号数乘法时，结果变量位宽应该为 2 个操作数&lt;strong&gt;位宽之和&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;关系&lt;/strong&gt;：大于，小于，大于等于，小于等于。如果操作数中有一位为x，则关系表达式结果为x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;等价&lt;/strong&gt;：相等(==)，不等(!=)，全等(===)，不全等(!===)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;逻辑&lt;/strong&gt;：与（&amp;amp;&amp;amp;），或（||），非(!)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;按位&lt;/strong&gt;：取反(~)，与(&amp;amp;)，或(|)，异或(^)，同或&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;归约&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;移位&lt;/strong&gt;：逻辑左右移（&amp;raquo;, &amp;laquo;），算术左右移（&amp;raquo;&amp;gt;, &amp;laquo;&amp;lt;）
+算术左移和逻辑左移时，右边低位会补 0。&lt;/p&gt;
+&lt;p&gt;逻辑右移时，左边高位会补 0；而算术右移时，左边高位会补充符号位，以保证数据缩小后值的正确性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;拼接&lt;/strong&gt;：{,}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;条件&lt;/strong&gt;：&lt;code&gt;condition_expression ? true_expression : false_expression&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作符优先级&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;25-verilog编译指令&#34;&gt;2.5 Verilog编译指令&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;类似C语言中的预编译指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以**`**为开头&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;``define`&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;``undef`&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在编译阶段，&lt;strong&gt;``define`&lt;/strong&gt; 用于文本替换，类似于 C 语言中的 &lt;strong&gt;#define&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;``undef`&lt;/strong&gt; 用来取消之前的宏定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`ifdef, `ifndef, `elsif, `endif, `else&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;条件编译指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`ifdef&lt;/span&gt;       MCU51
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;parameter&lt;/span&gt; DATA_DW &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;   ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`elsif&lt;/span&gt;       WINDOW
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;parameter&lt;/span&gt; DATA_DW &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;  ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;parameter&lt;/span&gt; DATA_DW &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;  ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`endif&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`include&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编译时将一个verilog文件包括在内&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`timescale&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将时间单位与实际时间相关联，用于定义时延、仿真的单位和精度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`timescale&lt;/span&gt;      time_unit &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; time_precision &lt;span style=&#34;color:#75715e&#34;&gt;//time_unit为单位，time_precision为精度
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在编译过程中，&lt;strong&gt;`timescale&lt;/strong&gt; 指令会影响后面所有模块中的时延值，直至遇到另一个 &lt;strong&gt;`timescale&lt;/strong&gt; 指令或 &lt;strong&gt;`resetall&lt;/strong&gt; 指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果一个设计中的多个模块都带有 &lt;strong&gt;`timescale&lt;/strong&gt; 时，模拟器总是定位在所有模块的最小时延精度上，并且所有时延都相应地换算为最小时延精度，时延单位并不受影响&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;并行子模块的`timescale不会相互影响‘&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`default_nettype&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用于为隐式的线网变量指定为线网类型，即将没有被声明的连线定义为线网类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`resetall&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将所有的编译指令重新设置为缺省值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`celldefine `endcelldefine&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将模块标记为单元模块&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`celldefine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;input&lt;/span&gt;      clk,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;input&lt;/span&gt;      rst,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;output&lt;/span&gt;     clk_pll,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;output&lt;/span&gt;     flag);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;……&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;endmodule&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;`endcelldefine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`unconnected_drive, `nounconnected_drive&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在模块实例化中，出现在这两个编译指令间的任何未连接的输入端口，为正偏电路状态或者为反偏电路状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第3章 赋值与时延</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
+      
+        <description>&lt;h1 id=&#34;chapter-3&#34;&gt;CHAPTER 3&lt;/h1&gt;
+&lt;h2 id=&#34;31-verilog连续赋值&#34;&gt;3.1 Verilog连续赋值&lt;/h2&gt;
+&lt;h3 id=&#34;连续赋值语句&#34;&gt;连续赋值语句&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;用于对wire型变量进行赋值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;     LHS_target &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; RHS_expression  &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;任何已声明的wire变量的连续赋值语句都是以assign开头：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      Cout, A, B ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;    Cout  &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;     &lt;span style=&#34;color:#75715e&#34;&gt;//实现计算A与B的功能
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;另一种对wire型赋值的方法，在声明时赋值：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      A, B ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      Cout &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;全加器&#34;&gt;全加器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;全加器的逻辑表达式为：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;So &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Ai &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;⊕&lt;/span&gt; Bi &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;⊕&lt;/span&gt; Ci ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Co &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AiBi &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Ci(Ai&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;Bi)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;加法器代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; full_adder1(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;input&lt;/span&gt;    Ai, Bi, Ci,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;output&lt;/span&gt;   So, Co;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; So &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Ai &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; Bi &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; Ci ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; Co &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (Ai &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; Bi) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; (Ci &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; (Ai &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; Bi));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;endmodule&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例子见&lt;a href=&#34;https://www.edaplayground.com/x/9RMw&#34;&gt;FullAdder&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32-verilog时延&#34;&gt;3.2 Verilog时延&lt;/h2&gt;
+&lt;h3 id=&#34;时延&#34;&gt;时延&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;连续赋值延时语句中的延时，用于控制任意操作数发生变化到语句左端得到新值之间的时间延时&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时延不可综合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;连续赋值时延分为普通时延，隐式时延，声明时延&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//普通时延，A&amp;amp;B计算结果延时10个时间单位赋值给Z
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; Z, A, B ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;    Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//隐式时延，声明一个wire型变量时对其进行包含一定时延的连续赋值。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; A, B;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;        Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//声明时延，声明一个wire型变量时指定一个时延。因此对该变量所有的连续赋值都会被推迟到指定的时间。除非门级建模中，一般不推荐使用此类方法建模。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; A, B;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; Z ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;           Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;惯性时延&#34;&gt;惯性时延&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在上述例子中，A 或 B 任意一个变量发生变化，那么在 Z 得到新的值之前，会有 10 个时间单位的时延。如果在这 10 个时间单位内，即在 Z 获取新的值之前，A 或 B 任意一个值又发生了变化，那么计算 Z 的新值时会取 A 或 B 当前的新值。所以称之为惯性时延，即信号脉冲宽度小于时延时，对输出没有影响&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例子见&lt;a href=&#34;https://www.edaplayground.com/x/MrGp&#34;&gt;time_delay_module&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

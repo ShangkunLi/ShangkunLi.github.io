@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Verilog入门笔记：第4章 结构与控制 - 李尚坤的个人网站
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="李尚坤" />
+  <meta name="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0" />
+
+
+<link rel="canonical" href="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.344fee5389fbc3b3675bdee1033db2900b2ebf2bb9afdd7cc0a696f015a8bcf8.css" integrity="sha256-NE/uU4n7w7NnW97hAz2ykAsuvyu5r918wKaW8BWovPg=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="Verilog入门笔记：第4章 结构与控制" />
+<meta property="og:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
+<meta itemprop="name" content="Verilog入门笔记：第4章 结构与控制">
+<meta itemprop="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia">
+<meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2535">
+<meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Verilog入门笔记：第4章 结构与控制"/>
+<meta name="twitter:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">李尚坤的个人网站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    
+
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      李尚坤的个人网站
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://shangkunli.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-verilog过程结构">4.1 Verilog过程结构</a>
+      <ul>
+        <li><a href="#initial语句">initial语句</a></li>
+        <li><a href="#always语句">always语句</a></li>
+      </ul>
+    </li>
+    <li><a href="#42-verilog过程赋值">4.2 Verilog过程赋值</a>
+      <ul>
+        <li><a href="#阻塞赋值">阻塞赋值</a></li>
+        <li><a href="#非阻塞赋值">非阻塞赋值</a></li>
+        <li><a href="#使用非阻塞赋值避免竞争冒险">使用非阻塞赋值避免竞争冒险</a></li>
+      </ul>
+    </li>
+    <li><a href="#43-verilog时序控制">4.3 Verilog时序控制</a>
+      <ul>
+        <li><a href="#时延控制">时延控制</a></li>
+        <li><a href="#边沿触发事件控制">边沿触发事件控制</a></li>
+        <li><a href="#电平敏感事件控制">电平敏感事件控制</a></li>
+      </ul>
+    </li>
+    <li><a href="#44-verilog语句块">4.4 Verilog语句块</a>
+      <ul>
+        <li><a href="#顺序块">顺序块</a></li>
+        <li><a href="#并行块">并行块</a></li>
+        <li><a href="#嵌套块">嵌套块</a></li>
+        <li><a href="#命名块">命名块</a></li>
+      </ul>
+    </li>
+    <li><a href="#45-verilog条件语句">4.5 Verilog条件语句</a>
+      <ul>
+        <li><a href="#条件语句">条件语句</a></li>
+      </ul>
+    </li>
+    <li><a href="#46-verilog多路分支语句">4.6 Verilog多路分支语句</a>
+      <ul>
+        <li><a href="#case语句">case语句</a></li>
+        <li><a href="#casexcasez语句">casex/casez语句</a></li>
+      </ul>
+    </li>
+    <li><a href="#47-verilog循环语句">4.7 Verilog循环语句</a>
+      <ul>
+        <li><a href="#while循环">while循环</a></li>
+        <li><a href="#for循环">for循环</a></li>
+        <li><a href="#repeat循环">repeat循环</a></li>
+        <li><a href="#forever循坏">forever循坏</a></li>
+      </ul>
+    </li>
+    <li><a href="#48-verilog过程连续赋值">4.8 Verilog过程连续赋值</a>
+      <ul>
+        <li><a href="#assign-deassign">assign-deassign</a></li>
+        <li><a href="#force-release">force-release</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">Verilog入门笔记：第4章 结构与控制</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          李尚坤
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2023-01-20">
+      2023-01-20
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 2535 字 -
+        预计阅读 6 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://shangkunli.github.io/categories/verilog/"> Verilog </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <h1 id="chapter-4">CHAPTER 4</h1>
+<h2 id="41-verilog过程结构">4.1 Verilog过程结构</h2>
+<ul>
+<li>initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行</li>
+</ul>
+<h3 id="initial语句">initial语句</h3>
+<ul>
+<li>initial语句从0时刻开始执行，只执行1次</li>
+<li>如果initial块内包含多个语句，使用begin&amp;end组成一个块语句</li>
+<li>如果initial块内只有1条语句，可以不用begin&amp;end</li>
+<li>不可综合，用于初始化、信号检测</li>
+</ul>
+<h3 id="always语句">always语句</h3>
+<ul>
+<li>always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句</li>
+<li>多用于仿真时钟的产生</li>
+</ul>
+<h2 id="42-verilog过程赋值">4.2 Verilog过程赋值</h2>
+<ul>
+<li>过程赋值是在initial块或always块中的赋值</li>
+<li>连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用</li>
+</ul>
+<h3 id="阻塞赋值">阻塞赋值</h3>
+<ul>
+<li>顺序执行，依次完成</li>
+<li>使用<code>=</code>作为赋值符号</li>
+</ul>
+<h3 id="非阻塞赋值">非阻塞赋值</h3>
+<ul>
+<li>并行执行，同时进行；不会阻塞位于同一个语句块的后面语句</li>
+<li>使用<code>&lt;=</code>作为赋值符号</li>
+</ul>
+<h3 id="使用非阻塞赋值避免竞争冒险">使用非阻塞赋值避免竞争冒险</h3>
+<ul>
+<li>
+<p>在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值</p>
+</li>
+<li>
+<p>使用阻塞赋值交换两个寄存器值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//由于always语句并行执行，无法达到目的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> b ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//由于使用非阻塞赋值，新值并不会影响结果
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">&lt;=</span> b ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">&lt;=</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="43-verilog时序控制">4.3 Verilog时序控制</h2>
+<h3 id="时延控制">时延控制</h3>
+<ul>
+<li>指定了语句从开始执行到执行完毕之间的时间间隔</li>
+</ul>
+<ol>
+<li>
+<p><strong>常规时延</strong></p>
+<p>语句要等待一段时间后，再将计算结果赋值给目标信号</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//写法1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span>  value_test ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_general ;
+</span></span><span style="display:flex;"><span>#<span style="color:#ae81ff">10</span>  value_general    <span style="color:#f92672">=</span> value_test ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//写法2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>#<span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>value_ single         <span style="color:#f92672">=</span> value_test ;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>内嵌时延</strong></p>
+<p>语句现将计算结果保存，然后等待一定时间后赋值给目标信号</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_test ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_embed ;
+</span></span><span style="display:flex;"><span>value_embed        <span style="color:#f92672">=</span> #<span style="color:#ae81ff">10</span> value_test ;
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="边沿触发事件控制">边沿触发事件控制</h3>
+<ol>
+<li>
+<p><strong>一般事件控制</strong></p>
+<ul>
+<li>
+<p>用符号@表示</p>
+</li>
+<li>
+<p>关键字posedge表示上升沿，negedge表示下降沿，未指明则两种边沿触发都识别</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//信号clk只要发生变化，就执行q&lt;=d，双边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(clk) q <span style="color:#f92672">&lt;=</span> d ;                
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//在信号clk上升沿时刻，执行q&lt;=d，正边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) q <span style="color:#f92672">&lt;=</span> d ;  
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//在信号clk下降沿时刻，执行q&lt;=d，负边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">negedge</span> clk) q <span style="color:#f92672">&lt;=</span> d ; 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//立刻计算d的值，并在clk上升沿时刻赋值给q，不推荐这种写法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>q <span style="color:#f92672">=</span> @(<span style="color:#66d9ef">posedge</span> clk) d ;    
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>命名事件控制</strong></p>
+<p>声明<code>event</code>类型变量，并触发该变量来识别该事件是否发生，触发信号用<code>-&gt;</code>表示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">event</span>     start_receiving ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @( <span style="color:#66d9ef">posedge</span> clk_samp) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">-&gt;</span> start_receiving ;       <span style="color:#75715e">//采样时钟上升沿作为时间触发时刻
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(start_receiving) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>  data_buf <span style="color:#f92672">=</span> {data_if[<span style="color:#ae81ff">0</span>], data_if[<span style="color:#ae81ff">1</span>]} ; <span style="color:#75715e">//事件发生，即监测到clk_samp的信号处于上升沿，则执行操作，对多维数据整合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>敏感列表</strong></p>
+<ul>
+<li>当多个信号或事件中任意一个发生变化都能够触发语句的执行时，Verilog 中使用&quot;或&quot;表达式来描述这种情况，用关键字<code>or</code>连接多个事件或信号。这些事件或信号组成的列表称为**&ldquo;敏感列表&rdquo;**。当然，<code>or</code>也可以用逗号<code>,</code>来代替</li>
+<li>当组合逻辑输入变量很多时，那么编写敏感列表会很繁琐。此时，更为简洁的写法是<code>@*</code> 或 <code>@(*)</code>，表示对语句块中的所有输入变量的变化都是敏感的</li>
+</ul>
+</li>
+</ol>
+<h3 id="电平敏感事件控制">电平敏感事件控制</h3>
+<p>语句的执行需要等待某个条件为真，采用<code>wait</code>来表示电平敏感情况</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">wait</span> (start_enable) ;      <span style="color:#75715e">//等待 start 信号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//start信号使能后，在clk_samp上升沿，对数据进行整合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        @(<span style="color:#66d9ef">posedge</span> clk_samp)  ;
+</span></span><span style="display:flex;"><span>        data_buf <span style="color:#f92672">=</span> {data_if[<span style="color:#ae81ff">0</span>], data_if[<span style="color:#ae81ff">1</span>]} ;      
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h2 id="44-verilog语句块">4.4 Verilog语句块</h2>
+<h3 id="顺序块">顺序块</h3>
+<ul>
+<li>用<code>begin</code>和<code>end</code>来表示</li>
+<li>顺序块中的语句是一条条执行的（非阻塞赋值除外）</li>
+<li>每条语句的时延与前面语句执行的时间相关</li>
+</ul>
+<h3 id="并行块">并行块</h3>
+<ul>
+<li>用<code>fork</code>和<code>join</code>来表示</li>
+<li>并行执行，即便是阻塞形式</li>
+<li>每块语句的时延都与块语句开始执行的时间相关</li>
+</ul>
+<h3 id="嵌套块">嵌套块</h3>
+<ul>
+<li>
+<p>顺序块和并行块可以嵌套使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span>      <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]   ai_sequen2, bi_sequen2 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]   ai_paral2,  bi_paral2 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>        ai_sequen2         <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d5</span> ;    <span style="color:#75715e">//at 0ns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">fork</span>
+</span></span><span style="display:flex;"><span>            #<span style="color:#ae81ff">10</span> ai_paral2          <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d5</span> ;    <span style="color:#75715e">//at 10ns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            #<span style="color:#ae81ff">15</span> bi_paral2          <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d8</span> ;    <span style="color:#75715e">//at 15ns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">join</span>
+</span></span><span style="display:flex;"><span>        #<span style="color:#ae81ff">20</span> bi_sequen2      <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d8</span> ;    <span style="color:#75715e">//at 35ns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="命名块">命名块</h3>
+<ul>
+<li>
+<p>给块语句结构命名，命名的块中可以声明局部变量，通过层次名引用的方法对变量进行访问</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span> <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob   <span style="color:#75715e">//命名模块名字为runoob，分号不能少
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">integer</span>    i ;       <span style="color:#75715e">//此变量可以通过test.runoob.i 被其他模块使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>            #<span style="color:#ae81ff">10</span> i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span> ;       
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> stop_flag ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> stop_flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> <span style="color:#66d9ef">begin</span> <span style="color:#f92672">:</span> detect_stop
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( test.runoob.i <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">begin</span> <span style="color:#75715e">//i累加10次，即100ns时停止仿真
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            $display(<span style="color:#e6db74">&#34;Now you can stop the simulation!!!&#34;</span>);
+</span></span><span style="display:flex;"><span>            stop_flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>        #<span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
+</span></span></code></pre></div></li>
+<li>
+<p>命名的块也可以被禁用，用关键字 disable 来表示。disable 可以终止命名块的执行，可以用来从循环中退出、处理错误等</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span> <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d <span style="color:#75715e">//命名模块名字为runoob_d
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">integer</span>    i_d ;
+</span></span><span style="display:flex;"><span>        i_d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(i_d<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d2
+</span></span><span style="display:flex;"><span>            # <span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (i_d <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">begin</span>       <span style="color:#75715e">//累加5次停止累加
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">disable</span> runoob_d3.clk_gen ;<span style="color:#75715e">//stop 外部block: clk_gen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">disable</span> runoob_d2 ;       <span style="color:#75715e">//stop 当前block: runoob_d2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>            i_d <span style="color:#f92672">=</span> i_d <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> clk ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d3
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> clk_gen  <span style="color:#75715e">//时钟产生模块
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            clk<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ;      #<span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>            clk<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> ;      #<span style="color:#ae81ff">10</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="45-verilog条件语句">4.5 Verilog条件语句</h2>
+<h3 id="条件语句">条件语句</h3>
+<ul>
+<li>
+<p>基本思想与C语言相同</p>
+<p>4路选择器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> mux4to1(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sel ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p0 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p1 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p2 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p3 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]    sout);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sout_t ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> @(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b00</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p0 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b01</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p1 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b10</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p2 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p3 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span> sout <span style="color:#f92672">=</span> sout_t ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="46-verilog多路分支语句">4.6 Verilog多路分支语句</h2>
+<h3 id="case语句">case语句</h3>
+<ul>
+<li>
+<p>基本思想与C语言中的switch相同</p>
+</li>
+<li>
+<p><strong>case语句支持嵌套使用</strong></p>
+</li>
+</ul>
+<h3 id="casexcasez语句">casex/casez语句</h3>
+<ul>
+<li>
+<p>用来表示条件选项中的无关项</p>
+</li>
+<li>
+<p>casex 用 &ldquo;x&rdquo; 来表示无关值，casez 用问号 &ldquo;?&rdquo; 来表示无关值</p>
+</li>
+<li>
+<p>4bit控制端的4路选择器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> mux4to1(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sel ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p0 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p1 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p2 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p3 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]    sout);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sout_t ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> @(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">casez</span>(sel)
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">???</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>     sout_t <span style="color:#f92672">=</span> p0 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">??</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?:</span>     sout_t <span style="color:#f92672">=</span> p1 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">?</span><span style="color:#ae81ff">1</span><span style="color:#f92672">??:</span>     sout_t <span style="color:#f92672">=</span> p2 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1</span><span style="color:#f92672">???:</span>     sout_t <span style="color:#f92672">=</span> p3 ;  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>         sout_t <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b0</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">endcase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span>      sout <span style="color:#f92672">=</span> sout_t ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="47-verilog循环语句">4.7 Verilog循环语句</h2>
+<ul>
+<li>循环语句只能在always或initial语句块中使用</li>
+</ul>
+<h3 id="while循环">while循环</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (condition) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="for循环">for循环</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(initial_assignment; condition ; step_assignment)  <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="repeat循环">repeat循环</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">repeat</span> (loop_times) <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="forever循坏">forever循坏</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>利用系统函数<code>$finish</code>可以退出forever循环</p>
+<h2 id="48-verilog过程连续赋值">4.8 Verilog过程连续赋值</h2>
+<ul>
+<li>过程连续赋值的表达式能被连续的驱动到wire或reg型变量中，即过程连续赋值发生作用时，右端表达式中任意操作数变化都会引起过程连续赋值语句的重新执行</li>
+</ul>
+<h3 id="assign-deassign">assign-deassign</h3>
+<ul>
+<li>赋值对象只能是寄存器或者寄存器组</li>
+</ul>
+<h3 id="force-release">force-release</h3>
+<ul>
+<li>赋值对象可以是reg型，也可以是wire型</li>
+<li>因为是无条件强制赋值，一般多用于交互式调试过程，<strong>不要在设计模块中使用</strong></li>
+<li>作用在reg上：寄存器当前值被覆盖，release 时该寄存器值将继续保留强制赋值时的值。之后，该寄存器的值可以被原有的过程赋值语句改变</li>
+<li>作用在wire上：线网值也会被强制赋值。但是，一旦 release 该线网型变量，其值马上变为原有的驱动值</li>
+</ul>
+
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">李尚坤</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2023-01-20
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://shangkunli.github.io/tags/verilog/">Verilog</a>
+                <a href="https://shangkunli.github.io/tags/ic/">IC</a>
+                <a href="https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+              <a class="prev" href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/">
+                
+                <i class="iconfont">
+                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                </i>
+                <span class="prev-text nav-default">Verilog入门笔记：第3章 赋值与时延</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/">
+                <span class="next-text nav-default">Verilog入门笔记：第5章 模块</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+
+    </div>
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+  
+  
+    <a href="gmail:%20shangkunlee27@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/ShangkunLi" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/lalala-57-8" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://shangkunli.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2023
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        李尚坤
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.411d9c08e1340e26f2ffd1786a9f5abfb48553618457fe8f7dc681173a3ea4b7.js" integrity="sha256-QR2cCOE0Diby/9F4ap9av7SFU2GEV/6PfcaBFzo&#43;pLc=" crossorigin="anonymous"></script>
+
+
+
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/custom.js"></script>
+
+
+  </body>
+</html>
