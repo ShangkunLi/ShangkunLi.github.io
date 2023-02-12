@@ -29,13 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="介绍 这一章节主要常微分方程的数值求解方法
-CompPhys: Ordinary Differential Equations
-求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
-Write a code to numerically solves radial Schrödinger equation for:
-$$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
-​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
-​ (2) $Z_{ion}=0.4000000, C_1=-14." />
+  <meta name="description" content="介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as" />
 
 
 
@@ -75,36 +69,18 @@ $$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
 
 
 <meta property="og:title" content="CompPhys: Ordinary Differential Equations" />
-<meta property="og:description" content="介绍 这一章节主要常微分方程的数值求解方法
-CompPhys: Ordinary Differential Equations
-求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
-Write a code to numerically solves radial Schrödinger equation for:
-$$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
-​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
-​ (2) $Z_{ion}=0.4000000, C_1=-14." />
+<meta property="og:description" content="介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-02-12T14:22:09+08:00" />
 <meta itemprop="name" content="CompPhys: Ordinary Differential Equations">
-<meta itemprop="description" content="介绍 这一章节主要常微分方程的数值求解方法
-CompPhys: Ordinary Differential Equations
-求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
-Write a code to numerically solves radial Schrödinger equation for:
-$$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
-​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
-​ (2) $Z_{ion}=0.4000000, C_1=-14.">
+<meta itemprop="description" content="介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as">
 <meta itemprop="dateModified" content="2023-02-12T14:22:09+08:00" />
-<meta itemprop="wordCount" content="101">
+<meta itemprop="wordCount" content="141">
 <meta itemprop="keywords" content="Python,C/C&#43;&#43;,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CompPhys: Ordinary Differential Equations"/>
-<meta name="twitter:description" content="介绍 这一章节主要常微分方程的数值求解方法
-CompPhys: Ordinary Differential Equations
-求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
-Write a code to numerically solves radial Schrödinger equation for:
-$$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
-​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
-​ (2) $Z_{ion}=0.4000000, C_1=-14."/>
+<meta name="twitter:description" content="介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,7 +100,7 @@ $$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
 
     <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">李尚坤的个人网站</a>
+    <a href="/" class="logo">尚坤的博客</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -246,7 +222,7 @@ $$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
       <div class="logo-wrapper">
   <a href="/" class="logo">
     
-      李尚坤的个人网站
+      尚坤的博客
     
   </a>
 </div>
@@ -373,7 +349,7 @@ $$ \left[-\frac{1}{2}\nabla^2&#43;V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 101 字 -
+        约 141 字 -
         预计阅读 1 分钟
       </span>
 

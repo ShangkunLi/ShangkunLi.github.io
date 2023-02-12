@@ -29,13 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
-module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
-模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
-如果模块与外界环境没有交互，则可以不用声明端口列表
-module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
-端口信号在列表中列出之后，就可以在模块实体中进行声明
-端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省" />
+  <meta name="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块" />
 
 
 
@@ -75,36 +69,18 @@ module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
 
 
 <meta property="og:title" content="Verilog入门笔记：第5章 模块" />
-<meta property="og:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
-module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
-模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
-如果模块与外界环境没有交互，则可以不用声明端口列表
-module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
-端口信号在列表中列出之后，就可以在模块实体中进行声明
-端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省" />
+<meta property="og:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第5章 模块">
-<meta itemprop="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
-module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
-模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
-如果模块与外界环境没有交互，则可以不用声明端口列表
-module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
-端口信号在列表中列出之后，就可以在模块实体中进行声明
-端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省">
+<meta itemprop="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="334">
+<meta itemprop="wordCount" content="1532">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第5章 模块"/>
-<meta name="twitter:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
-module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
-模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
-如果模块与外界环境没有交互，则可以不用声明端口列表
-module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
-端口信号在列表中列出之后，就可以在模块实体中进行声明
-端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省"/>
+<meta name="twitter:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,7 +100,7 @@ module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
 
     <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">李尚坤的个人网站</a>
+    <a href="/" class="logo">尚坤的博客</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -246,7 +222,7 @@ module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
       <div class="logo-wrapper">
   <a href="/" class="logo">
     
-      李尚坤的个人网站
+      尚坤的博客
     
   </a>
 </div>
@@ -388,8 +364,8 @@ module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 334 字 -
-        预计阅读 2 分钟
+        约 1532 字 -
+        预计阅读 4 分钟
       </span>
 
     <div class="post-meta-category">

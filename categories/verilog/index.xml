@@ -13,12 +13,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
-      <description>说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程度上帮助了我，这一部分教程的阅读笔记整理在了下面的文档中 Verilog入门笔记 Verilog入门笔记：第1章 介绍
-Verilog入门笔记：第2章 基础语法及数据
-Verilog入门笔记：第3章 赋值与时延
-Verilog入门笔记：第4章 结构与控制
-Verilog入门笔记：第5章 模块
-Verilog入门笔记：第6章 函数</description>
+      <description>说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程</description>
     </item>
     
     <item>
@@ -27,7 +22,7 @@ Verilog入门笔记：第6章 函数</description>
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
-      <description>CHAPTER 1 1.1 Vrilog介绍 </description>
+      <description>CHAPTER 1 1.1 Vrilog介绍</description>
     </item>
     
     <item>
@@ -36,12 +31,7 @@ Verilog入门笔记：第6章 函数</description>
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
-      <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
-注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
-指明位宽
-4&amp;#39;b1011 // 4bit 数值 32&amp;#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
-负数直接在表示位宽的数字前加负号
-字符串表示 用&amp;quot;&amp;ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件</description>
+      <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，</description>
     </item>
     
     <item>
@@ -50,11 +40,7 @@ Verilog入门笔记：第6章 函数</description>
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
-      <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
-assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
-wire Cout, A, B ; assign Cout = A &amp;amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
-wire A, B ; wire Cout = A &amp;amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi + Ci(Ai+Bi) 加法器代码：
-module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp;amp; Bi) | (Ci &amp;amp; (Ai | Bi)); endmodule 例子见FullAdder</description>
+      <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：</description>
     </item>
     
     <item>
@@ -63,9 +49,7 @@ module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; 
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</guid>
-      <description>CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&amp;lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
-使用阻塞赋值交换两个寄存器值
-//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &amp;lt;= b ; end always @(posedge clk) begin b &amp;lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延</description>
+      <description>CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia</description>
     </item>
     
     <item>
@@ -74,13 +58,7 @@ module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; 
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/</guid>
-      <description>CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
-module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
-模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
-如果模块与外界环境没有交互，则可以不用声明端口列表
-module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
-端口信号在列表中列出之后，就可以在模块实体中进行声明
-端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省</description>
+      <description>CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块</description>
     </item>
     
     <item>
@@ -89,16 +67,7 @@ module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/</guid>
-      <description>CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块
-不含延迟、时序或时序逻辑控制
-至少一个输入变量
-只有一个返回值，没有输出
-不含非阻塞赋值语句
-函数可以调用其他函数
-function [range-1:0] function_id ;//声明一个宽度为range，名字为function_id的寄存器变量，返回值通过这个传递 input_declaration ; other_declaration ; procedural_statement ; endfunction 函数调用
-function_id(input1, input2, …); 函数声明时，也可以在函数名后加一个括号，将input括起来
-function [N-1:0] data_rvs（ input [N-1:0] data_in ...... ） ; 常数函数 在仿真开始之前，在编译期间就计算出结果为常数的函数 不允许访问全局变量或者调用系统函数，可调用另一个常数函数 automatic函数 verliog函数中局部变量为静态的，每次调用时局部变量使用同一个存储空间。如果某个函数在两个不同地方同时调用，两个函数调用行为对同一地址操作，导致不确定的函数结果 使用automatic对函数进行说明，调用时自动分配内存空间 数码管译码 用信号 abcdefg 来控制光亮控制端，用信号 csn 来控制片选，4 位 10 进制的数字个十百千位分别用 4 个 4bit 信号 single_digit, ten_digit, hundred_digit, kilo_digit 来表示，则一个数码管的显示设计可以描述如下
-module digital_tube ( input clk , input rstn , input en , input [3:0] single_digit , input [3:0] ten_digit , input [3:0] hundred_digit , input [3:0] kilo_digit , output reg [3:0] csn , //chip select, low-available output reg [6:0] abcdefg //light control ); reg [1:0] scan_r ; //scan_ctrl always @ (posedge clk or negedge rstn) begin if(!</description>
+      <description>CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块 不含延迟、时序或时序逻辑控制 至少一个输入变量</description>
     </item>
     
   </channel>
