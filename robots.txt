@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://shangkunli.github.io/sitemap.xml
