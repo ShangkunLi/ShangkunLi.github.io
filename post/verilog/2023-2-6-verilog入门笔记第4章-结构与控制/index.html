@@ -29,7 +29,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia" />
+  <meta name="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&amp;lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
+使用阻塞赋值交换两个寄存器值
+//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &amp;lt;= b ; end always @(posedge clk) begin b &amp;lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延" />
 
 
 
@@ -69,18 +71,24 @@
 
 
 <meta property="og:title" content="Verilog入门笔记：第4章 结构与控制" />
-<meta property="og:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia" />
+<meta property="og:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
+使用阻塞赋值交换两个寄存器值
+//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &lt;= b ; end always @(posedge clk) begin b &lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第4章 结构与控制">
-<meta itemprop="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia">
+<meta itemprop="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
+使用阻塞赋值交换两个寄存器值
+//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &lt;= b ; end always @(posedge clk) begin b &lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2535">
+<meta itemprop="wordCount" content="585">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第4章 结构与控制"/>
-<meta name="twitter:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia"/>
+<meta name="twitter:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
+使用阻塞赋值交换两个寄存器值
+//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &lt;= b ; end always @(posedge clk) begin b &lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -394,8 +402,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2535 字 -
-        预计阅读 6 分钟
+        约 585 字 -
+        预计阅读 3 分钟
       </span>
 
     <div class="post-meta-category">

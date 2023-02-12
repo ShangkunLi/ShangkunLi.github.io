@@ -29,7 +29,11 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：" />
+  <meta name="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
+assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+wire Cout, A, B ; assign Cout = A &amp;amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
+wire A, B ; wire Cout = A &amp;amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi &#43; Ci(Ai&#43;Bi) 加法器代码：
+module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp;amp; Bi) | (Ci &amp;amp; (Ai | Bi)); endmodule 例子见FullAdder" />
 
 
 
@@ -69,18 +73,30 @@
 
 
 <meta property="og:title" content="Verilog入门笔记：第3章 赋值与时延" />
-<meta property="og:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：" />
+<meta property="og:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
+assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+wire Cout, A, B ; assign Cout = A &amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
+wire A, B ; wire Cout = A &amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi &#43; Ci(Ai&#43;Bi) 加法器代码：
+module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp; Bi) | (Ci &amp; (Ai | Bi)); endmodule 例子见FullAdder" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第3章 赋值与时延">
-<meta itemprop="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：">
+<meta itemprop="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
+assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+wire Cout, A, B ; assign Cout = A &amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
+wire A, B ; wire Cout = A &amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi &#43; Ci(Ai&#43;Bi) 加法器代码：
+module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp; Bi) | (Ci &amp; (Ai | Bi)); endmodule 例子见FullAdder">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="616">
+<meta itemprop="wordCount" content="152">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第3章 赋值与时延"/>
-<meta name="twitter:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头："/>
+<meta name="twitter:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
+assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+wire Cout, A, B ; assign Cout = A &amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
+wire A, B ; wire Cout = A &amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi &#43; Ci(Ai&#43;Bi) 加法器代码：
+module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp; Bi) | (Ci &amp; (Ai | Bi)); endmodule 例子见FullAdder"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -353,8 +369,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 616 字 -
-        预计阅读 2 分钟
+        约 152 字 -
+        预计阅读 1 分钟
       </span>
 
     <div class="post-meta-category">

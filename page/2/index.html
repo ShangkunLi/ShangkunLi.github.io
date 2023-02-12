@@ -334,7 +334,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 133 字 -
+        约 95 字 -
         预计阅读 1 分钟
       </span>
 
@@ -358,7 +358,12 @@
   <div class="post-content">
     
       <div class="post-summary">
-        介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$. Write a general code to transform a n×m matrix into the REDUCED ROW
+        介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等
+Computational Physics: Matrix
+求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$.
+Write a general code to transform a n×m matrix into the REDUCED ROW ECHE-
+LON FORM, and use the code to obtain the RREF of the following matrix.
+Solve the 1D Schrodinger equation with the potential (i) $V (x) = x^2$; (ii) $V (x) = x^4 − x^2 $with the variational approach using a Gaussian basis (either fixed widths or fixed centers).
       </div>
       <div class="read-more">
         <a href="/post/comp_phys/2023-2-6-compphys-matrix/" class="read-more-link"
@@ -405,7 +410,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 126 字 -
+        约 102 字 -
         预计阅读 1 分钟
       </span>
 
@@ -429,7 +434,10 @@
   <div class="post-content">
     
       <div class="post-summary">
-        介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and
+        介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Monte Carlo simulations
+求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and then calculate the volume for $d=4$ and $d=5$, compare your results with the exact results.
+Write a MC code for a 3D Face-Centered Cubic lattice using the Heisenberg spin model (adopt periodic boundary condition).
       </div>
       <div class="read-more">
         <a href="/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/" class="read-more-link"
@@ -476,7 +484,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 141 字 -
+        约 101 字 -
         预计阅读 1 分钟
       </span>
 
@@ -500,7 +508,13 @@
   <div class="post-content">
     
       <div class="post-summary">
-        介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as
+        介绍 这一章节主要常微分方程的数值求解方法
+CompPhys: Ordinary Differential Equations
+求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
+Write a code to numerically solves radial Schrödinger equation for:
+$$ \left[-\frac{1}{2}\nabla^2+V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
+​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
+​ (2) $Z_{ion}=0.4000000, C_1=-14.
       </div>
       <div class="read-more">
         <a href="/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/" class="read-more-link"
@@ -547,7 +561,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 179 字 -
+        约 142 字 -
         预计阅读 1 分钟
       </span>
 
@@ -571,7 +585,14 @@
   <div class="post-content">
     
       <div class="post-summary">
-        介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\
+        介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left.
       </div>
       <div class="read-more">
         <a href="/post/comp_phys/2023-2-6-compphys-partial-differential-equations/" class="read-more-link"
@@ -618,7 +639,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 125 字 -
+        约 33 字 -
         预计阅读 1 分钟
       </span>
 
@@ -642,7 +663,14 @@
   <div class="post-content">
     
       <div class="post-summary">
-        说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应
+        说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应的slides，问题及Documentation，源码 Computational Physcis Note CompPhys: Find Root
+CompPhys: Matrix
+CompPhys: Interpolation
+CompPhys: Differentiation and Intergration
+CompPhys: FFT
+CompPhys: Ordinary Differential Equations
+CompPhys: Partial Differential Equations
+CompPhys: Monte Carlo simulations
       </div>
       <div class="read-more">
         <a href="/post/comp_phys/comp_phys/" class="read-more-link"
@@ -684,7 +712,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 222 字 -
+        约 18 字 -
         预计阅读 1 分钟
       </span>
 
@@ -708,7 +736,12 @@
   <div class="post-content">
     
       <div class="post-summary">
-        说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程
+        说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程度上帮助了我，这一部分教程的阅读笔记整理在了下面的文档中 Verilog入门笔记 Verilog入门笔记：第1章 介绍
+Verilog入门笔记：第2章 基础语法及数据
+Verilog入门笔记：第3章 赋值与时延
+Verilog入门笔记：第4章 结构与控制
+Verilog入门笔记：第5章 模块
+Verilog入门笔记：第6章 函数
       </div>
       <div class="read-more">
         <a href="/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/" class="read-more-link"
@@ -750,7 +783,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 11 字 -
+        约 4 字 -
         预计阅读 1 分钟
       </span>
 
@@ -774,7 +807,7 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 1 1.1 Vrilog介绍
+        CHAPTER 1 1.1 Vrilog介绍 
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/" class="read-more-link"
@@ -816,8 +849,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2067 字 -
-        预计阅读 5 分钟
+        约 292 字 -
+        预计阅读 2 分钟
       </span>
 
     <div class="post-meta-category">
@@ -840,7 +873,12 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，
+        CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
+注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
+指明位宽
+4&#39;b1011 // 4bit 数值 32&#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
+负数直接在表示位宽的数字前加负号
+字符串表示 用&quot;&ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/" class="read-more-link"
@@ -882,8 +920,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 616 字 -
-        预计阅读 2 分钟
+        约 152 字 -
+        预计阅读 1 分钟
       </span>
 
     <div class="post-meta-category">
@@ -906,7 +944,11 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+        CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值
+assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：
+wire Cout, A, B ; assign Cout = A &amp; B ; //实现计算A与B的功能 另一种对wire型赋值的方法，在声明时赋值：
+wire A, B ; wire Cout = A &amp; B ; 全加器 全加器的逻辑表达式为： So = Ai ⊕ Bi ⊕ Ci ; Co = AiBi + Ci(Ai+Bi) 加法器代码：
+module full_adder1( input Ai, Bi, Ci, output So, Co; assign So = Ai ^ Bi ^ Ci ; assign Co = (Ai &amp; Bi) | (Ci &amp; (Ai | Bi)); endmodule 例子见FullAdder
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/" class="read-more-link"
@@ -948,8 +990,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2535 字 -
-        预计阅读 6 分钟
+        约 585 字 -
+        预计阅读 3 分钟
       </span>
 
     <div class="post-meta-category">
@@ -972,7 +1014,9 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia
+        CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initial语句从0时刻开始执行，只执行1次 如果initial块内包含多个语句，使用begin&amp;end组成一个块语句 如果initial块内只有1条语句，可以不用begin&amp;end 不可综合，用于初始化、信号检测 always语句 always语句重复执行，从0时刻开始执行其行为语句，当执行完最后一条时，再次执行第一条语句 多用于仿真时钟的产生 4.2 Verilog过程赋值 过程赋值是在initial块或always块中的赋值 连续赋值总是处于激活状态，任何操作数改变都会影响表达式结果；过程赋值只有在语句执行时起作用 阻塞赋值 顺序执行，依次完成 使用=作为赋值符号 非阻塞赋值 并行执行，同时进行；不会阻塞位于同一个语句块的后面语句 使用&lt;=作为赋值符号 使用非阻塞赋值避免竞争冒险 在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值
+使用阻塞赋值交换两个寄存器值
+//由于always语句并行执行，无法达到目的 always @(posedge clk) begin a = b ; end always @(posedge clk) begin b = a; end //由于使用非阻塞赋值，新值并不会影响结果 always @(posedge clk) begin a &lt;= b ; end always @(posedge clk) begin b &lt;= a; end 4.3 Verilog时序控制 时延控制 指定了语句从开始执行到执行完毕之间的时间间隔 常规时延
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/" class="read-more-link"

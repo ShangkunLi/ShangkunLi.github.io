@@ -329,8 +329,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1532 字 -
-        预计阅读 4 分钟
+        约 334 字 -
+        预计阅读 2 分钟
       </span>
 
     <div class="post-meta-category">
@@ -353,7 +353,13 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块
+        CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口
+module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块与外界交互的接口 端口列表
+模块的定义中包含一个可选的端口列表，一般将不带类型、不带位宽的信号变量罗列在模块声明里
+如果模块与外界环境没有交互，则可以不用声明端口列表
+module pad( DIN, OEN, PULL, DOUT, PAD); 端口声明
+端口信号在列表中列出之后，就可以在模块实体中进行声明
+端口类型：输入(input)，输出(output)，双向(inout) Input, inout不能声明为reg类型 端口数据类型：wire, reg //端口类型声明 input DIN, OEN ; input [1:0] PULL ; //(00,01-dispull, 11-pullup, 10-pulldown) inout PAD ; //pad value output DOUT ; //pad load when pad configured as input //端口数据类型声明 wire DIN, OEN ; wire [1:0] PULL ; wire PAD ; reg DOUT ; 当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/" class="read-more-link"
@@ -395,8 +401,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2048 字 -
-        预计阅读 5 分钟
+        约 442 字 -
+        预计阅读 3 分钟
       </span>
 
     <div class="post-meta-category">
@@ -419,7 +425,16 @@
   <div class="post-content">
     
       <div class="post-summary">
-        CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块 不含延迟、时序或时序逻辑控制 至少一个输入变量
+        CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块
+不含延迟、时序或时序逻辑控制
+至少一个输入变量
+只有一个返回值，没有输出
+不含非阻塞赋值语句
+函数可以调用其他函数
+function [range-1:0] function_id ;//声明一个宽度为range，名字为function_id的寄存器变量，返回值通过这个传递 input_declaration ; other_declaration ; procedural_statement ; endfunction 函数调用
+function_id(input1, input2, …); 函数声明时，也可以在函数名后加一个括号，将input括起来
+function [N-1:0] data_rvs（ input [N-1:0] data_in ...... ） ; 常数函数 在仿真开始之前，在编译期间就计算出结果为常数的函数 不允许访问全局变量或者调用系统函数，可调用另一个常数函数 automatic函数 verliog函数中局部变量为静态的，每次调用时局部变量使用同一个存储空间。如果某个函数在两个不同地方同时调用，两个函数调用行为对同一地址操作，导致不确定的函数结果 使用automatic对函数进行说明，调用时自动分配内存空间 数码管译码 用信号 abcdefg 来控制光亮控制端，用信号 csn 来控制片选，4 位 10 进制的数字个十百千位分别用 4 个 4bit 信号 single_digit, ten_digit, hundred_digit, kilo_digit 来表示，则一个数码管的显示设计可以描述如下
+module digital_tube ( input clk , input rstn , input en , input [3:0] single_digit , input [3:0] ten_digit , input [3:0] hundred_digit , input [3:0] kilo_digit , output reg [3:0] csn , //chip select, low-available output reg [6:0] abcdefg //light control ); reg [1:0] scan_r ; //scan_ctrl always @ (posedge clk or negedge rstn) begin if(!
       </div>
       <div class="read-more">
         <a href="/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/" class="read-more-link"

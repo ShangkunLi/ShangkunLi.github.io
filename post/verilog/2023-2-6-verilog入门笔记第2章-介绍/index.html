@@ -29,7 +29,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，" />
+  <meta name="description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
+注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
+指明位宽
+4&amp;#39;b1011 // 4bit 数值 32&amp;#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
+负数直接在表示位宽的数字前加负号
+字符串表示 用&amp;quot;&amp;ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件" />
 
 
 
@@ -69,18 +74,33 @@
 
 
 <meta property="og:title" content="Verilog入门笔记：第2章 基础语法及数据" />
-<meta property="og:description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，" />
+<meta property="og:description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
+注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
+指明位宽
+4&#39;b1011 // 4bit 数值 32&#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
+负数直接在表示位宽的数字前加负号
+字符串表示 用&quot;&ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第2章 基础语法及数据">
-<meta itemprop="description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，">
+<meta itemprop="description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
+注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
+指明位宽
+4&#39;b1011 // 4bit 数值 32&#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
+负数直接在表示位宽的数字前加负号
+字符串表示 用&quot;&ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2067">
+<meta itemprop="wordCount" content="292">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第2章 基础语法及数据"/>
-<meta name="twitter:description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，"/>
+<meta name="twitter:description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾
+注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，$ ，_组合而成，但第一个字符必须为字母或者下划线。标识符区分大小写 关键字：类似C语言，是verilog用于预定义语言用的标识符 2.2 Verilog数值表示 布尔数值表示 0：逻辑假/低电平 1：逻辑真/高电平 x/X：未知 z/Z：高阻态 整数数值表示 十进制 d，十六进制 h，八进制 o，二进制 b
+指明位宽
+4&#39;b1011 // 4bit 数值 32&#39;h3022_c0de // 32bit 的数值，下划线为增加可读性 也可不指明位宽，且直接写数字时默认为十进制
+负数直接在表示位宽的数字前加负号
+字符串表示 用&quot;&ldquo;括起来的字符队列 2.3 Verilog数据类型 线网(wire) wire类型表示硬件单元之间的物理连线 寄存器(reg) reg类型用来表示存储单元 整数、实数、时间等数据类型属于reg类型 整数（integer）：reg为无符号数，integer为有符号数 实数（real）：可用十进制/科学计数法表示 时间（time）：对仿真时间进行保存，通过调用$time获取当前仿真时间 字符串：每一个字符占8bit，有转义字符 数组 integer flag [7:0] ; //8个整数组成的数组 reg [3:0] counter [3:0] ; //由4个4bit计数器组成的数组 wire [7:0] addr_bus [3:0] ; //由4个8bit wire型变量组成的数组 wire data_bit[7:0][5:0] ; //声明1bit wire型变量的二维数组 reg [31:0] data_4d[11:0][3:0][3:0][255:0] ; //声明4维的32bit数据变量数组 数组由多个元件组成，向量是一个元件"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -370,8 +390,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 2067 字 -
-        预计阅读 5 分钟
+        约 292 字 -
+        预计阅读 2 分钟
       </span>
 
     <div class="post-meta-category">

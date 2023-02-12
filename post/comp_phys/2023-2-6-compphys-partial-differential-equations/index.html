@@ -29,7 +29,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\" />
+  <meta name="description" content="介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left." />
 
 
 
@@ -69,18 +76,39 @@
 
 
 <meta property="og:title" content="CompPhys: Partial Differential Equations" />
-<meta property="og:description" content="介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\" />
+<meta property="og:description" content="介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-02-12T14:22:09+08:00" />
 <meta itemprop="name" content="CompPhys: Partial Differential Equations">
-<meta itemprop="description" content="介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\">
+<meta itemprop="description" content="介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left.">
 <meta itemprop="dateModified" content="2023-02-12T14:22:09+08:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="wordCount" content="142">
 <meta itemprop="keywords" content="Python,C/C&#43;&#43;,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CompPhys: Partial Differential Equations"/>
-<meta name="twitter:description" content="介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\"/>
+<meta name="twitter:description" content="介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -349,7 +377,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 179 字 -
+        约 142 字 -
         预计阅读 1 分钟
       </span>
 

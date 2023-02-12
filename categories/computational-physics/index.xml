@@ -13,7 +13,12 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</guid>
-      <description>介绍 这一章节主要介绍数值微分与积分的方法 Computational Physics: Differentiation and Intergration 求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to</description>
+      <description>介绍 这一章节主要介绍数值微分与积分的方法
+Computational Physics: Differentiation and Intergration
+求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to estimate the derivative with six significant decimal digits. Output the Richardson table.
+Radial wave function of the 3s orbital is:
+$R_{3s} = \frac{1}{9√3} ×(6−6ρ+ρ^2)×Z^{3/2}×e^{-\rho/2}$
+· r = radius expressed in atomic units (1 Bohr radius = 52.</description>
     </item>
     
     <item>
@@ -22,7 +27,12 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</guid>
-      <description>介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun</description>
+      <description>介绍 这一章节主要介绍傅立叶变换的相关算法
+CompPhys: FFT
+求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$
+$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$
+Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun for each month since January 1749.
+Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $|c_k|^2$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal.</description>
     </item>
     
     <item>
@@ -31,7 +41,9 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/find_root/</guid>
-      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法） Computational Physics: Find Root 求解问题 题目说明 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:</description>
+      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法）
+Computational Physics: Find Root
+求解问题 题目说明 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:系数𝑎, 𝑏, 𝑐为程序执行时键盘输入，𝑎, 𝑏, 𝑐为任意实数，所有的解均输出到屏幕。 24 点游戏是儿时玩的主要益智类游戏之一，玩法为:从一副扑克中抽取 4 张牌，对 4 张牌使用加减乘除中的任何方法，使计算结果为 24。例如， 2,3,4,6，通过(((4+6)-2)*3) =24，最快算出24者胜。请 采用 Fortran90 编程求解 24 点游戏的解。 Sketch the function $𝑥^2−5𝑥+3=0$: (1) Determine the two positive roots to 4 decimal places using the bisection method. (2) Take the two roots that you found in the previous question (accurate to 4 decimals) and “polish them up” to 14 decimal places using the Newton-Raphson method.</description>
     </item>
     
     <item>
@@ -40,7 +52,14 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</guid>
-      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等 Computational Physics: Interpolation 求解问题 题目说明 Newton interpolation of: (i) 10 equal spacing points of cos x within $[0, π]$, (ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$. Compare the results</description>
+      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等
+Computational Physics: Interpolation
+求解问题 题目说明 Newton interpolation of:
+(i) 10 equal spacing points of cos x within $[0, π]$,
+(ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$.
+Compare the results with the cubic spline interpolation.
+The table below gives the temperature T along a metal rod whose ends are kept at fixed constant temperature. The temperature is a function of the distance x along the rod.
+(1)Compute a least-squares, straight-line fit to these data using$ T (x) = a + bx $</description>
     </item>
     
     <item>
@@ -49,7 +68,12 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
-      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等
+Computational Physics: Matrix
+求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$.
+Write a general code to transform a n×m matrix into the REDUCED ROW ECHE-
+LON FORM, and use the code to obtain the RREF of the following matrix.
+Solve the 1D Schrodinger equation with the potential (i) $V (x) = x^2$; (ii) $V (x) = x^4 − x^2 $with the variational approach using a Gaussian basis (either fixed widths or fixed centers).</description>
     </item>
     
     <item>
@@ -58,7 +82,10 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</guid>
-      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and</description>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Monte Carlo simulations
+求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and then calculate the volume for $d=4$ and $d=5$, compare your results with the exact results.
+Write a MC code for a 3D Face-Centered Cubic lattice using the Heisenberg spin model (adopt periodic boundary condition).</description>
     </item>
     
     <item>
@@ -67,7 +94,13 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
-      <description>介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as</description>
+      <description>介绍 这一章节主要常微分方程的数值求解方法
+CompPhys: Ordinary Differential Equations
+求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.
+Write a code to numerically solves radial Schrödinger equation for:
+$$ \left[-\frac{1}{2}\nabla^2+V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
+​ (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
+​ (2) $Z_{ion}=0.4000000, C_1=-14.</description>
     </item>
     
     <item>
@@ -76,7 +109,14 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
-      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\</description>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法
+CompPhys: Partial Differential Equations
+求解问题 题目说明 Consider the Poisson equation:
+​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$
+from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
+(a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+(b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left.</description>
     </item>
     
     <item>
@@ -85,7 +125,14 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
-      <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
+      <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应的slides，问题及Documentation，源码 Computational Physcis Note CompPhys: Find Root
+CompPhys: Matrix
+CompPhys: Interpolation
+CompPhys: Differentiation and Intergration
+CompPhys: FFT
+CompPhys: Ordinary Differential Equations
+CompPhys: Partial Differential Equations
+CompPhys: Monte Carlo simulations</description>
     </item>
     
   </channel>
