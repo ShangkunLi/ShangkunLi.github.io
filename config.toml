@@ -125,7 +125,7 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
     # alipay = "/reward_alipay.jpg"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "gmail: shangkunlee27@gmail.com"
+    a-email = "mailto: shangkunlee27@gmail.com"
     # b-stack-overflow = "http://localhost:1313"
     # c-twitter = "https://twitter.com/xian_min"
     # d-facebook = "http://localhost:1313"
