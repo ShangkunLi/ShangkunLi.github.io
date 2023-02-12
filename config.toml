@@ -1,6 +1,6 @@
 baseURL = "https://shangkunli.github.io"
 defaultContentLanguage = "zh-cn"
-title = "  李尚坤的个人网站"
+title = "尚坤的博客"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
