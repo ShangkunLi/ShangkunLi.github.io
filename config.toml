@@ -5,7 +5,7 @@ enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
 
-hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 10                                             # （可选）首页显示的文章条目数量，默认为10
 disqusShortname = "shangkunli"      # disqus_shortname
 #googleAnalytics = "G-4SFSR6JRVT"      # UA-XXXXXXXX-X
