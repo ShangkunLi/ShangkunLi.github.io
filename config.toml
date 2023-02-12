@@ -1,0 +1,181 @@
+baseURL = "https://shangkunli.github.io"
+defaultContentLanguage = "zh-cn"
+title = "李尚坤的个人网站"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "jane"
+
+publishDir = "docs"
+hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+paginate = 10                                             # （可选）首页显示的文章条目数量，默认为10
+disqusShortname = "shangkunli"      # disqus_shortname
+#googleAnalytics = "G-4SFSR6JRVT"      # UA-XXXXXXXX-X
+rssLimit = 20   # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+# copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
+enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
+
+[author]                  # require                       # 必需
+  name = "李尚坤"
+  url = "/about"
+
+[sitemap]                 # require                       # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]             # config your menu              # 配置目录
+  name = "主页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "归档"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "分类"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.main]]
+  name = "About"
+  weight = 50
+  identifier = "about"
+  url = "/about/"
+
+
+[params]
+  since = "2023"            # Site creation time          # 站点建立时间
+
+  # site info (option)                                    # 站点信息（可选）
+  logoTitle = "李尚坤的个人网站"        # default: the title value    # 默认值: 上面设置的title值
+  #keywords = ["linux", "emacs", "program", "journal", "贤民", "博客", "笔记"]
+  #description = "这里是我写字的地方"
+  rssFullContent = true
+
+  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目
+  archive-paginate = 1000
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
+
+  # show word count and read time ?                       # 是否显示字数统计与阅读时间
+  moreMeta = true
+
+  # 一些全局开关，你可以在每一篇内容的 front matter 中单独关闭某些选项
+  # Some global options, you can close something in front matter.
+  toc = true                                                                            # 是否开启目录
+  fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用fancybox（图片可点击）
+  bootcdn = false           # In china. @Deprecated: use [params.publicCDN]             # 是否使用bootcdn(@Deprecated: 请使用[params.publicCDN])
+  mathjax = true            # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+  linkToMarkDown = false    # if you config contentCopyright and hugo output .md files. # 是否在链接到markdown原始文件（如果你配置了下面的许可协议并允许hugo生成markdown文件）
+
+  #contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+  contentCopyright = '原创文章，如需转载请注明文章作者和出处。谢谢！'
+
+  changyanAppid = ""        # Changyan app id             # 畅言
+  changyanAppkey = ""       # Changyan app key
+  baidu_push = false        # baidu push                  # 百度
+  baidu_analytics = ""      # Baidu Analytics
+  baidu_verification = ""   # Baidu Verification
+  google_verification = ""  # Google_Verification         # 谷歌
+
+  customJS = ['custom.js']
+  customCSS = ['custom.css']
+
+  [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
+    enable = false
+    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
+    slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
+    fancyboxJs = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
+    fancyboxCss = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">'
+
+  #[params.giscus]         # giscus is a comment system based on GitHub Discussions. see https://giscus.app
+   # enable = true
+    #repo = "xianmin/comments---xianmin.org"
+    #repoId = "MDEwOlJlcG9zaXRvcnkxNDAyNTY2MDI="
+    #category = "Announcements"
+    #categoryId = "DIC_kwDOCFwlWs4CRRxW"
+    # mapping = "pathname"
+    # strict = 0
+    # reactionsEnabled = 1
+    # emitMetadata = 0
+    # inputPosition = "top"
+    # theme = "light"
+    #lang = "zh-CN"
+    # lazyLoading = false
+
+  #[params.search.google]    # google custom search, see https://cse.google.com
+    #enable = true
+    #id = "002186711602136249422:q1gkomof_em"
+    #title = "Search"
+
+  #[params.gitInfo]
+    #gitRepo = "https://github.com/xianmin/xianmin.org"
+    #showCommitMessage = true
+
+  [params.reward]                                         # 文章打赏
+    enable = false
+    #wechat = "/reward_wechat.png"           # 微信二维码
+    # alipay = "/reward_alipay.jpg"           # 支付宝二维码
+
+  [params.social]                                         # 社交链接
+    a-email = "gmail: shangkunlee27@gmail.com"
+    # b-stack-overflow = "http://localhost:1313"
+    # c-twitter = "https://twitter.com/xian_min"
+    # d-facebook = "http://localhost:1313"
+    # e-linkedin = "http://localhost:1313"
+    # f-google = "http://localhost:1313"
+    g-github = "https://github.com/ShangkunLi"
+    # h-weibo = "https://weibo.com/xianmin12"
+    i-zhihu = "https://www.zhihu.com/people/lalala-57-8"
+    # j-douban = "https://www.douban.com/people/xianmin12/"
+    # k-pocket = "http://localhost:1313"
+    # l-tumblr = "http://localhost:1313"
+    # m-instagram = "http://localhost:1313"
+    # p-coding = "https://coding.net/u/xianmin"
+
+
+# 将下面这段配置取消注释可以使 hugo 生成 .md 文件
+# Uncomment these options to make hugo output .md files.
+#[mediaTypes]
+#  [mediaTypes."text/plain"]
+#    suffix = "md"
+#
+#[outputFormats.MarkDown]
+#  mediaType = "text/plain"
+#  isPlainText = true
+#  isHTML = false
+#
+#[outputs]
+#  home = ["HTML", "RSS"]
+#  page = ["HTML", "MarkDown"]
+#  section = ["HTML", "RSS"]
+#  taxonomy = ["HTML", "RSS"]
+#  taxonomyTerm = ["HTML"]
+
+# Configure the English version of the website.
+[Languages.zh-cn]
+  languageCode = "zh-cn"
+
+#[markup]
+#  [markup.highlight]
+#    anchorLineNos = true
+#   codeFences = true
+#    guessSyntax = false
+#    hl_Lines = ''
+#    hl_inline = false
+#    lineAnchors = ''
+#    lineNoStart = 1
+#    lineNos = true
+#    lineNumbersInTable = true
+#    noClasses = true
+#    noHl = false
+#    style = 'friendly'
+#    tabWidth = 4
