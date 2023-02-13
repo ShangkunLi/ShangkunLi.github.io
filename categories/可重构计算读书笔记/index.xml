@@ -6,7 +6,16 @@
     <description>Recent content in 可重构计算读书笔记 on 尚坤的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/categories/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/categories/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>可重构计算-第6章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</guid>
+      <description>第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集</description>
+    </item>
+    
     <item>
       <title>可重构计算-第5章</title>
       <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</link>

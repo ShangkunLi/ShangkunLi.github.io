@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 尚坤的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>可重构计算-第6章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</guid>
+      <description>第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集</description>
+    </item>
+    
     <item>
       <title>可重构计算-第5章</title>
       <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
       <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：</description>
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第4章 结构与控制</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/</guid>
-      <description>CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia</description>
     </item>
     
   </channel>

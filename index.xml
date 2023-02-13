@@ -6,10 +6,152 @@
     <description>Recent content on 尚坤的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://shangkunli.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>可重构计算-第6章</title>
+      <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</guid>
+      
+        <description>&lt;h1 id=&#34;第6章-计算密集型与控制密集型重构计算&#34;&gt;第6章 计算密集型与控制密集型重构计算&lt;/h1&gt;
+&lt;h2 id=&#34;61-计算密集型与控制密集型应用的特征与举例&#34;&gt;6.1 计算密集型与控制密集型应用的特征与举例&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;计算密集型：计算部分所需的执行时间是其总体时间的主要部分&lt;/li&gt;
+&lt;li&gt;数据密集型：IO访问时间和数据搬移时间是其总体时间的主要部分&lt;/li&gt;
+&lt;li&gt;控制密集型：控制流所需的执行时间是其总体执行时间的主要部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;计算密集型和数据密集型适合并行处理。计算密集型将应用划分为多个独立的子任务，并行流水执行；数据密集型将数据分成多个独立的部分。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hpac.cs.umu.se/people/springer/cuda_dwarf_seminar.pdf&#34;&gt;&lt;strong&gt;伯克利分类方法&lt;/strong&gt;&lt;/a&gt;：十三种典型的分类方法&lt;/p&gt;
+&lt;h2 id=&#34;62-可重构计算处理器的设计方法&#34;&gt;6.2 可重构计算处理器的设计方法&lt;/h2&gt;
+&lt;p&gt;高效处理器系统的两个主流发展方向：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;并行化设计：增加并行运算单元数目，加速较高并行度的程序段&lt;/li&gt;
+&lt;li&gt;差异化与专用化设计：各个子模块针对专用领域或应用类型进行差异优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;针对计算密集型和控制密集型，对应不同的可重构计算处理器设计：&lt;/p&gt;
+&lt;h3 id=&#34;621-面向计算密集型应用的硬件设计&#34;&gt;6.2.1 面向计算密集型应用的硬件设计&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;面向计算密集型应用的可重构控制器的设计&lt;/p&gt;
+&lt;p&gt;只含有简单的控制流，配置只需要简单地顺序加载，PFSM也简单，无需特别优化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;面向计算密集型应用的可重构数据通路的设计&lt;/p&gt;
+&lt;p&gt;包含一个运算单元阵列和运算单元之间的互连&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;运算单元阵列的并行化设计
+&lt;ul&gt;
+&lt;li&gt;指令级并行：主要体现在运算单元的配置上，多个运算单元组成运算单元阵列&lt;/li&gt;
+&lt;li&gt;数据级并行：支持矢量化的计算方式&lt;/li&gt;
+&lt;li&gt;任务级并行：多个协同的运算单元阵列实现，把多个线程分别映射到各个阵列上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;运算单元的功能差异化和专用化设计
+&lt;ul&gt;
+&lt;li&gt;不同粒度的运算单元阵列&lt;/li&gt;
+&lt;li&gt;删除部分运算单元中使用率低的功能，得到基本单元的&lt;strong&gt;异构形式&lt;/strong&gt;，能量效率高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;互连结构的并行化设计
+&lt;ul&gt;
+&lt;li&gt;过于灵活的互连面积功耗代价较大，降低可重构计算处理器的能效；不灵活的互连会降低阵列内部有效通信的带宽，降低计算性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;互连结构的功能专用化设计
+&lt;ul&gt;
+&lt;li&gt;可以将运算单元的某些类型的算子分离出来，独立成一类专用化的运算单元；例如单目算子延时小，可以加入互连结构，成为专用化的单目运算单元&lt;/li&gt;
+&lt;li&gt;将阵列的层间通路由具备简单的数据通路，变成一种异构的计算单元，计算分布式设计到互连中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;622-面向控制密集型应用的硬件设计&#34;&gt;6.2.2 面向控制密集型应用的硬件设计&lt;/h3&gt;
+&lt;p&gt;该类应用由大量条件分支和循环结构组成，条件判断的计算量和执行的计算量差不多，控制流和数据通路的通信量较大&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无条件跳转语句&lt;/li&gt;
+&lt;li&gt;条件分支语句&lt;/li&gt;
+&lt;li&gt;循环语句&lt;/li&gt;
+&lt;li&gt;程序调用语句&lt;/li&gt;
+&lt;li&gt;程序终止语句&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;消除控制依赖关系，加速互斥和串行的语句是提高控制密集型应用性能的关键&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;减少指令跳转可以提高执行控制密集型应用的性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;可重构数据通路设计&lt;/p&gt;
+&lt;p&gt;可将控制流转换为数据流，从而在数据通路上实现控制。比如FPGA的配置不能切换，控制流完全在数据通路上实现&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;条件执行技术&lt;/p&gt;
+&lt;p&gt;将控制依赖转变为数据依赖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shangkunli.github.io/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;加载A和B，但是顺序执行时根据P的结果无效化一条语句&lt;/p&gt;
+&lt;p&gt;完全条件执行方式：为每个语句增添条件执行拓展；部分条件执行方式：为某种语句添加条件拓展&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;完全条件执行的设计方法&lt;/p&gt;
+&lt;p&gt;if_conversion算法，把所有条件分支内部的指令替换为条件执行语句&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;部分条件执行的设计方法&lt;/p&gt;
+&lt;p&gt;只增加一个条件数据转移指令或者选择指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推测执行技术&lt;/p&gt;
+&lt;p&gt;强制对分支结构内部的语句使用无条件执行的方式，虽然这些语句有可能不需要执行，但是该技术假定他们需要执行，以消除他们与条件语句的依赖关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可重构控制器设计&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;通用处理器&lt;/p&gt;
+&lt;p&gt;通用可重构计算处理器拥有足够的灵活性，但效率和性能不高。基于指令的FSM是串行的，对于多分支或嵌套分支结构，指令流会以串行的方式执行条件判断&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;专用集成电路&lt;/p&gt;
+&lt;p&gt;PFSM的ASIC设计：基于LUT（look-up table）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;63-计算密集型任务和控制密集型任务的映射方法&#34;&gt;6.3 计算密集型任务和控制密集型任务的映射方法&lt;/h2&gt;
+&lt;h3 id=&#34;631-计算密集型任务相关的映射方法&#34;&gt;6.3.1 计算密集型任务相关的映射方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;问题抽象&lt;/p&gt;
+&lt;p&gt;DFG进行映射时的情形：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不足区域：计算区域过小&lt;/li&gt;
+&lt;li&gt;线性区域：将完成划分的算子区域直接映射到硬件阵列上&lt;/li&gt;
+&lt;li&gt;冗余区域：较大的算子区域配置部分的计算任务&lt;/li&gt;
+&lt;li&gt;理想区域：输入输出少，计算量大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;映射方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;区域增长：对于不足区域，改变循环，扩展计算区域&lt;/li&gt;
+&lt;li&gt;矢量化：对于线性区域&lt;/li&gt;
+&lt;li&gt;虚拟化：对应冗余区域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;632-控制密集型任务相关的映射方法&#34;&gt;6.3.2 控制密集型任务相关的映射方法&lt;/h3&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>可重构计算-第5章</title>
@@ -1354,97 +1496,6 @@ For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;在模块实例化中，出现在这两个编译指令间的任何未连接的输入端口，为正偏电路状态或者为反偏电路状态&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第3章 赋值与时延</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
-      
-        <description>&lt;h1 id=&#34;chapter-3&#34;&gt;CHAPTER 3&lt;/h1&gt;
-&lt;h2 id=&#34;31-verilog连续赋值&#34;&gt;3.1 Verilog连续赋值&lt;/h2&gt;
-&lt;h3 id=&#34;连续赋值语句&#34;&gt;连续赋值语句&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;用于对wire型变量进行赋值&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;     LHS_target &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; RHS_expression  &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;任何已声明的wire变量的连续赋值语句都是以assign开头：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      Cout, A, B ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;    Cout  &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;     &lt;span style=&#34;color:#75715e&#34;&gt;//实现计算A与B的功能
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;另一种对wire型赋值的方法，在声明时赋值：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      A, B ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt;      Cout &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;全加器&#34;&gt;全加器&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;全加器的逻辑表达式为：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;So &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Ai &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;⊕&lt;/span&gt; Bi &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;⊕&lt;/span&gt; Ci ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Co &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AiBi &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Ci(Ai&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;Bi)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;加法器代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;module&lt;/span&gt; full_adder1(
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;input&lt;/span&gt;    Ai, Bi, Ci,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;output&lt;/span&gt;   So, Co;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; So &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Ai &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; Bi &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; Ci ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; Co &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (Ai &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; Bi) &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; (Ci &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; (Ai &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; Bi));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;endmodule&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;例子见&lt;a href=&#34;https://www.edaplayground.com/x/9RMw&#34;&gt;FullAdder&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;32-verilog时延&#34;&gt;3.2 Verilog时延&lt;/h2&gt;
-&lt;h3 id=&#34;时延&#34;&gt;时延&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;连续赋值延时语句中的延时，用于控制任意操作数发生变化到语句左端得到新值之间的时间延时&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;时延不可综合&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;连续赋值时延分为普通时延，隐式时延，声明时延&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//普通时延，A&amp;amp;B计算结果延时10个时间单位赋值给Z
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; Z, A, B ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;    Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//隐式时延，声明一个wire型变量时对其进行包含一定时延的连续赋值。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; A, B;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;        Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//声明时延，声明一个wire型变量时指定一个时延。因此对该变量所有的连续赋值都会被推迟到指定的时间。除非门级建模中，一般不推荐使用此类方法建模。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; A, B;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;wire&lt;/span&gt; #&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; Z ;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;assign&lt;/span&gt;           Z &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;A &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; B
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;惯性时延&#34;&gt;惯性时延&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;在上述例子中，A 或 B 任意一个变量发生变化，那么在 Z 得到新的值之前，会有 10 个时间单位的时延。如果在这 10 个时间单位内，即在 Z 获取新的值之前，A 或 B 任意一个值又发生了变化，那么计算 Z 的新值时会取 A 或 B 当前的新值。所以称之为惯性时延，即信号脉冲宽度小于时延时，对输出没有影响&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;例子见&lt;a href=&#34;https://www.edaplayground.com/x/MrGp&#34;&gt;time_delay_module&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
