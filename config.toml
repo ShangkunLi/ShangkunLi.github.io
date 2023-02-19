@@ -28,23 +28,28 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "归档"
+  name = "全部文章"
   weight = 20
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
   name = "标签"
-  weight = 30
+  weight = 50
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
   name = "分类"
-  weight = 40
+  weight = 30
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
+  name = "书·影"
+  weight = 40
+  identifier = "book-film"
+  url = "/book-film/"
+[[menu.main]]
   name = "About"
-  weight = 50
+  weight = 60
   identifier = "about"
   url = "/about/"
 
