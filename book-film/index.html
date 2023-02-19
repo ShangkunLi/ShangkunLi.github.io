@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          可重构计算-第3章 - 尚坤的博客
+          书·影 - 尚坤的博客
         </title>
     
 
@@ -29,7 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态" />
+  <meta name="description" content="书 书名 评分 短评 影 片名 评分 短评" />
 
 
 
@@ -40,7 +40,7 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/" />
+<link rel="canonical" href="https://shangkunli.github.io/book-film/" />
 
 
 
@@ -68,19 +68,19 @@
 <link rel="stylesheet" href="/css/custom.css">
 
 
-<meta property="og:title" content="可重构计算-第3章" />
-<meta property="og:description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态" />
+<meta property="og:title" content="书·影" />
+<meta property="og:description" content="书 书名 评分 短评 影 片名 评分 短评" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-02-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="name" content="可重构计算-第3章">
-<meta itemprop="description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态"><meta itemprop="datePublished" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1125">
-<meta itemprop="keywords" content="可重构计算,CGRA," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="可重构计算-第3章"/>
-<meta name="twitter:description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态"/>
+<meta property="og:url" content="https://shangkunli.github.io/book-film/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2023-02-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-19T09:11:56+08:00" />
+<meta itemprop="name" content="书·影">
+<meta itemprop="description" content="书 书名 评分 短评 影 片名 评分 短评"><meta itemprop="datePublished" content="2023-02-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-02-19T09:11:56+08:00" />
+<meta itemprop="wordCount" content="14">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="书·影"/>
+<meta name="twitter:description" content="书 书名 评分 短评 影 片名 评分 短评"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -318,31 +318,7 @@
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
     
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#31-可重构数据通路设计">3.1 可重构数据通路设计</a>
-      <ul>
-        <li><a href="#311-可重构计算单元设计">3.1.1 可重构计算单元设计</a></li>
-        <li><a href="#312-可重构路由单元设计">3.1.2 可重构路由单元设计</a></li>
-        <li><a href="#313-阵列接口单元的设计">3.1.3 阵列接口单元的设计</a></li>
-        <li><a href="#314-可重构阵列缓存设计">3.1.4 可重构阵列缓存设计</a></li>
-      </ul>
-    </li>
-    <li><a href="#32-可重构控制器设计">3.2 可重构控制器设计</a>
-      <ul>
-        <li><a href="#321-配置结构定义">3.2.1 配置结构定义</a></li>
-        <li><a href="#322-配置执行方式">3.2.2 配置执行方式</a></li>
-        <li><a href="#323-配置缓存设计">3.2.3 配置缓存设计</a></li>
-      </ul>
-    </li>
-    <li><a href="#33-可重构数据通路与控制器的耦合关系">3.3 可重构数据通路与控制器的耦合关系</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
+    
 
 
 
@@ -350,7 +326,7 @@
       <article class="post">
         
         <header class="post-header">
-          <h1 class="post-title">可重构计算-第3章</h1>
+          <h1 class="post-title">书·影</h1>
           
 
           <div class="post-meta">
@@ -365,24 +341,26 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2023-02-04">
-      2023-02-04
+    <time datetime="2023-02-13">
+      2023-02-13
     </time>
   </div>
 
+  
+    <div class="post-meta-lastmod">
+      (上次更新:
+      2023-02-19)
+    </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1125 字 -
-        预计阅读 3 分钟
+        约 14 字 -
+        预计阅读 1 分钟
       </span>
 
-    <div class="post-meta-category">
-        <a href="https://shangkunli.github.io/categories/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"> 可重构计算读书笔记 </a>
-          
-      </div>
+    
 
 
     
@@ -398,139 +376,40 @@
 
         
         <div class="post-content">
-          <h1 id="第3章-可重构计算处理器硬件架构">第3章 可重构计算处理器硬件架构</h1>
-<h2 id="31-可重构数据通路设计">3.1 可重构数据通路设计</h2>
-<h3 id="311-可重构计算单元设计">3.1.1 可重构计算单元设计</h3>
-<ol>
-<li>
-<p>粒度选择</p>
-<p>FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态配置。粒度越小越灵活，但需要付出更大的面积和配置时间；粒度越小则配置速度越快，但影响算法映射</p>
-</li>
-<li>
-<p>寄存选择</p>
-<p>合理的寄存器位置有利于实现流水线等算法加速执行手段</p>
-</li>
-<li>
-<p>计算功能选择</p>
-<ul>
-<li>算术：加减乘除</li>
-<li>比较：大于小于等于大于等于</li>
-<li>逻辑：与或非异或同或</li>
-<li>移位：逻辑左右移，算术左右移</li>
-<li>异构：一个大而全的计算单元中，一些功能的使用率很低，这种情况下应该对单元进行适当裁剪以得到基本计算单元的异构形式</li>
-</ul>
-</li>
-</ol>
-<h3 id="312-可重构路由单元设计">3.1.2 可重构路由单元设计</h3>
-<ul>
-<li>各种输入输出的选择单元，构成了可重构路由单元</li>
-</ul>
-<h3 id="313-阵列接口单元的设计">3.1.3 阵列接口单元的设计</h3>
-<ul>
-<li>可重构阵列面临存储墙的问题：存储器的接口带宽有限</li>
-<li>减少接口带宽的需求，在阵列内部设计缓存，数据不再频繁通过外部接口</li>
-<li>提高接口带宽上限，可以压缩数据：比如输入数据位宽小于接口时，可以将多个数据拼接共用接口</li>
-<li>合理的FIFO值</li>
-</ul>
-<h3 id="314-可重构阵列缓存设计">3.1.4 可重构阵列缓存设计</h3>
-<ul>
-<li>存储系统的好坏决定并行系统吞吐量计算的性能，<strong>分布式存储</strong>是提升可重构计算处理器吞吐效率的方法之一</li>
-<li>在外部存储器和计算阵列FIFO之间，设计缓存结构
-<ul>
-<li>按照数据变化的频率分类</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>
-<p>常数和立即数缓存结构</p>
-<p>常数和立即数倍存到阵列专门设置的缓存结构中</p>
-</li>
-<li>
-<p>变量的堆寄存器结构</p>
-<ul>
-<li>短变量在每个周期变化时反复使用；长变量则相隔数个周期再用到</li>
-</ul>
-<p>优点：</p>
-<ul>
-<li>可以增加额外的数据通路，实现阵列扩展：可以通过堆寄存器将前一次结果存下来，后面一起输出，这样输出结果会大于阵列宽度，相当于扩大了阵列宽度</li>
-<li>缓存中间数据，在两次配置之间传递数据</li>
-<li>插入空拍，提高流水线效率</li>
-</ul>
-</li>
-<li>
-<p>变量的边界存储结构</p>
-</li>
-<li>
-<p>变量的阵列外部缓存结构</p>
-<ul>
-<li>在外部寄存器和计算阵列接口之间放入的缓存单元</li>
-<li>针对规则的数据变换使用存储器和控制逻辑可以提高性能</li>
-<li>多种数据变换操作</li>
-</ul>
-</li>
-</ol>
-<h2 id="32-可重构控制器设计">3.2 可重构控制器设计</h2>
-<h3 id="321-配置结构定义">3.2.1 配置结构定义</h3>
-<ol>
-<li>
-<p>配置系统的层次化设计</p>
-<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE9.png" alt="截屏2023-01-28 20.15.46"></p>
-</li>
-<li>
-<p>算子功能编码研究</p>
-<ul>
-<li>固定码长，码长由操作的总数目决定</li>
-<li>为了降低电路的功耗，对运算单元内部各主要模块做门控电源或时钟</li>
-<li>为了降低配置端翻转次数，根据算子的转移概率进行huffman编码</li>
-</ul>
-</li>
-<li>
-<p>阵列时序模型研究</p>
-</li>
-<li>
-<p>阵列同步配置信息</p>
-<ol>
-<li>阵列的两种同步方式
-<ul>
-<li>在每个子单元的子任务序列中最后一个任务结束后，需要对各个子单元进行同步，以便执行下一个综合任务</li>
-<li>子任务之间存在数据时序依赖关系，需要对某几个任务进行同步</li>
-</ul>
-</li>
-<li>子单元的两种同步时机
-<ul>
-<li>后同步</li>
-<li>前同步</li>
-</ul>
-</li>
-<li>同步控制涉及模块
-<ul>
-<li>子单元配置字缓存起</li>
-<li>同步控制器</li>
-</ul>
-</li>
-<li>同步信息的描述方式和同步流程</li>
-</ol>
-</li>
-</ol>
-<h3 id="322-配置执行方式">3.2.2 配置执行方式</h3>
-<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE10.png" alt="截屏2023-01-28 20.36.41"></p>
-<h3 id="323-配置缓存设计">3.2.3 配置缓存设计</h3>
-<h2 id="33-可重构数据通路与控制器的耦合关系">3.3 可重构数据通路与控制器的耦合关系</h2>
-<ul>
-<li>
-<p>嵌入模式：数据通路在控制器内部实现</p>
-</li>
-<li>
-<p>协处理器模式：数据通路和控制器同一个芯片内连接</p>
-</li>
-<li>
-<p>独立芯片模式：数据通路在控制器芯片外实现</p>
-</li>
-<li>
-<p>一般情况，离控制器越远，对算法的加速效果越好，但是配置的代价也越大</p>
-</li>
-</ul>
+          <h1 id="书">书</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">书名</th>
+<th style="text-align:center">评分</th>
+<th style="text-align:center">短评</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="影">影</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">片名</th>
+<th style="text-align:center">评分</th>
+<th style="text-align:center">短评</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 
         </div>
 
@@ -544,7 +423,10 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2023-02-04
+      2023-02-19
+      
+        
+        
       
     </span>
   </p>
@@ -562,32 +444,15 @@
 
 
         <footer class="post-footer">
-          <div class="post-tags">
-              <a href="https://shangkunli.github.io/tags/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/">可重构计算</a>
-                <a href="https://shangkunli.github.io/tags/cgra/">CGRA</a>
-                
-            </div>
+          
 
 
           
           <nav class="post-nav">
             
-              <a class="prev" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/">
-                
-                <i class="iconfont">
-                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-                </i>
-                <span class="prev-text nav-default">可重构计算-第4章</span>
-                <span class="prev-text nav-mobile">上一篇</span>
-              </a>
             
-              <a class="next" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/">
-                <span class="next-text nav-default">可重构计算-第1章</span>
+              <a class="next" href="/about/">
+                <span class="next-text nav-default">About</span>
                 <span class="prev-text nav-mobile">下一篇</span>
                 
                 <i class="iconfont">
