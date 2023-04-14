@@ -1,5 +1,5 @@
 baseURL = "https://shangkunli.github.io"
-defaultContentLanguage = "en-us"
+defaultContentLanguage = "en"
 title = "Shangkun's Blog"
 enableRobotsTXT = true
 enableEmoji = true
@@ -165,8 +165,8 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
 #  taxonomyTerm = ["HTML"]
 
 # Configure the English version of the website.
-[Languages.en-us]
-  languageCode = "en-us"
+[Languages.en]
+  languageCode = "en"
 
 #[markup]
 #  [markup.highlight]
