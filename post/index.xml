@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 尚坤的博客</title>
+    <title>Posts on Shangkun&#39;s Blog</title>
     <link>https://shangkunli.github.io/post/</link>
-    <description>Recent content in Posts on 尚坤的博客</description>
+    <description>Recent content in Posts on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>四月初的碎碎念</title>
+      <link>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</guid>
+      <description>已经好久没有维护我的博客，最近难得清闲，想着来发点什么。 苦难 这个话题其实非常沉重，它来自我与老王三月中旬在酒吧里的长谈。当我们坐在酒吧里，身</description>
+    </item>
+    
     <item>
       <title>可重构计算-第6章</title>
       <link>https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/</link>
@@ -149,15 +158,6 @@
       
       <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
       <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
-    </item>
-    
-    <item>
-      <title>Verilog笔记_Guide</title>
-      <link>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
-      <description>说明 这是我个人学习Verilog的路径整理以及资料笔记整理 入门阶段 我主要通过HDLBits进行代码练习和知识点理解 阅读这一部分教程也在一定程</description>
     </item>
     
     <item>

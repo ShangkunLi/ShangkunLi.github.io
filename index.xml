@@ -1,15 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>尚坤的博客</title>
+    <title>Shangkun&#39;s Blog</title>
     <link>https://shangkunli.github.io/</link>
-    <description>Recent content on 尚坤的博客</description>
+    <description>Recent content on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://shangkunli.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>四月初的碎碎念</title>
+      <link>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</guid>
+      
+        <description>&lt;p&gt;已经好久没有维护我的博客，最近难得清闲，想着来发点什么。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;苦难&#34;&gt;苦难&lt;/h2&gt;
+&lt;p&gt;这个话题其实非常沉重，它来自我与老王三月中旬在酒吧里的长谈。当我们坐在酒吧里，身后的觥筹交错，耳边的谈天说地，情侣的耳鬓斯磨，都是美好的事，仿佛世间本没有什么苦难。但终于，我们还是到达了这个话题，苦难。它是如此的沉重，仿佛任何高昂的情绪都会被它瞬间拖拽落地。&lt;/p&gt;
+&lt;p&gt;事情从老王的一个故事开始，他之前做过口述史的访谈。&lt;/p&gt;
+&lt;h2 id=&#34;长衫&#34;&gt;长衫&lt;/h2&gt;
+&lt;h2 id=&#34;留下&#34;&gt;留下&lt;/h2&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>书·影</title>
+      <link>https://shangkunli.github.io/life/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/life/</guid>
+      
+        <description>&lt;h1 id=&#34;书&#34;&gt;书&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;书名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;评分&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;短评&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;影&#34;&gt;影&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;片名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;评分&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;短评&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>可重构计算-第6章</title>
@@ -149,51 +212,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;632-控制密集型任务相关的映射方法&#34;&gt;6.3.2 控制密集型任务相关的映射方法&lt;/h3&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>书·影</title>
-      <link>https://shangkunli.github.io/book-film/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/book-film/</guid>
-      
-        <description>&lt;h1 id=&#34;书&#34;&gt;书&lt;/h1&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;书名&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;评分&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;短评&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;影&#34;&gt;影&lt;/h1&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;片名&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;评分&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;短评&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 </description>
       
     </item>
@@ -1232,34 +1250,6 @@ For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/&#34;&gt;CompPhys: Partial Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/&#34;&gt;CompPhys: Monte Carlo simulations&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Verilog笔记_Guide</title>
-      <link>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/verilog%E7%AC%94%E8%AE%B0_guide/</guid>
-      
-        <description>&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;这是我个人学习Verilog的路径整理以及资料笔记整理&lt;/li&gt;
-&lt;li&gt;入门阶段
-&lt;ul&gt;
-&lt;li&gt;我主要通过&lt;a href=&#34;https://hdlbits.01xz.net/wiki/Main_Page&#34;&gt;HDLBits&lt;/a&gt;进行代码练习和知识点理解&lt;/li&gt;
-&lt;li&gt;阅读&lt;a href=&#34;https://www.runoob.com/w3cnote/verilog-tutorial.html&#34;&gt;这一部分教程&lt;/a&gt;也在一定程度上帮助了我，这一部分教程的阅读笔记整理在了下面的文档中&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;verilog入门笔记&#34;&gt;Verilog入门笔记&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/&#34;&gt;Verilog入门笔记：第1章 介绍&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/&#34;&gt;Verilog入门笔记：第2章 基础语法及数据&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/&#34;&gt;Verilog入门笔记：第3章 赋值与时延&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilg%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC4%E7%AB%A0-%E7%BB%93%E6%9E%84%E4%B8%8E%E6%8E%A7%E5%88%B6/&#34;&gt;Verilog入门笔记：第4章 结构与控制&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/&#34;&gt;Verilog入门笔记：第5章 模块&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/verilog/2023-2-6-verilg%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC6%E7%AB%A0-%E5%87%BD%E6%95%B0/&#34;&gt;Verilog入门笔记：第6章 函数&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>

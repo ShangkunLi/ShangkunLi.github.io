@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 尚坤的博客</title>
+    <title>Tags on Shangkun&#39;s Blog</title>
     <link>https://shangkunli.github.io/tags/</link>
-    <description>Recent content in Tags on 尚坤的博客</description>
+    <description>Recent content in Tags on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>随想录</title>
+      <link>https://shangkunli.github.io/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CGRA</title>
       <link>https://shangkunli.github.io/tags/cgra/</link>
