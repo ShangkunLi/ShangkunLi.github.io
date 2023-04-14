@@ -14,7 +14,7 @@ rssLimit = 20   # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 
 [author]                  # require                       # 必需
-  name = "Shangkun Li(李尚坤)"
+  name = "Shangkun Li"
   url = "/about"
 
 [sitemap]                 # require                       # 必需
@@ -46,7 +46,7 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   name = "Life"
   weight = 40
   identifier = "life"
-  url = "/book-film/"
+  url = "/life/"
 [[menu.main]]
   name = "About"
   weight = 60
