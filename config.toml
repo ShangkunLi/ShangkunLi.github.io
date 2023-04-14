@@ -1,6 +1,6 @@
 baseURL = "https://shangkunli.github.io"
-defaultContentLanguage = "zh-cn"
-title = "尚坤的博客"
+defaultContentLanguage = "en-us"
+title = "Shangkun's Blog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
@@ -14,7 +14,7 @@ rssLimit = 20   # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 
 [author]                  # require                       # 必需
-  name = "李尚坤"
+  name = "Shangkun Li(李尚坤)"
   url = "/about"
 
 [sitemap]                 # require                       # 必需
@@ -23,29 +23,29 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
-  name = "主页"
+  name = "Home"
   weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "全部文章"
+  name = "Archives"
   weight = 20
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
-  name = "标签"
+  name = "Tags"
   weight = 50
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
-  name = "分类"
+  name = "Categories"
   weight = 30
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
-  name = "书·影"
+  name = "Life"
   weight = 40
-  identifier = "book-film"
+  identifier = "life"
   url = "/book-film/"
 [[menu.main]]
   name = "About"
@@ -58,7 +58,7 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   since = "2023"            # Site creation time          # 站点建立时间
 
   # site info (option)                                    # 站点信息（可选）
-  logoTitle = "尚坤的博客"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Shangkun's Bolg"        # default: the title value    # 默认值: 上面设置的title值
   #keywords = ["linux", "emacs", "program", "journal", "贤民", "博客", "笔记"]
   #description = "这里是我写字的地方"
   rssFullContent = true
@@ -165,8 +165,8 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
 #  taxonomyTerm = ["HTML"]
 
 # Configure the English version of the website.
-[Languages.zh-cn]
-  languageCode = "zh-cn"
+[Languages.en-us]
+  languageCode = "en-us"
 
 #[markup]
 #  [markup.highlight]
