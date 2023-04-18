@@ -2,7 +2,7 @@
 # 常用定义
 title: "About"           # 标题
 date: 2023-02-03    # 创建时间
-lastmod: 2023-02-03 # 最后修改时间
+lastmod: 2023-04-18 # 最后修改时间
 draft: false                       # 是否是草稿？
 author: "李尚坤"                  # 作者
 
@@ -18,11 +18,11 @@ mathjax: true    # 打开 mathjax
 
 ![](/imag/简介/IMG_0001.JPG)
 
-你好！我是李尚坤，欢迎来到我的个人主页。我是复旦大学物理学系的本科生，虽然专业是物理学，但我的研究兴趣主要在数字电路设计方面。我通过选修及旁听课程，阅读书籍，项目实践积累了微电子相关的知识，目前在复旦大学微电子学院老师的指导下从事科研实习，方向主要为EDA、可重构计算。
+Hi! I am **Shangkun Li**, welcome to my homepage. I am an undergraduate student in the Department of Physics, Fudan University. Although my major is physics, my research interests are mainly in the field of digital circuit design. Through elective courses, auditing classes, reading books, and project practice, I have accumulated knowledge related to microelectronics. Currently, I am conducting research internships under the guidance of professors from the [School of Microelectronics](https://sme.fudan.edu.cn), Fudan University and the [ECE department](https://ece.hkust.edu.hk) of [HKUST](https://hkust.edu.hk). My research direction mainly focuses on EDA and reconfigurable computing.
 
 ---
 
-这是我的个人简历：（This is my CV）
+This is my CV: 
 
 [中文版简历](/pdf/简介/中文版CV.pdf)
 
@@ -30,7 +30,27 @@ mathjax: true    # 打开 mathjax
 
 ---
 
-## 关于我的报道
+## Honors and Awards
+
+Academic Year 2021-2022, **National Scholarship** (Top 1%)
+
+Academic Year 2021-2022, **Pacemaker to Merit Student** (10 out of all undergraduates in Fudan University)
+
+Academic Year 2020-2021, **The First Prize Scholarship** (Top 5%)
+
+Academic Year 2020-2021, Merit Student
+
+Aug 2021, Grand Prize of the 12th China Undergraduate Physics Tournament (**Ranking 2nd in China**)
+
+Dec 2022, Third Prize of the 8th China Undergraduate Physics Experiment Competition
+
+## Publications
+
+Hope there will be something soon.
+
+![](/imag/简介/pdf_破大防.jpeg)
+
+## News about me
 
 [复旦大学：本科生如何开启科研之路？复旦标兵们这样做→](https://news.fudan.edu.cn/2023/0205/c5a133834/page.htm)
 
