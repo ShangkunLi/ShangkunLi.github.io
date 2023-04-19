@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          可重构计算-第3章 - Shangkun&#39;s Blog
+          可重构计算-第1章 - Shangkun&#39;s Blog
         </title>
     
 
@@ -29,7 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态" />
+  <meta name="description" content="第1章 计算技术发展史 1.1 计算技术引言 进位概念推动了计数法的发展 1.1.1 史前时代——电子计算机之前 1.1.2 第一代电子计算机——电子管计算机 1.1.3 第二代电子计算机" />
 
 
 
@@ -40,7 +40,7 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/" />
+<link rel="canonical" href="https://shangkunli.github.io/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/" />
 
 
 
@@ -58,7 +58,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.344fee5389fbc3b3675bdee1033db2900b2ebf2bb9afdd7cc0a696f015a8bcf8.css" integrity="sha256-NE/uU4n7w7NnW97hAz2ykAsuvyu5r918wKaW8BWovPg=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8402ca8f8f9845c0a5c234d2ec2a521272d4ed8cc15be44b706744d578ab4b05.css" integrity="sha256-hALKj4&#43;YRcClwjTS7CpSEnLU7YzBW&#43;RLcGdE1XirSwU=" media="screen" crossorigin="anonymous">
 
 
 
@@ -68,19 +68,19 @@
 <link rel="stylesheet" href="/css/custom.css">
 
 
-<meta property="og:title" content="可重构计算-第3章" />
-<meta property="og:description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态" />
+<meta property="og:title" content="可重构计算-第1章" />
+<meta property="og:description" content="第1章 计算技术发展史 1.1 计算技术引言 进位概念推动了计数法的发展 1.1.1 史前时代——电子计算机之前 1.1.2 第一代电子计算机——电子管计算机 1.1.3 第二代电子计算机" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-02-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="name" content="可重构计算-第3章">
-<meta itemprop="description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态"><meta itemprop="datePublished" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-02-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1125">
+<meta property="og:url" content="https://shangkunli.github.io/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-02T00:00:00+00:00" />
+<meta itemprop="name" content="可重构计算-第1章">
+<meta itemprop="description" content="第1章 计算技术发展史 1.1 计算技术引言 进位概念推动了计数法的发展 1.1.1 史前时代——电子计算机之前 1.1.2 第一代电子计算机——电子管计算机 1.1.3 第二代电子计算机"><meta itemprop="datePublished" content="2023-02-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-02-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="730">
 <meta itemprop="keywords" content="可重构计算,CGRA," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="可重构计算-第3章"/>
-<meta name="twitter:description" content="第3章 可重构计算处理器硬件架构 3.1 可重构数据通路设计 3.1.1 可重构计算单元设计 粒度选择 FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态"/>
+<meta name="twitter:title" content="可重构计算-第1章"/>
+<meta name="twitter:description" content="第1章 计算技术发展史 1.1 计算技术引言 进位概念推动了计数法的发展 1.1.1 史前时代——电子计算机之前 1.1.2 第一代电子计算机——电子管计算机 1.1.3 第二代电子计算机"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -324,22 +324,31 @@
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#31-可重构数据通路设计">3.1 可重构数据通路设计</a>
+    <li><a href="#11-计算技术引言">1.1 计算技术引言</a>
       <ul>
-        <li><a href="#311-可重构计算单元设计">3.1.1 可重构计算单元设计</a></li>
-        <li><a href="#312-可重构路由单元设计">3.1.2 可重构路由单元设计</a></li>
-        <li><a href="#313-阵列接口单元的设计">3.1.3 阵列接口单元的设计</a></li>
-        <li><a href="#314-可重构阵列缓存设计">3.1.4 可重构阵列缓存设计</a></li>
+        <li><a href="#111-史前时代电子计算机之前">1.1.1 史前时代——电子计算机之前</a></li>
+        <li><a href="#112-第一代电子计算机电子管计算机">1.1.2 第一代电子计算机——电子管计算机</a></li>
+        <li><a href="#113-第二代电子计算机晶体管计算机">1.1.3 第二代电子计算机——晶体管计算机</a></li>
+        <li><a href="#114-第三代电子计算机集成电路计算机">1.1.4 第三代电子计算机——集成电路计算机</a></li>
+        <li><a href="#115-第四代电子计算机大规模集成电路计算机">1.1.5 第四代电子计算机——大规模集成电路计算机</a></li>
       </ul>
     </li>
-    <li><a href="#32-可重构控制器设计">3.2 可重构控制器设计</a>
+    <li><a href="#12-经典计算体系结构">1.2 经典计算体系结构</a>
       <ul>
-        <li><a href="#321-配置结构定义">3.2.1 配置结构定义</a></li>
-        <li><a href="#322-配置执行方式">3.2.2 配置执行方式</a></li>
-        <li><a href="#323-配置缓存设计">3.2.3 配置缓存设计</a></li>
+        <li><a href="#121-计算体系结构设计因素">1.2.1 计算体系结构设计因素</a></li>
+        <li><a href="#122-冯诺依曼体系和哈佛体系结构">1.2.2 冯诺依曼体系和哈佛体系结构</a></li>
+        <li><a href="#123-并行计算体系结构">1.2.3 并行计算体系结构</a></li>
+        <li><a href="#124-多核和阿姆达尔定律">1.2.4 多核和阿姆达尔定律</a></li>
       </ul>
     </li>
-    <li><a href="#33-可重构数据通路与控制器的耦合关系">3.3 可重构数据通路与控制器的耦合关系</a></li>
+    <li><a href="#13-半导体技术发展的挑战">1.3 半导体技术发展的挑战</a>
+      <ul>
+        <li><a href="#131-芯片复用技术需求">1.3.1 芯片复用技术需求</a></li>
+        <li><a href="#132-低功耗技术需求">1.3.2 低功耗技术需求</a></li>
+        <li><a href="#133-存储技术瓶颈">1.3.3 存储技术瓶颈</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-可重构计算技术的历史背景">1.4 可重构计算技术的历史背景</a></li>
   </ul>
 </nav>
     </div>
@@ -351,7 +360,7 @@
       <article class="post">
         
         <header class="post-header">
-          <h1 class="post-title">可重构计算-第3章</h1>
+          <h1 class="post-title">可重构计算-第1章</h1>
           
 
           <div class="post-meta">
@@ -366,8 +375,8 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2023-02-04">
-      2023-02-04
+    <time datetime="2023-02-02">
+      2023-02-02
     </time>
   </div>
 
@@ -376,8 +385,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        1125 words -
-        3 min read
+        730 words -
+        2 min read
       </span>
 
     <div class="post-meta-category">
@@ -399,139 +408,63 @@
 
         
         <div class="post-content">
-          <h1 id="第3章-可重构计算处理器硬件架构">第3章 可重构计算处理器硬件架构</h1>
-<h2 id="31-可重构数据通路设计">3.1 可重构数据通路设计</h2>
-<h3 id="311-可重构计算单元设计">3.1.1 可重构计算单元设计</h3>
+          <h1 id="第1章-计算技术发展史">第1章 计算技术发展史</h1>
+<h2 id="11-计算技术引言">1.1 计算技术引言</h2>
+<p>进位概念推动了计数法的发展</p>
+<h3 id="111-史前时代电子计算机之前">1.1.1 史前时代——电子计算机之前</h3>
+<h3 id="112-第一代电子计算机电子管计算机">1.1.2 第一代电子计算机——电子管计算机</h3>
+<h3 id="113-第二代电子计算机晶体管计算机">1.1.3 第二代电子计算机——晶体管计算机</h3>
+<h3 id="114-第三代电子计算机集成电路计算机">1.1.4 第三代电子计算机——集成电路计算机</h3>
+<h3 id="115-第四代电子计算机大规模集成电路计算机">1.1.5 第四代电子计算机——大规模集成电路计算机</h3>
+<h2 id="12-经典计算体系结构">1.2 经典计算体系结构</h2>
+<p>计算分为通用计算，如Intel i3/5/7，和专用计算，如显卡芯片，MP3解码芯片等</p>
+<h3 id="121-计算体系结构设计因素">1.2.1 计算体系结构设计因素</h3>
+<p>体系结构的设计要考虑技术、性能、功耗和成本等因素</p>
 <ol>
 <li>
-<p>粒度选择</p>
-<p>FPGA为单比特粒度，但配置的面积代价和时间代价很大，无法动态配置。粒度越小越灵活，但需要付出更大的面积和配置时间；粒度越小则配置速度越快，但影响算法映射</p>
+<p>技术因素</p>
+<p>硅工艺。芯片面积决定成本；特征尺寸决定及程度、延时和功耗</p>
 </li>
 <li>
-<p>寄存选择</p>
-<p>合理的寄存器位置有利于实现流水线等算法加速执行手段</p>
+<p>性能因素</p>
 </li>
 <li>
-<p>计算功能选择</p>
-<ul>
-<li>算术：加减乘除</li>
-<li>比较：大于小于等于大于等于</li>
-<li>逻辑：与或非异或同或</li>
-<li>移位：逻辑左右移，算术左右移</li>
-<li>异构：一个大而全的计算单元中，一些功能的使用率很低，这种情况下应该对单元进行适当裁剪以得到基本计算单元的异构形式</li>
-</ul>
+<p>功耗因素</p>
+<p>翻转功耗，漏电功耗和短路功耗</p>
+</li>
+<li>
+<p>面积因素</p>
 </li>
 </ol>
-<h3 id="312-可重构路由单元设计">3.1.2 可重构路由单元设计</h3>
+<h3 id="122-冯诺依曼体系和哈佛体系结构">1.2.2 冯诺依曼体系和哈佛体系结构</h3>
 <ul>
-<li>各种输入输出的选择单元，构成了可重构路由单元</li>
+<li>冯诺依曼体系将运算器与存储器分开，导致运算器与存储器之间的流量与存储器相比非常小</li>
+<li>在运算器和存储器间的快取内存缓解了冯诺依曼瓶颈的问题</li>
+<li>分支预测算法的建立也帮助缓和了问题</li>
+<li>哈佛体系将程序指令存储与数据存储分开</li>
 </ul>
-<h3 id="313-阵列接口单元的设计">3.1.3 阵列接口单元的设计</h3>
+<h3 id="123-并行计算体系结构">1.2.3 并行计算体系结构</h3>
 <ul>
-<li>可重构阵列面临存储墙的问题：存储器的接口带宽有限</li>
-<li>减少接口带宽的需求，在阵列内部设计缓存，数据不再频繁通过外部接口</li>
-<li>提高接口带宽上限，可以压缩数据：比如输入数据位宽小于接口时，可以将多个数据拼接共用接口</li>
-<li>合理的FIFO值</li>
-</ul>
-<h3 id="314-可重构阵列缓存设计">3.1.4 可重构阵列缓存设计</h3>
-<ul>
-<li>存储系统的好坏决定并行系统吞吐量计算的性能，<strong>分布式存储</strong>是提升可重构计算处理器吞吐效率的方法之一</li>
-<li>在外部存储器和计算阵列FIFO之间，设计缓存结构
-<ul>
-<li>按照数据变化的频率分类</li>
-</ul>
-</li>
+<li>指令并行，循环并行，线程并行，程序并行</li>
 </ul>
 <ol>
-<li>
-<p>常数和立即数缓存结构</p>
-<p>常数和立即数倍存到阵列专门设置的缓存结构中</p>
-</li>
-<li>
-<p>变量的堆寄存器结构</p>
-<ul>
-<li>短变量在每个周期变化时反复使用；长变量则相隔数个周期再用到</li>
-</ul>
-<p>优点：</p>
-<ul>
-<li>可以增加额外的数据通路，实现阵列扩展：可以通过堆寄存器将前一次结果存下来，后面一起输出，这样输出结果会大于阵列宽度，相当于扩大了阵列宽度</li>
-<li>缓存中间数据，在两次配置之间传递数据</li>
-<li>插入空拍，提高流水线效率</li>
-</ul>
-</li>
-<li>
-<p>变量的边界存储结构</p>
-</li>
-<li>
-<p>变量的阵列外部缓存结构</p>
-<ul>
-<li>在外部寄存器和计算阵列接口之间放入的缓存单元</li>
-<li>针对规则的数据变换使用存储器和控制逻辑可以提高性能</li>
-<li>多种数据变换操作</li>
-</ul>
-</li>
+<li>SISD结构（单指令流单数据流）</li>
+<li>SIMD结构（单指令流多数据流）</li>
+<li>MISD结构（多指令流单数据流）</li>
+<li>MIMD结构（多指令流多数据流）</li>
 </ol>
-<h2 id="32-可重构控制器设计">3.2 可重构控制器设计</h2>
-<h3 id="321-配置结构定义">3.2.1 配置结构定义</h3>
-<ol>
-<li>
-<p>配置系统的层次化设计</p>
-<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE9.png" alt="截屏2023-01-28 20.15.46"></p>
-</li>
-<li>
-<p>算子功能编码研究</p>
-<ul>
-<li>固定码长，码长由操作的总数目决定</li>
-<li>为了降低电路的功耗，对运算单元内部各主要模块做门控电源或时钟</li>
-<li>为了降低配置端翻转次数，根据算子的转移概率进行huffman编码</li>
-</ul>
-</li>
-<li>
-<p>阵列时序模型研究</p>
-</li>
-<li>
-<p>阵列同步配置信息</p>
-<ol>
-<li>阵列的两种同步方式
-<ul>
-<li>在每个子单元的子任务序列中最后一个任务结束后，需要对各个子单元进行同步，以便执行下一个综合任务</li>
-<li>子任务之间存在数据时序依赖关系，需要对某几个任务进行同步</li>
-</ul>
-</li>
-<li>子单元的两种同步时机
-<ul>
-<li>后同步</li>
-<li>前同步</li>
-</ul>
-</li>
-<li>同步控制涉及模块
-<ul>
-<li>子单元配置字缓存起</li>
-<li>同步控制器</li>
-</ul>
-</li>
-<li>同步信息的描述方式和同步流程</li>
-</ol>
-</li>
-</ol>
-<h3 id="322-配置执行方式">3.2.2 配置执行方式</h3>
-<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE10.png" alt="截屏2023-01-28 20.36.41"></p>
-<h3 id="323-配置缓存设计">3.2.3 配置缓存设计</h3>
-<h2 id="33-可重构数据通路与控制器的耦合关系">3.3 可重构数据通路与控制器的耦合关系</h2>
-<ul>
-<li>
-<p>嵌入模式：数据通路在控制器内部实现</p>
-</li>
-<li>
-<p>协处理器模式：数据通路和控制器同一个芯片内连接</p>
-</li>
-<li>
-<p>独立芯片模式：数据通路在控制器芯片外实现</p>
-</li>
-<li>
-<p>一般情况，离控制器越远，对算法的加速效果越好，但是配置的代价也越大</p>
-</li>
-</ul>
+<h3 id="124-多核和阿姆达尔定律">1.2.4 多核和阿姆达尔定律</h3>
+<p>多核绕开了单核频率墙的问题</p>
+<h2 id="13-半导体技术发展的挑战">1.3 半导体技术发展的挑战</h2>
+<h3 id="131-芯片复用技术需求">1.3.1 芯片复用技术需求</h3>
+<p>芯片的工艺线成本和设计费用在不断增加</p>
+<h3 id="132-低功耗技术需求">1.3.2 低功耗技术需求</h3>
+<p>当芯片特征尺寸缩小，漏电急剧增加，功耗密度上升，存在<strong>功耗墙</strong>的问题</p>
+<h3 id="133-存储技术瓶颈">1.3.3 存储技术瓶颈</h3>
+<p>DRAM的提高速度远小于处理器速度提升速度。出现<strong>存储墙</strong>问题</p>
+<h2 id="14-可重构计算技术的历史背景">1.4 可重构计算技术的历史背景</h2>
+<p>强调资源的复用，在静态情况下，采用类似ASIC的设计追求高性能；在动态情况下，通过改变功能配置，适应不同应用的要求</p>
+<p>在基于近平衡态物理的硅微电子技术发展速度明显放缓，摩尔定律失效，硅微电子的创新将主要依赖于芯片设计方法学的进步</p>
 
         </div>
 
@@ -545,7 +478,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2023-02-04
+      2023-02-02
       
     </span>
   </p>
@@ -573,7 +506,7 @@
           
           <nav class="post-nav">
             
-              <a class="prev" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/">
+              <a class="prev" href="/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter3/">
                 
                 <i class="iconfont">
                   <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -583,12 +516,12 @@
 </svg>
 
                 </i>
-                <span class="prev-text nav-default">可重构计算-第4章</span>
+                <span class="prev-text nav-default">可重构计算-第3章</span>
                 <span class="prev-text nav-mobile">Prev</span>
               </a>
             
-              <a class="next" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter1/">
-                <span class="next-text nav-default">可重构计算-第1章</span>
+              <a class="next" href="/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter2/">
+                <span class="next-text nav-default">可重构计算-第2章</span>
                 <span class="prev-text nav-mobile">Next</span>
                 
                 <i class="iconfont">

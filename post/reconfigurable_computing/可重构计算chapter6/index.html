@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          可重构计算-第5章 - Shangkun&#39;s Blog
+          可重构计算-第6章 - Shangkun&#39;s Blog
         </title>
     
 
@@ -29,7 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="第5章 动态重构与部分重构 5.1 动态重构与部分重构的概念 5.1.1 静态重构 比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间 5.1.2 动态重" />
+  <meta name="description" content="第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集" />
 
 
 
@@ -40,7 +40,7 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/" />
+<link rel="canonical" href="https://shangkunli.github.io/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/" />
 
 
 
@@ -58,7 +58,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.344fee5389fbc3b3675bdee1033db2900b2ebf2bb9afdd7cc0a696f015a8bcf8.css" integrity="sha256-NE/uU4n7w7NnW97hAz2ykAsuvyu5r918wKaW8BWovPg=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8402ca8f8f9845c0a5c234d2ec2a521272d4ed8cc15be44b706744d578ab4b05.css" integrity="sha256-hALKj4&#43;YRcClwjTS7CpSEnLU7YzBW&#43;RLcGdE1XirSwU=" media="screen" crossorigin="anonymous">
 
 
 
@@ -68,19 +68,19 @@
 <link rel="stylesheet" href="/css/custom.css">
 
 
-<meta property="og:title" content="可重构计算-第5章" />
-<meta property="og:description" content="第5章 动态重构与部分重构 5.1 动态重构与部分重构的概念 5.1.1 静态重构 比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间 5.1.2 动态重" />
+<meta property="og:title" content="可重构计算-第6章" />
+<meta property="og:description" content="第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shangkunli.github.io/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-02-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-12T00:00:00+00:00" />
-<meta itemprop="name" content="可重构计算-第5章">
-<meta itemprop="description" content="第5章 动态重构与部分重构 5.1 动态重构与部分重构的概念 5.1.1 静态重构 比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间 5.1.2 动态重"><meta itemprop="datePublished" content="2023-02-11T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-02-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1147">
+<meta property="og:url" content="https://shangkunli.github.io/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-13T00:00:00+00:00" />
+<meta itemprop="name" content="可重构计算-第6章">
+<meta itemprop="description" content="第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集"><meta itemprop="datePublished" content="2023-02-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-02-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1539">
 <meta itemprop="keywords" content="可重构计算,CGRA," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="可重构计算-第5章"/>
-<meta name="twitter:description" content="第5章 动态重构与部分重构 5.1 动态重构与部分重构的概念 5.1.1 静态重构 比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间 5.1.2 动态重"/>
+<meta name="twitter:title" content="可重构计算-第6章"/>
+<meta name="twitter:description" content="第6章 计算密集型与控制密集型重构计算 6.1 计算密集型与控制密集型应用的特征与举例 计算密集型：计算部分所需的执行时间是其总体时间的主要部分 数据密集"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -324,25 +324,17 @@
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#51-动态重构与部分重构的概念">5.1 动态重构与部分重构的概念</a>
+    <li><a href="#61-计算密集型与控制密集型应用的特征与举例">6.1 计算密集型与控制密集型应用的特征与举例</a></li>
+    <li><a href="#62-可重构计算处理器的设计方法">6.2 可重构计算处理器的设计方法</a>
       <ul>
-        <li><a href="#511-静态重构">5.1.1 静态重构</a></li>
-        <li><a href="#512-动态重构">5.1.2 动态重构</a></li>
-        <li><a href="#513-部分重构">5.1.3 部分重构</a></li>
+        <li><a href="#621-面向计算密集型应用的硬件设计">6.2.1 面向计算密集型应用的硬件设计</a></li>
+        <li><a href="#622-面向控制密集型应用的硬件设计">6.2.2 面向控制密集型应用的硬件设计</a></li>
       </ul>
     </li>
-    <li><a href="#52-配置信息的组织管理与高速缓存">5.2 配置信息的组织、管理与高速缓存</a>
+    <li><a href="#63-计算密集型任务和控制密集型任务的映射方法">6.3 计算密集型任务和控制密集型任务的映射方法</a>
       <ul>
-        <li><a href="#521-细粒度配置中配置信息的组织管理与缓存">5.2.1 细粒度配置中配置信息的组织、管理与缓存</a></li>
-        <li><a href="#522-中粒度配置中配置信息的组织管理与缓存">5.2.2 中粒度配置中配置信息的组织、管理与缓存</a></li>
-        <li><a href="#523-粗粒度配置中配置信息的组织管理与缓存">5.2.3 粗粒度配置中配置信息的组织、管理与缓存</a></li>
-      </ul>
-    </li>
-    <li><a href="#53-计算数据的组织管理与高速缓存">5.3 计算数据的组织、管理与高速缓存</a>
-      <ul>
-        <li><a href="#531-细粒度可重构阵列的管理与缓存结构">5.3.1 细粒度可重构阵列的管理与缓存结构</a></li>
-        <li><a href="#532-粗粒度可重构阵列的管理与缓存结构">5.3.2 粗粒度可重构阵列的管理与缓存结构</a></li>
-        <li><a href="#533-层次化数据缓存结构">5.3.3 层次化数据缓存结构</a></li>
+        <li><a href="#631-计算密集型任务相关的映射方法">6.3.1 计算密集型任务相关的映射方法</a></li>
+        <li><a href="#632-控制密集型任务相关的映射方法">6.3.2 控制密集型任务相关的映射方法</a></li>
       </ul>
     </li>
   </ul>
@@ -356,7 +348,7 @@
       <article class="post">
         
         <header class="post-header">
-          <h1 class="post-title">可重构计算-第5章</h1>
+          <h1 class="post-title">可重构计算-第6章</h1>
           
 
           <div class="post-meta">
@@ -371,23 +363,18 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2023-02-11">
-      2023-02-11
+    <time datetime="2023-02-13">
+      2023-02-13
     </time>
   </div>
 
-  
-    <div class="post-meta-lastmod">
-      (LastMod:
-      2023-02-12)
-    </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        1147 words -
-        3 min read
+        1539 words -
+        4 min read
       </span>
 
     <div class="post-meta-category">
@@ -409,88 +396,137 @@
 
         
         <div class="post-content">
-          <h1 id="第5章-动态重构与部分重构">第5章 动态重构与部分重构</h1>
-<h2 id="51-动态重构与部分重构的概念">5.1 动态重构与部分重构的概念</h2>
-<h3 id="511-静态重构">5.1.1 静态重构</h3>
+          <h1 id="第6章-计算密集型与控制密集型重构计算">第6章 计算密集型与控制密集型重构计算</h1>
+<h2 id="61-计算密集型与控制密集型应用的特征与举例">6.1 计算密集型与控制密集型应用的特征与举例</h2>
 <ul>
-<li>比如FPGA，由于采用细粒度的查找表单元，配置文件巨大，导致超长重构时间</li>
+<li>计算密集型：计算部分所需的执行时间是其总体时间的主要部分</li>
+<li>数据密集型：IO访问时间和数据搬移时间是其总体时间的主要部分</li>
+<li>控制密集型：控制流所需的执行时间是其总体执行时间的主要部分</li>
 </ul>
-<h3 id="512-动态重构">5.1.2 动态重构</h3>
+<p>计算密集型和数据密集型适合并行处理。计算密集型将应用划分为多个独立的子任务，并行流水执行；数据密集型将数据分成多个独立的部分。</p>
+<p><a href="https://hpac.cs.umu.se/people/springer/cuda_dwarf_seminar.pdf"><strong>伯克利分类方法</strong></a>：十三种典型的分类方法</p>
+<h2 id="62-可重构计算处理器的设计方法">6.2 可重构计算处理器的设计方法</h2>
+<p>高效处理器系统的两个主流发展方向：</p>
 <ul>
-<li>比如CGRA，CGRA粒度大配置信息量小，可以在短时间内完成功能重构</li>
+<li>并行化设计：增加并行运算单元数目，加速较高并行度的程序段</li>
+<li>差异化与专用化设计：各个子模块针对专用领域或应用类型进行差异优化</li>
 </ul>
-<h3 id="513-部分重构">5.1.3 部分重构</h3>
-<ul>
-<li>数据通路在空间上被划分为多个区域， 每个区域被重构成特定的功能引擎来执行特定的计算任务
-<ul>
-<li>静态部分重构：重构时非配置区要停下来</li>
-<li>动态部分重构：重构时非配置区可正常执行（CGRA）</li>
-</ul>
-</li>
-</ul>
-<h2 id="52-配置信息的组织管理与高速缓存">5.2 配置信息的组织、管理与高速缓存</h2>
-<p><strong>配置粒度</strong></p>
-<ul>
-<li>一次配置完成的可重构数据通路中被划分出的区域规模</li>
-<li>细粒度配置：一次只完成一个运算单元的配置</li>
-<li>中粒度配置：一次完成一块区域的配置（一行、一列，1/2阵列等）</li>
-<li>粗粒度配置：一次完成整个阵列的配置</li>
-</ul>
-<h3 id="521-细粒度配置中配置信息的组织管理与缓存">5.2.1 细粒度配置中配置信息的组织、管理与缓存</h3>
-<ul>
-<li>配置链结构：按固定的顺序，从配置接口开始链接各个运算单元内的配置寄存器，配置信息在配置链中逐级传递，直到匹配目标运算单元</li>
-<li>配置链结构的重构时间取决于配置信息传到距离接口最远的配置单元的传输时间</li>
-<li>垂直配置链+水平配置链：先匹配行，再匹配列</li>
-</ul>
-<h3 id="522-中粒度配置中配置信息的组织管理与缓存">5.2.2 中粒度配置中配置信息的组织、管理与缓存</h3>
-<ul>
-<li>以运算阵列中的行为单位，依次配置</li>
-<li>可以方便地实现DFG图到阵列的映射</li>
-<li>配置流程：
-<ul>
-<li>读出步配置信息，缓存在步寄存器中</li>
-<li>行配置信息对步配置信息到行配置信息的载入进行控制</li>
-</ul>
-</li>
-</ul>
-<h3 id="523-粗粒度配置中配置信息的组织管理与缓存">5.2.3 粗粒度配置中配置信息的组织、管理与缓存</h3>
-<ul>
-<li>配置信息从配置存储器中读出后，直接被写入运算单元内的配置寄存器中</li>
-<li>完全动态重构：运算单元阵列在运算的过程中每一时钟周期都对阵列功能进行重构</li>
-<li>完全动态重构产生较高的配置功耗，占40%左右。可以通过压缩连续周期执行相同算子的配置，来减少配置功耗</li>
-</ul>
-<h2 id="53-计算数据的组织管理与高速缓存">5.3 计算数据的组织、管理与高速缓存</h2>
-<ul>
-<li>数据传输面临存储墙问题</li>
-<li>现代通用处理器采用处理器与内存之间的多级cache结构</li>
-<li>可重构系统面临的存储墙问题更加严峻，因为并行计算能力更强</li>
-</ul>
-<h3 id="531-细粒度可重构阵列的管理与缓存结构">5.3.1 细粒度可重构阵列的管理与缓存结构</h3>
-<ul>
-<li>以FPGA为例，FPGA的结构中可以采用少量多块的离散数据缓存结构，提高数据访问速度</li>
-</ul>
-<h3 id="532-粗粒度可重构阵列的管理与缓存结构">5.3.2 粗粒度可重构阵列的管理与缓存结构</h3>
-<ul>
-<li>数据预取：可以将数据传输与阵列配置 or 计算过程并行执行</li>
-<li>随着计算速度的提高，数据预取成为了流水线中的关键路径</li>
-<li>有的采用与通用处理器类似的方法，增加多层数据缓存结构</li>
-</ul>
-<h3 id="533-层次化数据缓存结构">5.3.3 层次化数据缓存结构</h3>
-<ul>
+<p>针对计算密集型和控制密集型，对应不同的可重构计算处理器设计：</p>
+<h3 id="621-面向计算密集型应用的硬件设计">6.2.1 面向计算密集型应用的硬件设计</h3>
+<ol>
 <li>
-<p>计算数据的有效组织与管理可以提高数据吞吐量，减小外村带宽对阵列计算效率的制约</p>
+<p>面向计算密集型应用的可重构控制器的设计</p>
+<p>只含有简单的控制流，配置只需要简单地顺序加载，PFSM也简单，无需特别优化</p>
 </li>
 <li>
-<p>可重构系统的存储结构：片外主存，阵列之间的全局存储，阵列独享的共享存储，阵列内的运算单元独享的局部存储</p>
-<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE11.png" alt="截屏2023-02-10 21.21.41"></p>
+<p>面向计算密集型应用的可重构数据通路的设计</p>
+<p>包含一个运算单元阵列和运算单元之间的互连</p>
+<ol>
+<li>运算单元阵列的并行化设计
 <ul>
-<li>片外主存：存储输入数据，中间结果，最终结果</li>
-<li>全局存储：存储阵列之间的交互数据，存储可重构阵列与系统访存控制器（DMAC）之间的交互数据</li>
-<li>共享存储：存储阵列的可重构结果及少量中间结果</li>
-<li>局部存储：避免访存冲突，保证确定的访存时延，保证阵列的计算流水线不会被不确定的访存时延打断</li>
+<li>指令级并行：主要体现在运算单元的配置上，多个运算单元组成运算单元阵列</li>
+<li>数据级并行：支持矢量化的计算方式</li>
+<li>任务级并行：多个协同的运算单元阵列实现，把多个线程分别映射到各个阵列上</li>
 </ul>
 </li>
+<li>运算单元的功能差异化和专用化设计
+<ul>
+<li>不同粒度的运算单元阵列</li>
+<li>删除部分运算单元中使用率低的功能，得到基本单元的<strong>异构形式</strong>，能量效率高</li>
 </ul>
+</li>
+<li>互连结构的并行化设计
+<ul>
+<li>过于灵活的互连面积功耗代价较大，降低可重构计算处理器的能效；不灵活的互连会降低阵列内部有效通信的带宽，降低计算性能</li>
+</ul>
+</li>
+<li>互连结构的功能专用化设计
+<ul>
+<li>可以将运算单元的某些类型的算子分离出来，独立成一类专用化的运算单元；例如单目算子延时小，可以加入互连结构，成为专用化的单目运算单元</li>
+<li>将阵列的层间通路由具备简单的数据通路，变成一种异构的计算单元，计算分布式设计到互连中</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="622-面向控制密集型应用的硬件设计">6.2.2 面向控制密集型应用的硬件设计</h3>
+<p>该类应用由大量条件分支和循环结构组成，条件判断的计算量和执行的计算量差不多，控制流和数据通路的通信量较大</p>
+<ul>
+<li>无条件跳转语句</li>
+<li>条件分支语句</li>
+<li>循环语句</li>
+<li>程序调用语句</li>
+<li>程序终止语句</li>
+</ul>
+<p>消除控制依赖关系，加速互斥和串行的语句是提高控制密集型应用性能的关键</p>
+<ul>
+<li>减少指令跳转可以提高执行控制密集型应用的性能</li>
+</ul>
+<ol>
+<li>
+<p>可重构数据通路设计</p>
+<p>可将控制流转换为数据流，从而在数据通路上实现控制。比如FPGA的配置不能切换，控制流完全在数据通路上实现</p>
+<ul>
+<li>
+<p>条件执行技术</p>
+<p>将控制依赖转变为数据依赖</p>
+<p><img src="/imag/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%9B%BE12.png" alt=""></p>
+<p>加载A和B，但是顺序执行时根据P的结果无效化一条语句</p>
+<p>完全条件执行方式：为每个语句增添条件执行拓展；部分条件执行方式：为某种语句添加条件拓展</p>
+<ul>
+<li>
+<p>完全条件执行的设计方法</p>
+<p>if_conversion算法，把所有条件分支内部的指令替换为条件执行语句</p>
+</li>
+<li>
+<p>部分条件执行的设计方法</p>
+<p>只增加一个条件数据转移指令或者选择指令</p>
+</li>
+</ul>
+</li>
+<li>
+<p>推测执行技术</p>
+<p>强制对分支结构内部的语句使用无条件执行的方式，虽然这些语句有可能不需要执行，但是该技术假定他们需要执行，以消除他们与条件语句的依赖关系</p>
+</li>
+</ul>
+</li>
+<li>
+<p>可重构控制器设计</p>
+<ul>
+<li>
+<p>通用处理器</p>
+<p>通用可重构计算处理器拥有足够的灵活性，但效率和性能不高。基于指令的FSM是串行的，对于多分支或嵌套分支结构，指令流会以串行的方式执行条件判断</p>
+</li>
+<li>
+<p>专用集成电路</p>
+<p>PFSM的ASIC设计：基于LUT（look-up table）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="63-计算密集型任务和控制密集型任务的映射方法">6.3 计算密集型任务和控制密集型任务的映射方法</h2>
+<h3 id="631-计算密集型任务相关的映射方法">6.3.1 计算密集型任务相关的映射方法</h3>
+<ol>
+<li>
+<p>问题抽象</p>
+<p>DFG进行映射时的情形：</p>
+<ul>
+<li>不足区域：计算区域过小</li>
+<li>线性区域：将完成划分的算子区域直接映射到硬件阵列上</li>
+<li>冗余区域：较大的算子区域配置部分的计算任务</li>
+<li>理想区域：输入输出少，计算量大</li>
+</ul>
+</li>
+<li>
+<p>映射方案</p>
+<ul>
+<li>区域增长：对于不足区域，改变循环，扩展计算区域</li>
+<li>矢量化：对于线性区域</li>
+<li>虚拟化：对应冗余区域</li>
+</ul>
+</li>
+</ol>
+<h3 id="632-控制密集型任务相关的映射方法">6.3.2 控制密集型任务相关的映射方法</h3>
 
         </div>
 
@@ -504,7 +540,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2023-02-12
+      2023-02-13
       
     </span>
   </p>
@@ -532,7 +568,7 @@
           
           <nav class="post-nav">
             
-              <a class="prev" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter6/">
+              <a class="prev" href="/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/">
                 
                 <i class="iconfont">
                   <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -542,12 +578,12 @@
 </svg>
 
                 </i>
-                <span class="prev-text nav-default">可重构计算-第6章</span>
+                <span class="prev-text nav-default">四月初的碎碎念</span>
                 <span class="prev-text nav-mobile">Prev</span>
               </a>
             
-              <a class="next" href="/post/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter4/">
-                <span class="next-text nav-default">可重构计算-第4章</span>
+              <a class="next" href="/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/">
+                <span class="next-text nav-default">可重构计算-第5章</span>
                 <span class="prev-text nav-mobile">Next</span>
                 
                 <i class="iconfont">
