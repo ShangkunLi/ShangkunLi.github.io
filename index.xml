@@ -6,10 +6,43 @@
     <description>Recent content on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://shangkunli.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo-Jane主题个性化记录</title>
+      <link>https://shangkunli.github.io/post/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/2023-4-21-hugo-jane%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/2023-4-21-hugo-jane%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%B0%E5%BD%95/</guid>
+      
+        <description>&lt;p&gt;本博客的主要目的是用于记录jane主题的一些个性化需求的更改，以防后续查询&lt;/p&gt;
+&lt;h1 id=&#34;个性化字体&#34;&gt;个性化字体&lt;/h1&gt;
+&lt;p&gt;打开&lt;code&gt;themes/jane/assets/sass/_variables.scss&lt;/code&gt;文件：&lt;/p&gt;
+&lt;p&gt;在Global部分，设置全文章的字体。如下设置后在macOS中，中英文都能更换为目标字体。在Windows中，只有英文能够更换为Times New Roman字体&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$global-lineheight&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.5&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;!default&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Font family of the site.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$global-font-family&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Times New Roman&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Source Sans Pro&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Helvetica Neue&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; Arial&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; sans-serif &lt;span style=&#34;color:#66d9ef&#34;&gt;!default&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Serif font family of the site.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$global-serif-font-family&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Times New Roman&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;Athelas&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; STHeiti&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; Microsoft Yahei&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; serif &lt;span style=&#34;color:#66d9ef&#34;&gt;!default&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在Header部分，设置如下的字体，可以将Shangkun&amp;rsquo;s Blog在各种浏览器及系统中均设为Times New Roman字体&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Font family of the logo.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$logo-font-family&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Times New Roman&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;LiSu&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; sans-serif &lt;span style=&#34;color:#66d9ef&#34;&gt;!default&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;个性化排版&#34;&gt;个性化排版&lt;/h1&gt;
+&lt;p&gt;打开&lt;code&gt;/themes/jane/assets/sass/_partial/_post/_content.scss&lt;/code&gt;文件：&lt;/p&gt;
+&lt;p&gt;在如下代码块中加入&lt;code&gt;text-align&lt;/code&gt;内容，即可设置对齐的相关参数&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//font-size: 1em;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;text-align&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; justify;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
     
     <item>
       <title>四月初的碎碎念</title>
@@ -19,7 +52,6 @@
       <guid>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</guid>
       
         <description>&lt;p&gt;已经好久没有维护我的博客，最近难得清闲，想着来发点什么。&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2 id=&#34;苦难&#34;&gt;苦难&lt;/h2&gt;
 &lt;p&gt;这个话题其实非常沉重，它来自我与老王三月中旬在酒吧里的长谈。当我们坐在酒吧里，身后的觥筹交错，耳边的谈天说地，情侣的耳鬓斯磨，都是美好的事，仿佛世间本没有什么苦难。但终于，我们还是到达了这个话题，苦难。它是如此的沉重，仿佛任何高昂的情绪都会被它瞬间拖拽落地。&lt;/p&gt;
 &lt;p&gt;事情从老王的一个故事开始，他之前做过口述史的访谈。&lt;/p&gt;
@@ -958,12 +990,12 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Radial wave function of the 3s orbital is:&lt;/p&gt;
-&lt;p&gt;$R_{3s} = \frac{1}{9√3} ×(6−6ρ+ρ^2)×Z^{3/2}×e^{-\rho/2}$&lt;/p&gt;
+&lt;p&gt;$R_{3s} = \frac{1}{9\sqrt3} ×(6−6\rho+\rho^2)×Z^{3/2}×e^{-\rho/2}$&lt;/p&gt;
 &lt;p&gt;· r = radius expressed in atomic units (1 Bohr radius = 52.9 pm)&lt;/p&gt;
 &lt;p&gt;· e = 2.71828 approximately&lt;/p&gt;
 &lt;p&gt;· Z = effective nuclear charge for that orbital in that atom&lt;/p&gt;
 &lt;p&gt;· ρ = 2Zr/n where n is the principal quantum number (3 for the 3s orbital)&lt;/p&gt;
-&lt;p&gt;Compute $∫_0^{40}|R_{3s}|^2r^2dr $for Si atom (Z = 14) with Simpson’s rule using two different radial grids:&lt;/p&gt;
+&lt;p&gt;Compute $\int_0^{40}|R_{3s}|^2r^2dr $for Si atom (Z = 14) with Simpson’s rule using two different radial grids:&lt;/p&gt;
 &lt;p&gt;(1)Equalspacinggrids: $r[i]=(i−1)h$  ;  $i=1,···,N$ (trydifferentN)&lt;/p&gt;
 &lt;p&gt;(2) A nonuniform integration grid, more finely spaced at small r than at large r:&lt;/p&gt;
 &lt;p&gt;$r[i] = r_0(e^{t[i]} − 1)$; $t[i] = (i − 1)h$;$ i = 1,· · · , N$ (One typically choose$ r_0 = 0.0005$ a.u., try different N)&lt;/p&gt;
@@ -1261,19 +1293,6 @@ For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/&#34;&gt;CompPhys: Partial Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/&#34;&gt;CompPhys: Monte Carlo simulations&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第1章 介绍</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
-      
-        <description>&lt;h1 id=&#34;chapter-1&#34;&gt;CHAPTER 1&lt;/h1&gt;
-&lt;h2 id=&#34;11-vrilog介绍&#34;&gt;1.1 Vrilog介绍&lt;/h2&gt;
 </description>
       
     </item>

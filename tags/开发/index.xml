@@ -6,7 +6,16 @@
     <description>Recent content in 开发 on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo-Jane主题个性化记录</title>
+      <link>https://shangkunli.github.io/post/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/2023-4-21-hugo-jane%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/2023-4-21-hugo-jane%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%B0%E5%BD%95/</guid>
+      <description>本博客的主要目的是用于记录jane主题的一些个性化需求的更改，以防后续查询 个性化字体 打开themes/jane/assets/sass/_v</description>
+    </item>
+    
     <item>
       <title>CompPhys: Differentiation and Intergration</title>
       <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</link>
