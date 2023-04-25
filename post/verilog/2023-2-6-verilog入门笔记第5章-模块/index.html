@@ -31,7 +31,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块" />
+  <meta name="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 1 2 3 4 5 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句" />
 
 
 
@@ -71,18 +71,18 @@
 
 
 <meta property="og:title" content="Verilog入门笔记：第5章 模块" />
-<meta property="og:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块" />
+<meta property="og:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 1 2 3 4 5 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC5%E7%AB%A0-%E6%A8%A1%E5%9D%97/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第5章 模块">
-<meta itemprop="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块">
+<meta itemprop="description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 1 2 3 4 5 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1532">
+<meta itemprop="wordCount" content="1623">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第5章 模块"/>
-<meta name="twitter:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句 endmodule 端口 模块"/>
+<meta name="twitter:description" content="CHAPTER 5 5.1 Verilog模块与端口 模块 模块是verilog中基本单元的定义形式，是与外界交互的接口 1 2 3 4 5 module module_name #(parameter_list) (port_list) ; Declarations_and_Statements ;//模块内部的设计语句"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -348,7 +348,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        1532 words -
+        1623 words -
         4 min read
       </span>
 
@@ -377,12 +377,23 @@
 <ul>
 <li>
 <p>模块是verilog中基本单元的定义形式，是与外界交互的接口</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> module_name 
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> module_name 
 </span></span><span style="display:flex;"><span>#(parameter_list)
 </span></span><span style="display:flex;"><span>(port_list) ;
-</span></span><span style="display:flex;"><span>              Declarations_and_Statements ;<span style="color:#75715e">//模块内部的设计语句
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>              Declarations_and_Statements ;<span style="color:#60a0b0;font-style:italic">//模块内部的设计语句
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <p><img src="/imag/Verilog/picture1.png" alt="jxRkciGWpiEbvz3D"></p>
 <h3 id="端口">端口</h3>
@@ -396,10 +407,19 @@
 </li>
 <li>
 <p>如果模块与外界环境没有交互，则可以不用声明端口列表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> pad(
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> pad(
 </span></span><span style="display:flex;"><span>    DIN, OEN, PULL,
 </span></span><span style="display:flex;"><span>    DOUT, PAD);
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <p><strong>端口声明</strong></p>
 <ol>
@@ -410,50 +430,108 @@
 <li>Input, inout不能声明为reg类型</li>
 <li>端口数据类型：wire, reg</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//端口类型声明
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">input</span>        DIN, OEN ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  PULL ;  <span style="color:#75715e">//(00,01-dispull, 11-pullup, 10-pulldown)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">inout</span>        PAD ;   <span style="color:#75715e">//pad value
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">output</span>       DOUT ;  <span style="color:#75715e">//pad load when pad configured as input
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//端口数据类型声明
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span>         DIN, OEN ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">wire</span>  [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  PULL ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">wire</span>         PAD ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>          DOUT ;
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-11">11</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//端口类型声明
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">input</span>        DIN, OEN ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  PULL ;  <span style="color:#60a0b0;font-style:italic">//(00,01-dispull, 11-pullup, 10-pulldown)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">inout</span>        PAD ;   <span style="color:#60a0b0;font-style:italic">//pad value
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">output</span>       DOUT ;  <span style="color:#60a0b0;font-style:italic">//pad load when pad configured as input
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//端口数据类型声明
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span>         DIN, OEN ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">wire</span>  [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  PULL ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">wire</span>         PAD ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span>          DOUT ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>当端口具有wire属性时，不用再次声明端口为wire型。但当端口有reg属性时，则reg声明不可省</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//端口类型声明
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">input</span>        DIN, OEN ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  PULL ;     
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">inout</span>        PAD ;     
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">output</span>       DOUT ;    
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>          DOUT ;
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//端口类型声明
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">input</span>        DIN, OEN ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  PULL ;     
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">inout</span>        PAD ;     
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">output</span>       DOUT ;    
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span>          DOUT ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>代码中的最后两行可以合并</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">output</span> <span style="color:#66d9ef">reg</span> DOUT;
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> DOUT;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>还有一种声明端口的方法，即在端口列表中同时列出端口及类型</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//第一种写法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">module</span> pad(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span>        DIN, OEN ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  PULL ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">inout</span>        PAD ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span> <span style="color:#66d9ef">reg</span>   DOUT
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-16">16</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//第一种写法
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">module</span> pad(
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span>        DIN, OEN ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  PULL ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">inout</span>        PAD ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span>   DOUT
 </span></span><span style="display:flex;"><span>    );
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//第二种写法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">module</span> pad(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span>        DIN, OEN ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  PULL ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">inout</span>        PAD ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span>       DOUT
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//第二种写法
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">module</span> pad(
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span>        DIN, OEN ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  PULL ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">inout</span>        PAD ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span>       DOUT
 </span></span><span style="display:flex;"><span>    );
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span>        DOUT ;
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span>        DOUT ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h3 id="inout端口仿真">inout端口仿真</h3>
 <h2 id="52-verilog模块例化">5.2 Verilog模块例化</h2>
@@ -464,31 +542,64 @@
 <ul>
 <li>
 <p>将需要例化的模块端口与外部信号按照其名字进行连接</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//例化一个1bit全加器
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>full_adder1  u_adder0(
-</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span>),
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//例化一个1bit全加器
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>full_adder1  u_adder0(
+</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#666">==</span><span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span> <span style="color:#666">?</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span> <span style="color:#666">:</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span>),
 </span></span><span style="display:flex;"><span>    .So     (so_bit0),
-</span></span><span style="display:flex;"><span>    .Co     (co_temp[<span style="color:#ae81ff">0</span>]));
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>    .Co     (co_temp[<span style="color:#40a070">0</span>]));
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>如果某些输出端口并不需要在外部连接，例化时 可以悬空不连接，甚至删除。一般来说，input 端口在例化时不能删除，否则编译报错，output 端口在例化时可以删除</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//output 端口 Co 悬空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>full_adder1  u_adder0(
-</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span>),
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-14">14</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//output 端口 Co 悬空
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>full_adder1  u_adder0(
+</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#666">==</span><span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span> <span style="color:#666">?</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span> <span style="color:#666">:</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span>),
 </span></span><span style="display:flex;"><span>    .So     (so_bit0),
 </span></span><span style="display:flex;"><span>    .Co     ());
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//output 端口 Co 删除
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>full_adder1  u_adder0(
-</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#ae81ff">0</span>]),
-</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span>),
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//output 端口 Co 删除
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>full_adder1  u_adder0(
+</span></span><span style="display:flex;"><span>    .Ai     (a[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Bi     (b[<span style="color:#40a070">0</span>]),
+</span></span><span style="display:flex;"><span>    .Ci     (c<span style="color:#666">==</span><span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span> <span style="color:#666">?</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span> <span style="color:#666">:</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span>),
 </span></span><span style="display:flex;"><span>    .So     (so_bit0));
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="顺序端口连接">顺序端口连接</h3>
 <ul>
@@ -513,13 +624,25 @@
 </li>
 <li>
 <p>一般来说，建议 input 端口不要做悬空处理，无其他外部连接时赋值其常量，例如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>full_adder4  u_adder4(
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>full_adder4  u_adder4(
 </span></span><span style="display:flex;"><span>    .a      (a),
 </span></span><span style="display:flex;"><span>    .b      (b),
-</span></span><span style="display:flex;"><span>    .c      (<span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span>),
+</span></span><span style="display:flex;"><span>    .c      (<span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span>),
 </span></span><span style="display:flex;"><span>    .so     (so),
 </span></span><span style="display:flex;"><span>    .co     (co));
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <p><strong>位宽匹配</strong></p>
 <p>当例化端口与连续信号位宽不匹配时，端口会通过无符号数的右对齐或截断方式进行匹配</p>
@@ -541,18 +664,35 @@
 <p>用defparam关键字通过模块层次调用的方法，改写低层次模块的参数值</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//instantiation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//对一个单口地址线和数据线都是 4bit 宽度的 ram 模块的 MASK 参数进行改写
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">defparam</span>     u_ram_4x4.MASK <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span> ;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-11">11</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//instantiation
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//对一个单口地址线和数据线都是 4bit 宽度的 ram 模块的 MASK 参数进行改写
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">defparam</span>     u_ram_4x4.MASK <span style="color:#666">=</span> <span style="color:#40a070">7</span> ;
 </span></span><span style="display:flex;"><span>ram_4x4    u_ram_4x4
 </span></span><span style="display:flex;"><span>    (
 </span></span><span style="display:flex;"><span>        .CLK    (clk),
-</span></span><span style="display:flex;"><span>        .A      (a[<span style="color:#ae81ff">4</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]),
+</span></span><span style="display:flex;"><span>        .A      (a[<span style="color:#40a070">4</span><span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]),
 </span></span><span style="display:flex;"><span>        .D      (d),
 </span></span><span style="display:flex;"><span>        .EN     (en),
-</span></span><span style="display:flex;"><span>        .WR     (wr),    <span style="color:#75715e">//1 for write and 0 for read
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        .Q      (q)    );
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>        .WR     (wr),    <span style="color:#60a0b0;font-style:italic">//1 for write and 0 for read
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        .Q      (q)    );
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="带参数模块例化">带参数模块例化</h3>
 <ul>
@@ -560,18 +700,35 @@
 <p>例化模块时，将新的参数值写入模块例化语句，以此来改写原有 module 的参数值</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//对一个地址和数据位宽都可变的 ram 模块进行带参数的模块例化
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ram #(.AW(<span style="color:#ae81ff">4</span>), .DW(<span style="color:#ae81ff">4</span>))
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-11">11</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//对一个地址和数据位宽都可变的 ram 模块进行带参数的模块例化
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>ram #(.AW(<span style="color:#40a070">4</span>), .DW(<span style="color:#40a070">4</span>))
 </span></span><span style="display:flex;"><span>    u_ram
 </span></span><span style="display:flex;"><span>    (
 </span></span><span style="display:flex;"><span>        .CLK    (clk),
-</span></span><span style="display:flex;"><span>        .A      (a[AW<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]),
+</span></span><span style="display:flex;"><span>        .A      (a[AW<span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]),
 </span></span><span style="display:flex;"><span>        .D      (d),
 </span></span><span style="display:flex;"><span>        .EN     (en),
-</span></span><span style="display:flex;"><span>        .WR     (wr),    <span style="color:#75715e">//1 for write and 0 for read
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        .Q      (q)
+</span></span><span style="display:flex;"><span>        .WR     (wr),    <span style="color:#60a0b0;font-style:italic">//1 for write and 0 for read
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        .Q      (q)
 </span></span><span style="display:flex;"><span>     );
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="区别与建议">区别与建议</h3>
 <ul>

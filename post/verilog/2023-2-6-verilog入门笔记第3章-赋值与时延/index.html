@@ -31,7 +31,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：" />
+  <meta name="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 1 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头" />
 
 
 
@@ -71,18 +71,18 @@
 
 
 <meta property="og:title" content="Verilog入门笔记：第3章 赋值与时延" />
-<meta property="og:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：" />
+<meta property="og:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 1 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-01-20T00:00:00+00:00" />
 <meta itemprop="name" content="Verilog入门笔记：第3章 赋值与时延">
-<meta itemprop="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头：">
+<meta itemprop="description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 1 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="616">
+<meta itemprop="wordCount" content="642">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第3章 赋值与时延"/>
-<meta name="twitter:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头："/>
+<meta name="twitter:description" content="CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 1 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -348,7 +348,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        616 words -
+        642 words -
         2 min read
       </span>
 
@@ -379,38 +379,82 @@
 <p>用于对wire型变量进行赋值</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">assign</span>     LHS_target <span style="color:#f92672">=</span> RHS_expression  <span style="color:#960050;background-color:#1e0010">；</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">assign</span>     LHS_target <span style="color:#666">=</span> RHS_expression  <span style="">；</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>任何已声明的wire变量的连续赋值语句都是以assign开头：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">wire</span>      Cout, A, B ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assign</span>    Cout  <span style="color:#f92672">=</span> A <span style="color:#f92672">&amp;</span> B ;     <span style="color:#75715e">//实现计算A与B的功能
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">wire</span>      Cout, A, B ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">assign</span>    Cout  <span style="color:#666">=</span> A <span style="color:#666">&amp;</span> B ;     <span style="color:#60a0b0;font-style:italic">//实现计算A与B的功能
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <ul>
 <li>
 <p>另一种对wire型赋值的方法，在声明时赋值：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">wire</span>      A, B ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">wire</span>      Cout <span style="color:#f92672">=</span> A <span style="color:#f92672">&amp;</span> B ;
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">wire</span>      A, B ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">wire</span>      Cout <span style="color:#666">=</span> A <span style="color:#666">&amp;</span> B ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="全加器">全加器</h3>
 <ul>
 <li>全加器的逻辑表达式为：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>So <span style="color:#f92672">=</span> Ai <span style="color:#960050;background-color:#1e0010">⊕</span> Bi <span style="color:#960050;background-color:#1e0010">⊕</span> Ci ;
-</span></span><span style="display:flex;"><span>Co <span style="color:#f92672">=</span> AiBi <span style="color:#f92672">+</span> Ci(Ai<span style="color:#f92672">+</span>Bi)
-</span></span></code></pre></div><ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>So <span style="color:#666">=</span> Ai <span style="">⊕</span> Bi <span style="">⊕</span> Ci ;
+</span></span><span style="display:flex;"><span>Co <span style="color:#666">=</span> AiBi <span style="color:#666">+</span> Ci(Ai<span style="color:#666">+</span>Bi)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>加法器代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> full_adder1(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span>    Ai, Bi, Ci,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span>   So, Co;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> full_adder1(
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span>    Ai, Bi, Ci,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span>   So, Co;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span> So <span style="color:#f92672">=</span> Ai <span style="color:#f92672">^</span> Bi <span style="color:#f92672">^</span> Ci ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span> Co <span style="color:#f92672">=</span> (Ai <span style="color:#f92672">&amp;</span> Bi) <span style="color:#f92672">|</span> (Ci <span style="color:#f92672">&amp;</span> (Ai <span style="color:#f92672">|</span> Bi));
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assign</span> So <span style="color:#666">=</span> Ai <span style="color:#666">^</span> Bi <span style="color:#666">^</span> Ci ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assign</span> Co <span style="color:#666">=</span> (Ai <span style="color:#666">&amp;</span> Bi) <span style="color:#666">|</span> (Ci <span style="color:#666">&amp;</span> (Ai <span style="color:#666">|</span> Bi));
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>例子见<a href="https://www.edaplayground.com/x/9RMw">FullAdder</a></p>
 </li>
@@ -428,19 +472,37 @@
 <p>连续赋值时延分为普通时延，隐式时延，声明时延</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//普通时延，A&amp;B计算结果延时10个时间单位赋值给Z
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> Z, A, B ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assign</span> #<span style="color:#ae81ff">10</span>    Z <span style="color:#f92672">=</span> A <span style="color:#f92672">&amp;</span> B ;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//普通时延，A&amp;B计算结果延时10个时间单位赋值给Z
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> Z, A, B ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">assign</span> #<span style="color:#40a070">10</span>    Z <span style="color:#666">=</span> A <span style="color:#666">&amp;</span> B ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//隐式时延，声明一个wire型变量时对其进行包含一定时延的连续赋值。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> A, B;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">wire</span> #<span style="color:#ae81ff">10</span>        Z <span style="color:#f92672">=</span> A <span style="color:#f92672">&amp;</span> B;
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//隐式时延，声明一个wire型变量时对其进行包含一定时延的连续赋值。
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> A, B;
+</span></span><span style="display:flex;"><span><span style="color:#902000">wire</span> #<span style="color:#40a070">10</span>        Z <span style="color:#666">=</span> A <span style="color:#666">&amp;</span> B;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//声明时延，声明一个wire型变量时指定一个时延。因此对该变量所有的连续赋值都会被推迟到指定的时间。除非门级建模中，一般不推荐使用此类方法建模。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> A, B;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">wire</span> #<span style="color:#ae81ff">10</span> Z ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assign</span>           Z <span style="color:#f92672">=</span>A <span style="color:#f92672">&amp;</span> B
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//声明时延，声明一个wire型变量时指定一个时延。因此对该变量所有的连续赋值都会被推迟到指定的时间。除非门级建模中，一般不推荐使用此类方法建模。
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> A, B;
+</span></span><span style="display:flex;"><span><span style="color:#902000">wire</span> #<span style="color:#40a070">10</span> Z ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">assign</span>           Z <span style="color:#666">=</span>A <span style="color:#666">&amp;</span> B
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="惯性时延">惯性时延</h3>
 <ul>

@@ -79,7 +79,7 @@
 <meta itemprop="name" content="Verilog入门笔记：第6章 函数">
 <meta itemprop="description" content="CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块 不含延迟、时序或时序逻辑控制 至少一个输入变量">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2048">
+<meta itemprop="wordCount" content="2147">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第6章 函数"/>
 <meta name="twitter:description" content="CHAPTER 6 6.1 Verilog函数 函数 function 在模块中定义，位置任意，在模块的任何地方引用，作用范围局限在此模块 不含延迟、时序或时序逻辑控制 至少一个输入变量"/>
@@ -348,7 +348,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        2048 words -
+        2147 words -
         5 min read
       </span>
 
@@ -392,23 +392,51 @@
 </li>
 <li>
 <p>函数可以调用其他函数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> [range<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     function_id ;<span style="color:#75715e">//声明一个宽度为range，名字为function_id的寄存器变量，返回值通过这个传递
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>input_declaration ;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> [range<span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     function_id ;<span style="color:#60a0b0;font-style:italic">//声明一个宽度为range，名字为function_id的寄存器变量，返回值通过这个传递
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>input_declaration ;
 </span></span><span style="display:flex;"><span> other_declaration ;
 </span></span><span style="display:flex;"><span>procedural_statement ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endfunction</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endfunction</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>函数调用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>function_id(input1, input2, <span style="color:#960050;background-color:#1e0010">…</span>);
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>function_id(input1, input2, <span style="">…</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>函数声明时，也可以在函数名后加一个括号，将input括起来</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> [N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     data_rvs<span style="color:#960050;background-color:#1e0010">（</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">input</span>     [N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] data_in 
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> [N<span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     data_rvs<span style="">（</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">input</span>     [N<span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] data_in 
 </span></span><span style="display:flex;"><span>    ......
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">）</span> ;
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>    <span style="">）</span> ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 </ul>
@@ -426,75 +454,149 @@
 <ul>
 <li>
 <p>用信号 abcdefg 来控制光亮控制端，用信号 csn 来控制片选，4 位 10 进制的数字个十百千位分别用 4 个 4bit 信号 single_digit, ten_digit, hundred_digit, kilo_digit 来表示，则一个数码管的显示设计可以描述如下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> digital_tube
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-30">30</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-31">31</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-32">32</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-33">33</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-34">34</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-35">35</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-36">36</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-37">37</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-38">38</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-39">39</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-40">40</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-41">41</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-42">42</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-43">43</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-44">44</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-45">45</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-46">46</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-47"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-47">47</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-48"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-48">48</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-49"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-49">49</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-50"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-50">50</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-51"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-51">51</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-52"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-52">52</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-53"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-53">53</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-54"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-54">54</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-55"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-55">55</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-56"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-56">56</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-57"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-57">57</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-58"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-58">58</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-59"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-59">59</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-60"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-60">60</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-61"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-61">61</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-62"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-62">62</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-63"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-63">63</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-64"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-64">64</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-65"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-65">65</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-66"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-66">66</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-67"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-67">67</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-68"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-68">68</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> digital_tube
 </span></span><span style="display:flex;"><span>     (
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span>             clk ,
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span>             rstn ,
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span>             en ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span>             clk ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span>             rstn ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span>             en ,
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       single_digit ,
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       ten_digit ,
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       hundred_digit ,
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       kilo_digit ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       single_digit ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       ten_digit ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       hundred_digit ,
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       kilo_digit ,
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">output</span> <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  csn , <span style="color:#75715e">//chip select, low-available
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">output</span> <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  abcdefg        <span style="color:#75715e">//light control
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      );
+</span></span><span style="display:flex;"><span>      <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  csn , <span style="color:#60a0b0;font-style:italic">//chip select, low-available
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      <span style="color:#007020;font-weight:bold">output</span> <span style="color:#902000">reg</span> [<span style="color:#40a070">6</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  abcdefg        <span style="color:#60a0b0;font-style:italic">//light control
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>      );
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]            scan_r ;  <span style="color:#75715e">//scan_ctrl
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">always</span> @ (<span style="color:#66d9ef">posedge</span> clk <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">negedge</span> rstn) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>rstn)<span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>            csn            <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1111</span>;
-</span></span><span style="display:flex;"><span>            abcdefg        <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">&#39;d0</span>;
-</span></span><span style="display:flex;"><span>            scan_r         <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span><span style="color:#ae81ff">&#39;d0</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (en) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span>(scan_r)
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;d0</span><span style="color:#f92672">:</span><span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span><span style="color:#ae81ff">&#39;d1</span>;
-</span></span><span style="display:flex;"><span>                csn       <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b0111</span>;     <span style="color:#75715e">//select single digit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                abcdefg   <span style="color:#f92672">&lt;=</span> dt_translate(single_digit);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;d1</span><span style="color:#f92672">:</span><span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span><span style="color:#ae81ff">&#39;d2</span>;
-</span></span><span style="display:flex;"><span>                csn       <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1011</span>;     <span style="color:#75715e">//select ten digit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                abcdefg   <span style="color:#f92672">&lt;=</span> dt_translate(ten_digit);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;d2</span><span style="color:#f92672">:</span><span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span><span style="color:#ae81ff">&#39;d3</span>;
-</span></span><span style="display:flex;"><span>                csn       <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1101</span>;     <span style="color:#75715e">//select hundred digit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                abcdefg   <span style="color:#f92672">&lt;=</span> dt_translate(hundred_digit);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;d3</span><span style="color:#f92672">:</span><span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span><span style="color:#ae81ff">&#39;d0</span>;
-</span></span><span style="display:flex;"><span>                csn       <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1110</span>;     <span style="color:#75715e">//select kilo digit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                abcdefg   <span style="color:#f92672">&lt;=</span> dt_translate(kilo_digit);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">endcase</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]            scan_r ;  <span style="color:#60a0b0;font-style:italic">//scan_ctrl
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">always</span> @ (<span style="color:#007020;font-weight:bold">posedge</span> clk <span style="color:#007020;font-weight:bold">or</span> <span style="color:#007020;font-weight:bold">negedge</span> rstn) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span>(<span style="color:#666">!</span>rstn)<span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>            csn            <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1111</span>;
+</span></span><span style="display:flex;"><span>            abcdefg        <span style="color:#666">&lt;=</span> <span style="color:#40a070">&#39;d0</span>;
+</span></span><span style="display:flex;"><span>            scan_r         <span style="color:#666">&lt;=</span> <span style="color:#40a070">3</span><span style="color:#40a070">&#39;d0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (en) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">case</span>(scan_r)
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">2</span><span style="color:#40a070">&#39;d0</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#666">&lt;=</span> <span style="color:#40a070">3</span><span style="color:#40a070">&#39;d1</span>;
+</span></span><span style="display:flex;"><span>                csn       <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b0111</span>;     <span style="color:#60a0b0;font-style:italic">//select single digit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                abcdefg   <span style="color:#666">&lt;=</span> dt_translate(single_digit);
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">2</span><span style="color:#40a070">&#39;d1</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#666">&lt;=</span> <span style="color:#40a070">3</span><span style="color:#40a070">&#39;d2</span>;
+</span></span><span style="display:flex;"><span>                csn       <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1011</span>;     <span style="color:#60a0b0;font-style:italic">//select ten digit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                abcdefg   <span style="color:#666">&lt;=</span> dt_translate(ten_digit);
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">2</span><span style="color:#40a070">&#39;d2</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#666">&lt;=</span> <span style="color:#40a070">3</span><span style="color:#40a070">&#39;d3</span>;
+</span></span><span style="display:flex;"><span>                csn       <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1101</span>;     <span style="color:#60a0b0;font-style:italic">//select hundred digit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                abcdefg   <span style="color:#666">&lt;=</span> dt_translate(hundred_digit);
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">2</span><span style="color:#40a070">&#39;d3</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>                scan_r    <span style="color:#666">&lt;=</span> <span style="color:#40a070">3</span><span style="color:#40a070">&#39;d0</span>;
+</span></span><span style="display:flex;"><span>                csn       <span style="color:#666">&lt;=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1110</span>;     <span style="color:#60a0b0;font-style:italic">//select kilo digit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                abcdefg   <span style="color:#666">&lt;=</span> dt_translate(kilo_digit);
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">endcase</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*------------ translate function -------*/</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> [<span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] dt_translate;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]   data;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span>(data)
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d0</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1111110</span>;     <span style="color:#75715e">//number 0 -&gt; 0x7e
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d1</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b0110000</span>;     <span style="color:#75715e">//number 1 -&gt; 0x30
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d2</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1101101</span>;     <span style="color:#75715e">//number 2 -&gt; 0x6d
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d3</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1111001</span>;     <span style="color:#75715e">//number 3 -&gt; 0x79
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d4</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b0110011</span>;     <span style="color:#75715e">//number 4 -&gt; 0x33
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d5</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1011011</span>;     <span style="color:#75715e">//number 5 -&gt; 0x5b
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d6</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1011111</span>;     <span style="color:#75715e">//number 6 -&gt; 0x5f
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d7</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1110000</span>;     <span style="color:#75715e">//number 7 -&gt; 0x70
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d8</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1111111</span>;     <span style="color:#75715e">//number 8 -&gt; 0x7f
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d9</span><span style="color:#f92672">:</span> dt_translate <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span><span style="color:#ae81ff">&#39;b1111011</span>;     <span style="color:#75715e">//number 9 -&gt; 0x7b
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">endcase</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">endfunction</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">/*------------ translate function -------*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">function</span> [<span style="color:#40a070">6</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] dt_translate;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]   data;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">case</span>(data)
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d0</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1111110</span>;     <span style="color:#60a0b0;font-style:italic">//number 0 -&gt; 0x7e
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d1</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b0110000</span>;     <span style="color:#60a0b0;font-style:italic">//number 1 -&gt; 0x30
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d2</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1101101</span>;     <span style="color:#60a0b0;font-style:italic">//number 2 -&gt; 0x6d
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d3</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1111001</span>;     <span style="color:#60a0b0;font-style:italic">//number 3 -&gt; 0x79
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d4</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b0110011</span>;     <span style="color:#60a0b0;font-style:italic">//number 4 -&gt; 0x33
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d5</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1011011</span>;     <span style="color:#60a0b0;font-style:italic">//number 5 -&gt; 0x5b
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d6</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1011111</span>;     <span style="color:#60a0b0;font-style:italic">//number 6 -&gt; 0x5f
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d7</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1110000</span>;     <span style="color:#60a0b0;font-style:italic">//number 7 -&gt; 0x70
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d8</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1111111</span>;     <span style="color:#60a0b0;font-style:italic">//number 8 -&gt; 0x7f
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d9</span><span style="color:#666">:</span> dt_translate <span style="color:#666">=</span> <span style="color:#40a070">7</span><span style="color:#40a070">&#39;b1111011</span>;     <span style="color:#60a0b0;font-style:italic">//number 9 -&gt; 0x7b
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">endcase</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">endfunction</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="62-verilog任务">6.2 Verilog任务</h2>
 <h3 id="任务与函数的区别">任务与函数的区别</h3>
@@ -515,37 +617,76 @@
 <li>没有输入变量</li>
 <li>没有输出或者输出端的数量大于1</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">task</span>       task_id ;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">task</span>       task_id ;
 </span></span><span style="display:flex;"><span>    port_declaration ;
 </span></span><span style="display:flex;"><span>    procedural_statement ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endtask</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endtask</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>任务可单独作为一条语句出现在initial或者always语句中</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>task_id(input1, input2, <span style="color:#960050;background-color:#1e0010">…</span>,outpu1, output2, <span style="color:#960050;background-color:#1e0010">…</span>);
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span>task_id(input1, input2, <span style="">…</span>,outpu1, output2, <span style="">…</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="任务操作全局变量">任务操作全局变量</h3>
 <ul>
 <li>任务内部变量也只有在任务中可见，如果想具体观察任务中对变量的操作过程，需要将观察的变量声明在模块之内、任务之外，可谓之&quot;全局变量&quot;</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//way1 to decirbe clk generating, not work
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">task</span> clk_rvs_iner ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">output</span>    clk_no_rvs ;
-</span></span><span style="display:flex;"><span>        # <span style="color:#ae81ff">5</span> ;     clk_no_rvs <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
-</span></span><span style="display:flex;"><span>        # <span style="color:#ae81ff">5</span> ;     clk_no_rvs <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endtask</span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>          clk_test1 ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> clk_rvs_iner(clk_test1);
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-16">16</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//way1 to decirbe clk generating, not work
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">task</span> clk_rvs_iner ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">output</span>    clk_no_rvs ;
+</span></span><span style="display:flex;"><span>        # <span style="color:#40a070">5</span> ;     clk_no_rvs <span style="color:#666">=</span> <span style="color:#40a070">0</span> ;
+</span></span><span style="display:flex;"><span>        # <span style="color:#40a070">5</span> ;     clk_no_rvs <span style="color:#666">=</span> <span style="color:#40a070">1</span> ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endtask</span> 
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span>          clk_test1 ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> clk_rvs_iner(clk_test1);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//way2: use task to operate global varialbes to generating clk
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span>          clk_test2 ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">task</span> clk_rvs_global ;
-</span></span><span style="display:flex;"><span>        # <span style="color:#ae81ff">5</span> ;     clk_test2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
-</span></span><span style="display:flex;"><span>        # <span style="color:#ae81ff">5</span> ;     clk_test2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endtask</span> <span style="color:#75715e">// clk_rvs_iner
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> clk_rvs_global;
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//way2: use task to operate global varialbes to generating clk
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span>          clk_test2 ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">task</span> clk_rvs_global ;
+</span></span><span style="display:flex;"><span>        # <span style="color:#40a070">5</span> ;     clk_test2 <span style="color:#666">=</span> <span style="color:#40a070">0</span> ;
+</span></span><span style="display:flex;"><span>        # <span style="color:#40a070">5</span> ;     clk_test2 <span style="color:#666">=</span> <span style="color:#40a070">1</span> ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endtask</span> <span style="color:#60a0b0;font-style:italic">// clk_rvs_iner
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> clk_rvs_global;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>第一种方法将无法产生翻转的时钟信号，只是恒为1；第二种方法可以产生翻转的时钟信号</li>
 </ul>
 <h3 id="automatic任务">automatic任务</h3>

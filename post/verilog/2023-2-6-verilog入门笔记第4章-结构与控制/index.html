@@ -79,7 +79,7 @@
 <meta itemprop="name" content="Verilog入门笔记：第4章 结构与控制">
 <meta itemprop="description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2535">
+<meta itemprop="wordCount" content="2706">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第4章 结构与控制"/>
 <meta name="twitter:description" content="CHAPTER 4 4.1 Verilog过程结构 initial语句与always语句，两个语句在模块间并行执行，但语句内部顺序执行 initial语句 initia"/>
@@ -348,7 +348,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        2535 words -
+        2706 words -
         6 min read
       </span>
 
@@ -410,23 +410,51 @@
 </li>
 <li>
 <p>使用阻塞赋值交换两个寄存器值</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//由于always语句并行执行，无法达到目的
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> b ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//由于always语句并行执行，无法达到目的
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#666">=</span> b ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> a;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//由于使用非阻塞赋值，新值并不会影响结果
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">&lt;=</span> b ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#666">=</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//由于使用非阻塞赋值，新值并不会影响结果
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#666">&lt;=</span> b ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">&lt;=</span> a;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#666">&lt;=</span> a;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="43-verilog时序控制">4.3 Verilog时序控制</h2>
 <h3 id="时延控制">时延控制</h3>
@@ -437,22 +465,45 @@
 <li>
 <p><strong>常规时延</strong></p>
 <p>语句要等待一段时间后，再将计算结果赋值给目标信号</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//写法1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span>  value_test ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_general ;
-</span></span><span style="display:flex;"><span>#<span style="color:#ae81ff">10</span>  value_general    <span style="color:#f92672">=</span> value_test ;
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//写法1
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span>  value_test ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span>  value_general ;
+</span></span><span style="display:flex;"><span>#<span style="color:#40a070">10</span>  value_general    <span style="color:#666">=</span> value_test ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//写法2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>#<span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>value_ single         <span style="color:#f92672">=</span> value_test ;
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//写法2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>#<span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>value_ single         <span style="color:#666">=</span> value_test ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p><strong>内嵌时延</strong></p>
 <p>语句现将计算结果保存，然后等待一定时间后赋值给目标信号</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_test ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>  value_embed ;
-</span></span><span style="display:flex;"><span>value_embed        <span style="color:#f92672">=</span> #<span style="color:#ae81ff">10</span> value_test ;
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">reg</span>  value_test ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span>  value_embed ;
+</span></span><span style="display:flex;"><span>value_embed        <span style="color:#666">=</span> #<span style="color:#40a070">10</span> value_test ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h3 id="边沿触发事件控制">边沿触发事件控制</h3>
 <ol>
@@ -464,29 +515,57 @@
 </li>
 <li>
 <p>关键字posedge表示上升沿，negedge表示下降沿，未指明则两种边沿触发都识别</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#75715e">//信号clk只要发生变化，就执行q&lt;=d，双边沿D触发器模型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(clk) q <span style="color:#f92672">&lt;=</span> d ;                
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//在信号clk上升沿时刻，执行q&lt;=d，正边沿D触发器模型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">posedge</span> clk) q <span style="color:#f92672">&lt;=</span> d ;  
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//在信号clk下降沿时刻，执行q&lt;=d，负边沿D触发器模型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">always</span> @(<span style="color:#66d9ef">negedge</span> clk) q <span style="color:#f92672">&lt;=</span> d ; 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">//立刻计算d的值，并在clk上升沿时刻赋值给q，不推荐这种写法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>q <span style="color:#f92672">=</span> @(<span style="color:#66d9ef">posedge</span> clk) d ;    
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//信号clk只要发生变化，就执行q&lt;=d，双边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> @(clk) q <span style="color:#666">&lt;=</span> d ;                
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//在信号clk上升沿时刻，执行q&lt;=d，正边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) q <span style="color:#666">&lt;=</span> d ;  
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//在信号clk下降沿时刻，执行q&lt;=d，负边沿D触发器模型
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#007020;font-weight:bold">negedge</span> clk) q <span style="color:#666">&lt;=</span> d ; 
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">//立刻计算d的值，并在clk上升沿时刻赋值给q，不推荐这种写法
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>q <span style="color:#666">=</span> @(<span style="color:#007020;font-weight:bold">posedge</span> clk) d ;    
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 <li>
 <p><strong>命名事件控制</strong></p>
 <p>声明<code>event</code>类型变量，并触发该变量来识别该事件是否发生，触发信号用<code>-&gt;</code>表示</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">event</span>     start_receiving ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @( <span style="color:#66d9ef">posedge</span> clk_samp) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">-&gt;</span> start_receiving ;       <span style="color:#75715e">//采样时钟上升沿作为时间触发时刻
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">end</span>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">event</span>     start_receiving ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @( <span style="color:#007020;font-weight:bold">posedge</span> clk_samp) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#666">-&gt;</span> start_receiving ;       <span style="color:#60a0b0;font-style:italic">//采样时钟上升沿作为时间触发时刻
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span> @(start_receiving) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>  data_buf <span style="color:#f92672">=</span> {data_if[<span style="color:#ae81ff">0</span>], data_if[<span style="color:#ae81ff">1</span>]} ; <span style="color:#75715e">//事件发生，即监测到clk_samp的信号处于上升沿，则执行操作，对多维数据整合
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span> @(start_receiving) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>  data_buf <span style="color:#666">=</span> {data_if[<span style="color:#40a070">0</span>], data_if[<span style="color:#40a070">1</span>]} ; <span style="color:#60a0b0;font-style:italic">//事件发生，即监测到clk_samp的信号处于上升沿，则执行操作，对多维数据整合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p><strong>敏感列表</strong></p>
 <ul>
@@ -497,15 +576,29 @@
 </ol>
 <h3 id="电平敏感事件控制">电平敏感事件控制</h3>
 <p>语句的执行需要等待某个条件为真，采用<code>wait</code>来表示电平敏感情况</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">wait</span> (start_enable) ;      <span style="color:#75715e">//等待 start 信号
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//start信号使能后，在clk_samp上升沿，对数据进行整合
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        @(<span style="color:#66d9ef">posedge</span> clk_samp)  ;
-</span></span><span style="display:flex;"><span>        data_buf <span style="color:#f92672">=</span> {data_if[<span style="color:#ae81ff">0</span>], data_if[<span style="color:#ae81ff">1</span>]} ;      
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h2 id="44-verilog语句块">4.4 Verilog语句块</h2>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">initial</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">wait</span> (start_enable) ;      <span style="color:#60a0b0;font-style:italic">//等待 start 信号
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">forever</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">//start信号使能后，在clk_samp上升沿，对数据进行整合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        @(<span style="color:#007020;font-weight:bold">posedge</span> clk_samp)  ;
+</span></span><span style="display:flex;"><span>        data_buf <span style="color:#666">=</span> {data_if[<span style="color:#40a070">0</span>], data_if[<span style="color:#40a070">1</span>]} ;      
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="44-verilog语句块">4.4 Verilog语句块</h2>
 <h3 id="顺序块">顺序块</h3>
 <ul>
 <li>用<code>begin</code>和<code>end</code>来表示</li>
@@ -522,81 +615,164 @@
 <ul>
 <li>
 <p>顺序块和并行块可以嵌套使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span>      <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-16">16</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`timescale</span>      <span style="color:#40a070">1</span>ns<span style="color:#666">/</span><span style="color:#40a070">1</span>ns
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> test ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]   ai_sequen2, bi_sequen2 ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]   ai_paral2,  bi_paral2 ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        ai_sequen2         <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d5</span> ;    <span style="color:#75715e">//at 0ns
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">fork</span>
-</span></span><span style="display:flex;"><span>            #<span style="color:#ae81ff">10</span> ai_paral2          <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d5</span> ;    <span style="color:#75715e">//at 10ns
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            #<span style="color:#ae81ff">15</span> bi_paral2          <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d8</span> ;    <span style="color:#75715e">//at 15ns
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">join</span>
-</span></span><span style="display:flex;"><span>        #<span style="color:#ae81ff">20</span> bi_sequen2      <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;d8</span> ;    <span style="color:#75715e">//at 35ns
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]   ai_sequen2, bi_sequen2 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]   ai_paral2,  bi_paral2 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">initial</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        ai_sequen2         <span style="color:#666">=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d5</span> ;    <span style="color:#60a0b0;font-style:italic">//at 0ns
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">fork</span>
+</span></span><span style="display:flex;"><span>            #<span style="color:#40a070">10</span> ai_paral2          <span style="color:#666">=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d5</span> ;    <span style="color:#60a0b0;font-style:italic">//at 10ns
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            #<span style="color:#40a070">15</span> bi_paral2          <span style="color:#666">=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d8</span> ;    <span style="color:#60a0b0;font-style:italic">//at 15ns
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">join</span>
+</span></span><span style="display:flex;"><span>        #<span style="color:#40a070">20</span> bi_sequen2      <span style="color:#666">=</span> <span style="color:#40a070">4</span><span style="color:#40a070">&#39;d8</span> ;    <span style="color:#60a0b0;font-style:italic">//at 35ns
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="命名块">命名块</h3>
 <ul>
 <li>
 <p>给块语句结构命名，命名的块中可以声明局部变量，通过层次名引用的方法对变量进行访问</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span> <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-23">23</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`timescale</span> <span style="color:#40a070">1</span>ns<span style="color:#666">/</span><span style="color:#40a070">1</span>ns
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> test;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob   <span style="color:#75715e">//命名模块名字为runoob，分号不能少
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">integer</span>    i ;       <span style="color:#75715e">//此变量可以通过test.runoob.i 被其他模块使用
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>            #<span style="color:#ae81ff">10</span> i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span> ;       
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">initial</span> <span style="color:#007020;font-weight:bold">begin</span><span style="color:#666">:</span> runoob   <span style="color:#60a0b0;font-style:italic">//命名模块名字为runoob，分号不能少
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">integer</span>    i ;       <span style="color:#60a0b0;font-style:italic">//此变量可以通过test.runoob.i 被其他模块使用
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        i <span style="color:#666">=</span> <span style="color:#40a070">0</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">forever</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>            #<span style="color:#40a070">10</span> i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#40a070">10</span> ;       
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> stop_flag ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> stop_flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span> ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> <span style="color:#66d9ef">begin</span> <span style="color:#f92672">:</span> detect_stop
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( test.runoob.i <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">begin</span> <span style="color:#75715e">//i累加10次，即100ns时停止仿真
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            $display(<span style="color:#e6db74">&#34;Now you can stop the simulation!!!&#34;</span>);
-</span></span><span style="display:flex;"><span>            stop_flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b1</span> ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        #<span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> stop_flag ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">initial</span> stop_flag <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">always</span> <span style="color:#007020;font-weight:bold">begin</span> <span style="color:#666">:</span> detect_stop
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> ( test.runoob.i <span style="color:#666">==</span> <span style="color:#40a070">100</span>) <span style="color:#007020;font-weight:bold">begin</span> <span style="color:#60a0b0;font-style:italic">//i累加10次，即100ns时停止仿真
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#007020">$display</span>(<span style="color:#4070a0">&#34;Now you can stop the simulation!!!&#34;</span>);
+</span></span><span style="display:flex;"><span>            stop_flag <span style="color:#666">=</span> <span style="color:#40a070">1</span><span style="color:#40a070">&#39;b1</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>        #<span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>命名的块也可以被禁用，用关键字 disable 来表示。disable 可以终止命名块的执行，可以用来从循环中退出、处理错误等</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span> <span style="color:#ae81ff">1</span>ns<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>ns
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-26">26</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`timescale</span> <span style="color:#40a070">1</span>ns<span style="color:#666">/</span><span style="color:#40a070">1</span>ns
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> test;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> test;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d <span style="color:#75715e">//命名模块名字为runoob_d
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">integer</span>    i_d ;
-</span></span><span style="display:flex;"><span>        i_d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(i_d<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d2
-</span></span><span style="display:flex;"><span>            # <span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (i_d <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">begin</span>       <span style="color:#75715e">//累加5次停止累加
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">disable</span> runoob_d3.clk_gen ;<span style="color:#75715e">//stop 外部block: clk_gen
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">disable</span> runoob_d2 ;       <span style="color:#75715e">//stop 当前block: runoob_d2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>            i_d <span style="color:#f92672">=</span> i_d <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">initial</span> <span style="color:#007020;font-weight:bold">begin</span><span style="color:#666">:</span> runoob_d <span style="color:#60a0b0;font-style:italic">//命名模块名字为runoob_d
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#007020;font-weight:bold">integer</span>    i_d ;
+</span></span><span style="display:flex;"><span>        i_d <span style="color:#666">=</span> <span style="color:#40a070">0</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">while</span>(i_d<span style="color:#666">&lt;=</span><span style="color:#40a070">100</span>) <span style="color:#007020;font-weight:bold">begin</span><span style="color:#666">:</span> runoob_d2
+</span></span><span style="display:flex;"><span>            # <span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">if</span> (i_d <span style="color:#666">&gt;=</span> <span style="color:#40a070">50</span>) <span style="color:#007020;font-weight:bold">begin</span>       <span style="color:#60a0b0;font-style:italic">//累加5次停止累加
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                <span style="color:#007020;font-weight:bold">disable</span> runoob_d3.clk_gen ;<span style="color:#60a0b0;font-style:italic">//stop 外部block: clk_gen
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>                <span style="color:#007020;font-weight:bold">disable</span> runoob_d2 ;       <span style="color:#60a0b0;font-style:italic">//stop 当前block: runoob_d2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>            i_d <span style="color:#666">=</span> i_d <span style="color:#666">+</span> <span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> clk ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">initial</span> <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> runoob_d3
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">begin</span><span style="color:#f92672">:</span> clk_gen  <span style="color:#75715e">//时钟产生模块
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            clk<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ;      #<span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>            clk<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> ;      #<span style="color:#ae81ff">10</span> ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> clk ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">initial</span> <span style="color:#007020;font-weight:bold">begin</span><span style="color:#666">:</span> runoob_d3
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">while</span> (<span style="color:#40a070">1</span>) <span style="color:#007020;font-weight:bold">begin</span><span style="color:#666">:</span> clk_gen  <span style="color:#60a0b0;font-style:italic">//时钟产生模块
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>            clk<span style="color:#666">=</span><span style="color:#40a070">1</span> ;      #<span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>            clk<span style="color:#666">=</span><span style="color:#40a070">0</span> ;      #<span style="color:#40a070">10</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="45-verilog条件语句">4.5 Verilog条件语句</h2>
 <h3 id="条件语句">条件语句</h3>
@@ -604,30 +780,59 @@
 <li>
 <p>基本思想与C语言相同</p>
 <p>4路选择器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> mux4to1(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sel ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p0 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p1 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p2 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p3 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]    sout);
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-23">23</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> mux4to1(
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     sel ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p0 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p1 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p2 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p3 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]    sout);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sout_t ;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     sout_t ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> @(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b00</span>)
-</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p0 ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b01</span>)
-</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p1 ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (sel <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b10</span>)
-</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p2 ;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>            sout_t <span style="color:#f92672">=</span> p3 ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span> sout <span style="color:#f92672">=</span> sout_t ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#666">*</span>) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> (sel <span style="color:#666">==</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b00</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#666">=</span> p0 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (sel <span style="color:#666">==</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b01</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#666">=</span> p1 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (sel <span style="color:#666">==</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b10</span>)
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#666">=</span> p2 ;
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            sout_t <span style="color:#666">=</span> p3 ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assign</span> sout <span style="color:#666">=</span> sout_t ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="46-verilog多路分支语句">4.6 Verilog多路分支语句</h2>
 <h3 id="case语句">case语句</h3>
@@ -649,49 +854,111 @@
 </li>
 <li>
 <p>4bit控制端的4路选择器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> mux4to1(
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sel ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p0 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p1 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p2 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     p3 ,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]    sout);
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-20">20</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> mux4to1(
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     sel ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p0 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p1 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p2 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     p3 ,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]    sout);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     sout_t ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">always</span> @(<span style="color:#f92672">*</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">casez</span>(sel)
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">???</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>     sout_t <span style="color:#f92672">=</span> p0 ;
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">??</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?:</span>     sout_t <span style="color:#f92672">=</span> p1 ;
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span>&#39;b<span style="color:#f92672">?</span><span style="color:#ae81ff">1</span><span style="color:#f92672">??:</span>     sout_t <span style="color:#f92672">=</span> p2 ;
-</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1</span><span style="color:#f92672">???:</span>     sout_t <span style="color:#f92672">=</span> p3 ;  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>         sout_t <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#ae81ff">&#39;b0</span> ;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">endcase</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assign</span>      sout <span style="color:#f92672">=</span> sout_t ;
+</span></span><span style="display:flex;"><span>    <span style="color:#902000">reg</span> [<span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     sout_t ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">always</span> @(<span style="color:#666">*</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">casez</span>(sel)
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">4</span>&#39;b<span style="color:#666">???</span><span style="color:#40a070">1</span><span style="color:#666">:</span>     sout_t <span style="color:#666">=</span> p0 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">4</span>&#39;b<span style="color:#666">??</span><span style="color:#40a070">1</span><span style="color:#666">?:</span>     sout_t <span style="color:#666">=</span> p1 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">4</span>&#39;b<span style="color:#666">?</span><span style="color:#40a070">1</span><span style="color:#666">??:</span>     sout_t <span style="color:#666">=</span> p2 ;
+</span></span><span style="display:flex;"><span>            <span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1</span><span style="color:#666">???:</span>     sout_t <span style="color:#666">=</span> p3 ;  
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">default</span><span style="color:#666">:</span>         sout_t <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#40a070">&#39;b0</span> ;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">endcase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">assign</span>      sout <span style="color:#666">=</span> sout_t ;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="47-verilog循环语句">4.7 Verilog循环语句</h2>
 <ul>
 <li>循环语句只能在always或initial语句块中使用</li>
 </ul>
 <h3 id="while循环">while循环</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (condition) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h3 id="for循环">for循环</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(initial_assignment; condition ; step_assignment)  <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h3 id="repeat循环">repeat循环</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">repeat</span> (loop_times) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><h3 id="forever循坏">forever循坏</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">forever</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">…</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p>利用系统函数<code>$finish</code>可以退出forever循环</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> (condition) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="for循环">for循环</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span>(initial_assignment; condition ; step_assignment)  <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="repeat循环">repeat循环</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">repeat</span> (loop_times) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="forever循坏">forever循坏</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">forever</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="">…</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>利用系统函数<code>$finish</code>可以退出forever循环</p>
 <h2 id="48-verilog过程连续赋值">4.8 Verilog过程连续赋值</h2>
 <ul>
 <li>过程连续赋值的表达式能被连续的驱动到wire或reg型变量中，即过程连续赋值发生作用时，右端表达式中任意操作数变化都会引起过程连续赋值语句的重新执行</li>

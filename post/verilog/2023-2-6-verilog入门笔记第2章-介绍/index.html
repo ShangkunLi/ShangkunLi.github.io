@@ -79,7 +79,7 @@
 <meta itemprop="name" content="Verilog入门笔记：第2章 基础语法及数据">
 <meta itemprop="description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，">
 <meta itemprop="dateModified" content="2023-01-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2067">
+<meta itemprop="wordCount" content="2110">
 <meta itemprop="keywords" content="Verilog,IC,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Verilog入门笔记：第2章 基础语法及数据"/>
 <meta name="twitter:description" content="CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，"/>
@@ -348,7 +348,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        2067 words -
+        2110 words -
         5 min read
       </span>
 
@@ -400,9 +400,17 @@
 </li>
 <li>
 <p>指明位宽</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#ae81ff">4</span><span style="color:#ae81ff">&#39;b1011</span>         <span style="color:#75715e">// 4bit 数值
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">32&#39;h3022</span>_c0de   <span style="color:#75715e">// 32bit 的数值，下划线为增加可读性
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#40a070">4</span><span style="color:#40a070">&#39;b1011</span>         <span style="color:#60a0b0;font-style:italic">// 4bit 数值
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#40a070">32&#39;h3022</span>_c0de   <span style="color:#60a0b0;font-style:italic">// 32bit 的数值，下划线为增加可读性
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>也可不指明位宽，且直接写数字时默认为十进制</p>
 </li>
@@ -432,43 +440,88 @@
 </li>
 </ul>
 <h3 id="数组">数组</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">integer</span>          flag [<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] ; <span style="color:#75715e">//8个整数组成的数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span>  [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       counter [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] ; <span style="color:#75715e">//由4个4bit计数器组成的数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> [<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       addr_bus [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] ; <span style="color:#75715e">//由4个8bit wire型变量组成的数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span>             data_bit[<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] ; <span style="color:#75715e">//声明1bit wire型变量的二维数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">31</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]       data_4d[<span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">255</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>] ; <span style="color:#75715e">//声明4维的32bit数据变量数组
-</span></span></span></code></pre></div><ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">integer</span>          flag [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] ; <span style="color:#60a0b0;font-style:italic">//8个整数组成的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span>  [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       counter [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] ; <span style="color:#60a0b0;font-style:italic">//由4个4bit计数器组成的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       addr_bus [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] ; <span style="color:#60a0b0;font-style:italic">//由4个8bit wire型变量组成的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span>             data_bit[<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>][<span style="color:#40a070">5</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] ; <span style="color:#60a0b0;font-style:italic">//声明1bit wire型变量的二维数组
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span> [<span style="color:#40a070">31</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]       data_4d[<span style="color:#40a070">11</span><span style="color:#666">:</span><span style="color:#40a070">0</span>][<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>][<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>][<span style="color:#40a070">255</span><span style="color:#666">:</span><span style="color:#40a070">0</span>] ; <span style="color:#60a0b0;font-style:italic">//声明4维的32bit数据变量数组
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>数组由<strong>多个元件</strong>组成，向量是一个<strong>元件</strong></p>
 </li>
 <li>
 <p>存储器：一种寄存器数组，可用来描述RAM和ROM</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">reg</span>               membit[<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">255</span>] ;  <span style="color:#75715e">//256bit的1bit存储器
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span>  [<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]        mem[<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1023</span>] ;    <span style="color:#75715e">//1Kbyte存储器，位宽8bit
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>mem[<span style="color:#ae81ff">511</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span><span style="color:#ae81ff">&#39;b0</span> ;                  <span style="color:#75715e">//令第512个8bit的存储单元值为0
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">reg</span>               membit[<span style="color:#40a070">0</span><span style="color:#666">:</span><span style="color:#40a070">255</span>] ;  <span style="color:#60a0b0;font-style:italic">//256bit的1bit存储器
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span>  [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]        mem[<span style="color:#40a070">0</span><span style="color:#666">:</span><span style="color:#40a070">1023</span>] ;    <span style="color:#60a0b0;font-style:italic">//1Kbyte存储器，位宽8bit
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>mem[<span style="color:#40a070">511</span>] <span style="color:#666">=</span> <span style="color:#40a070">8</span><span style="color:#40a070">&#39;b0</span> ;                  <span style="color:#60a0b0;font-style:italic">//令第512个8bit的存储单元值为0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="向量">向量</h3>
 <ul>
 <li>
 <p>当位宽大于1时，wire或reg类型可以声明为向量</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]      counter ;    <span style="color:#75715e">//声明4bit位宽的寄存器counter
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> [<span style="color:#ae81ff">32</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]  gpio_data;   <span style="color:#75715e">//声明32bit位宽的线型变量gpio_data
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">wire</span> [<span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>]     addr ;       <span style="color:#75715e">//声明7bit位宽的线型变量addr，位宽范围为8:2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">31</span>]     data ;       <span style="color:#75715e">//声明32bit位宽的寄存器变量data, 最高有效位为0
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">reg</span> [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]      counter ;    <span style="color:#60a0b0;font-style:italic">//声明4bit位宽的寄存器counter
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> [<span style="color:#40a070">32</span><span style="color:#666">-</span><span style="color:#40a070">1</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]  gpio_data;   <span style="color:#60a0b0;font-style:italic">//声明32bit位宽的线型变量gpio_data
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">wire</span> [<span style="color:#40a070">8</span><span style="color:#666">:</span><span style="color:#40a070">2</span>]     addr ;       <span style="color:#60a0b0;font-style:italic">//声明7bit位宽的线型变量addr，位宽范围为8:2
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">reg</span> [<span style="color:#40a070">0</span><span style="color:#666">:</span><span style="color:#40a070">31</span>]     data ;       <span style="color:#60a0b0;font-style:italic">//声明32bit位宽的寄存器变量data, 最高有效位为0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Verilog支持可变的向量域选择</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">31</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]     data1 ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">reg</span> [<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]      byte1 [<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>];<span style="color:#75715e">//byte1变量的每一个元素都为一个8bit宽的寄存器
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">integer</span> j ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">always</span>@<span style="color:#f92672">*</span> <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">3</span>;j<span style="color:#f92672">=</span>j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">begin</span>
-</span></span><span style="display:flex;"><span>        byte1[j] <span style="color:#f92672">=</span> data1[(j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> j<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>]; 
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//把data1[7:0]…data1[31:24]依次赋值给byte1[0][7:0]…byte[3][7:0]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8">8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">reg</span> [<span style="color:#40a070">31</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]     data1 ;
+</span></span><span style="display:flex;"><span><span style="color:#902000">reg</span> [<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]      byte1 [<span style="color:#40a070">3</span><span style="color:#666">:</span><span style="color:#40a070">0</span>];<span style="color:#60a0b0;font-style:italic">//byte1变量的每一个元素都为一个8bit宽的寄存器
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">integer</span> j ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">always</span>@<span style="color:#666">*</span> <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> (j<span style="color:#666">=</span><span style="color:#40a070">0</span>; j<span style="color:#666">&lt;=</span><span style="color:#40a070">3</span>;j<span style="color:#666">=</span>j<span style="color:#666">+</span><span style="color:#40a070">1</span>) <span style="color:#007020;font-weight:bold">begin</span>
+</span></span><span style="display:flex;"><span>        byte1[j] <span style="color:#666">=</span> data1[(j<span style="color:#666">+</span><span style="color:#40a070">1</span>)<span style="color:#666">*</span><span style="color:#40a070">8</span><span style="color:#666">-</span><span style="color:#40a070">1</span> <span style="color:#666">:</span> j<span style="color:#666">*</span><span style="color:#40a070">8</span>]; 
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">//把data1[7:0]…data1[31:24]依次赋值给byte1[0][7:0]…byte[3][7:0]
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p><strong>Verillog 还支持指定 bit 位后固定位宽的向量域选择访问</strong></p>
 <ul>
@@ -478,10 +531,19 @@
 </li>
 <li>
 <p>Verilog可以利用大括号<code>{}</code>进行数据拼接</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">wire</span> [<span style="color:#ae81ff">31</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>]    temp1, temp2 ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assign</span> temp1 <span style="color:#f92672">=</span> {byte1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>], data1[<span style="color:#ae81ff">31</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>]};  <span style="color:#75715e">//数据拼接
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">assign</span> temp2 <span style="color:#f92672">=</span> {<span style="color:#ae81ff">32</span>{<span style="color:#ae81ff">1</span><span style="color:#ae81ff">&#39;b0</span>}};  <span style="color:#75715e">//赋值32位的数值0  
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#902000">wire</span> [<span style="color:#40a070">31</span><span style="color:#666">:</span><span style="color:#40a070">0</span>]    temp1, temp2 ;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">assign</span> temp1 <span style="color:#666">=</span> {byte1[<span style="color:#40a070">0</span>][<span style="color:#40a070">7</span><span style="color:#666">:</span><span style="color:#40a070">0</span>], data1[<span style="color:#40a070">31</span><span style="color:#666">:</span><span style="color:#40a070">8</span>]};  <span style="color:#60a0b0;font-style:italic">//数据拼接
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">assign</span> temp2 <span style="color:#666">=</span> {<span style="color:#40a070">32</span>{<span style="color:#40a070">1</span><span style="color:#40a070">&#39;b0</span>}};  <span style="color:#60a0b0;font-style:italic">//赋值32位的数值0  
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h3 id="参数parameter">参数（parameter）</h3>
 <ul>
@@ -556,14 +618,27 @@
 <p>条件编译指令</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`ifdef</span>       MCU51
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">parameter</span> DATA_DW <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>   ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">`elsif</span>       WINDOW
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">parameter</span> DATA_DW <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>  ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">`else</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">parameter</span> DATA_DW <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>  ;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">`endif</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`ifdef</span>       MCU51
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">parameter</span> DATA_DW <span style="color:#666">=</span> <span style="color:#40a070">8</span>   ;
+</span></span><span style="display:flex;"><span><span style="color:#60add5">`elsif</span>       WINDOW
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">parameter</span> DATA_DW <span style="color:#666">=</span> <span style="color:#40a070">64</span>  ;
+</span></span><span style="display:flex;"><span><span style="color:#60add5">`else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">parameter</span> DATA_DW <span style="color:#666">=</span> <span style="color:#40a070">32</span>  ;
+</span></span><span style="display:flex;"><span><span style="color:#60add5">`endif</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 <li>
@@ -579,8 +654,15 @@
 <p>将时间单位与实际时间相关联，用于定义时延、仿真的单位和精度</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`timescale</span>      time_unit <span style="color:#f92672">/</span> time_precision <span style="color:#75715e">//time_unit为单位，time_precision为精度
-</span></span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`timescale</span>      time_unit <span style="color:#666">/</span> time_precision <span style="color:#60a0b0;font-style:italic">//time_unit为单位，time_precision为精度
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>在编译过程中，<strong>`timescale</strong> 指令会影响后面所有模块中的时延值，直至遇到另一个 <strong>`timescale</strong> 指令或 <strong>`resetall</strong> 指令</p>
 </li>
@@ -611,16 +693,31 @@
 <p>将模块标记为单元模块</p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#66d9ef">`celldefine</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> (
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span>      clk,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">input</span>      rst,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span>     clk_pll,
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">output</span>     flag);
-</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">……</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">endmodule</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">`endcelldefine</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8">8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-verilog" data-lang="verilog"><span style="display:flex;"><span><span style="color:#60add5">`celldefine</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">module</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span>      clk,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">input</span>      rst,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span>     clk_pll,
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">output</span>     flag);
+</span></span><span style="display:flex;"><span>        <span style="">……</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">endmodule</span>
+</span></span><span style="display:flex;"><span><span style="color:#60add5">`endcelldefine</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 <li>
