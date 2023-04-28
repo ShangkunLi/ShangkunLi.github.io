@@ -77,24 +77,6 @@
     </item>
     
     <item>
-      <title>四月初的碎碎念</title>
-      <link>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</link>
-      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/%E9%9A%8F%E6%83%B3%E5%BD%95/%E5%9B%9B%E6%9C%88/</guid>
-      
-        <description>&lt;p&gt;已经好久没有维护我的博客，最近难得清闲，想着来发点什么。&lt;/p&gt;
-&lt;h2 id=&#34;苦难&#34;&gt;苦难&lt;/h2&gt;
-&lt;p&gt;这个话题其实非常沉重，它来自我与老王三月中旬在酒吧里的长谈。当我们坐在酒吧里，身后的觥筹交错，耳边的谈天说地，情侣的耳鬓斯磨，都是美好的事，仿佛世间本没有什么苦难。但终于，我们还是到达了这个话题，苦难。它是如此的沉重，仿佛任何高昂的情绪都会被它瞬间拖拽落地。&lt;/p&gt;
-&lt;p&gt;事情从老王的一个故事开始，他之前做过口述史的访谈。&lt;/p&gt;
-&lt;h2 id=&#34;长衫&#34;&gt;长衫&lt;/h2&gt;
-&lt;p&gt;hello this is a test&lt;/p&gt;
-&lt;h2 id=&#34;留下&#34;&gt;留下&lt;/h2&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>Life About Me</title>
       <link>https://shangkunli.github.io/life/</link>
       <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
@@ -1395,6 +1377,19 @@ For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/&#34;&gt;CompPhys: Partial Differential Equations&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/&#34;&gt;CompPhys: Monte Carlo simulations&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Verilog入门笔记：第1章 介绍</title>
+      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
+      
+        <description>&lt;h1 id=&#34;chapter-1&#34;&gt;CHAPTER 1&lt;/h1&gt;
+&lt;h2 id=&#34;11-vrilog介绍&#34;&gt;1.1 Vrilog介绍&lt;/h2&gt;
 </description>
       
     </item>
