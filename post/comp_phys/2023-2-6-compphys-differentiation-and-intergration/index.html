@@ -75,11 +75,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2023-04-21T00:39:43+08:00" />
+<meta property="article:modified_time" content="2023-04-30T00:09:49+08:00" />
 <meta itemprop="name" content="CompPhys: Differentiation and Intergration">
 <meta itemprop="description" content="介绍 这一章节主要介绍数值微分与积分的方法 Computational Physics: Differentiation and Intergration 求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to">
-<meta itemprop="dateModified" content="2023-04-21T00:39:43+08:00" />
-<meta itemprop="wordCount" content="305">
+<meta itemprop="dateModified" content="2023-04-30T00:09:49+08:00" />
+<meta itemprop="wordCount" content="310">
 <meta itemprop="keywords" content="Python,C/C&#43;&#43;,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CompPhys: Differentiation and Intergration"/>
 <meta name="twitter:description" content="介绍 这一章节主要介绍数值微分与积分的方法 Computational Physics: Differentiation and Intergration 求解问题 题目说明 Compute the derivative of $f(x) = sinx$ at $x = π/3$ using the Richardson extrap- olation algorithm. Start with h = 1 and find the number of rows in the Richardson table required to"/>
@@ -136,9 +136,23 @@
       </li><li class="mobile-menu-item">
         
           
-          
-            <a class="menu-item-link" href="https://shangkunli.github.io/life/">Life</a>
-          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://shangkunli.github.io/categories/life/">
+              Life
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/">旅游记Ⓒ2020</a>
+              </li>
+            
+              <li>
+                <a href="https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>
+              </li>
+            
+          </ul>
         
       </li><li class="mobile-menu-item">
         
@@ -276,9 +290,18 @@
         <li class="menu-item">
         
           
-          
-            <a class="menu-item-link" href="https://shangkunli.github.io/life/">Life</a>
-          
+          <a class="menu-item-link menu-parent" href="https://shangkunli.github.io/categories/life/">Life</a>
+          <ul class="submenu">
+            
+              <li class="submenu-item">
+                <a href="https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/">旅游记Ⓒ2020</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>
+              </li>
+            
+          </ul>
 
         
 
@@ -346,14 +369,14 @@
   
     <div class="post-meta-lastmod">
       (LastMod:
-      2023-04-21)
+      2023-04-30)
     </div>
   
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        305 words -
+        310 words -
         1 min read
       </span>
 
@@ -387,15 +410,15 @@
 </li>
 <li>
 <p>Radial wave function of the 3s orbital is:</p>
-<p>$R_{3s} = \frac{1}{9\sqrt3} ×(6−6\rho+\rho^2)×Z^{3/2}×e^{-\rho/2}$</p>
+<p>$$R_{3s} = \frac{1}{9\sqrt3} ×(6−6\rho+\rho^2)×Z^{3/2}×e^{-\rho/2}$$</p>
 <p>· r = radius expressed in atomic units (1 Bohr radius = 52.9 pm)</p>
 <p>· e = 2.71828 approximately</p>
 <p>· Z = effective nuclear charge for that orbital in that atom</p>
 <p>· ρ = 2Zr/n where n is the principal quantum number (3 for the 3s orbital)</p>
-<p>Compute $\int_0^{40}|R_{3s}|^2r^2dr $for Si atom (Z = 14) with Simpson’s rule using two different radial grids:</p>
-<p>(1)Equalspacinggrids: $r[i]=(i−1)h$  ;  $i=1,···,N$ (trydifferentN)</p>
+<p>Compute $$\int_0^{40}|R_{3s}|^2r^2dr $$for Si atom (Z = 14) with Simpson’s rule using two different radial grids:</p>
+<p>(1)Equalspacinggrids: $$r[i]=(i−1)h$$  ;  $$i=1,···,N$$ (trydifferentN)</p>
 <p>(2) A nonuniform integration grid, more finely spaced at small r than at large r:</p>
-<p>$r[i] = r_0(e^{t[i]} − 1)$; $t[i] = (i − 1)h$;$ i = 1,· · · , N$ (One typically choose$ r_0 = 0.0005$ a.u., try different N)</p>
+<p>$$r[i] = r_0(e^{t[i]} − 1)$$; $$t[i] = (i − 1)h$$;$$ i = 1,· · · , N$$ (One typically choose$$ r_0 = 0.0005$$ a.u., try different N)</p>
 <p>(3) Find out which one is more eﬀicient, and discuss the reason.</p>
 </li>
 </ol>
@@ -416,7 +439,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2023-04-21
+      2023-04-30
       
         
         

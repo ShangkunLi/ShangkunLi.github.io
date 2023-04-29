@@ -31,7 +31,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李尚坤" />
-  <meta name="description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$. Periodic potential $V(x)=V(x&#43;a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x&#43;1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun" />
+  <meta name="description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$$. Periodic potential $$V(x)=V(x&#43;a)$$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x&#43;1)$$ $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun" />
 
 
 
@@ -71,18 +71,18 @@
 
 
 <meta property="og:title" content="CompPhys: FFT" />
-<meta property="og:description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$. Periodic potential $V(x)=V(x&#43;a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x&#43;1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun" />
+<meta property="og:description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$$. Periodic potential $$V(x)=V(x&#43;a)$$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x&#43;1)$$ $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2023-02-12T14:22:09+08:00" />
+<meta property="article:modified_time" content="2023-04-30T00:09:49+08:00" />
 <meta itemprop="name" content="CompPhys: FFT">
-<meta itemprop="description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$. Periodic potential $V(x)=V(x&#43;a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x&#43;1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun">
-<meta itemprop="dateModified" content="2023-02-12T14:22:09+08:00" />
+<meta itemprop="description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$$. Periodic potential $$V(x)=V(x&#43;a)$$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x&#43;1)$$ $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun">
+<meta itemprop="dateModified" content="2023-04-30T00:09:49+08:00" />
 <meta itemprop="wordCount" content="181">
 <meta itemprop="keywords" content="Python,C/C&#43;&#43;,开发," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CompPhys: FFT"/>
-<meta name="twitter:description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$. Periodic potential $V(x)=V(x&#43;a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x&#43;1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun"/>
+<meta name="twitter:description" content="介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} &#43;V(x)$$. Periodic potential $$V(x)=V(x&#43;a)$$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x&#43;1)$$ $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,9 +136,23 @@
       </li><li class="mobile-menu-item">
         
           
-          
-            <a class="menu-item-link" href="https://shangkunli.github.io/life/">Life</a>
-          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://shangkunli.github.io/categories/life/">
+              Life
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/">旅游记Ⓒ2020</a>
+              </li>
+            
+              <li>
+                <a href="https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>
+              </li>
+            
+          </ul>
         
       </li><li class="mobile-menu-item">
         
@@ -276,9 +290,18 @@
         <li class="menu-item">
         
           
-          
-            <a class="menu-item-link" href="https://shangkunli.github.io/life/">Life</a>
-          
+          <a class="menu-item-link menu-parent" href="https://shangkunli.github.io/categories/life/">Life</a>
+          <ul class="submenu">
+            
+              <li class="submenu-item">
+                <a href="https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/">旅游记Ⓒ2020</a>
+              </li>
+            
+              <li class="submenu-item">
+                <a href="https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>
+              </li>
+            
+          </ul>
 
         
 
@@ -346,7 +369,7 @@
   
     <div class="post-meta-lastmod">
       (LastMod:
-      2023-02-12)
+      2023-04-30)
     </div>
   
 
@@ -383,13 +406,13 @@
 <h2 id="题目说明">题目说明</h2>
 <ol>
 <li>
-<p>$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$.
-Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$</p>
-<p>$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$</p>
+<p>$$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$$. Periodic potential $$V(x)=V(x+a)$$.
+Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x+1)$$</p>
+<p>$$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$</p>
 </li>
 <li>
 <p>Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun for each month since January 1749.</p>
-<p>Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $|c_k|^2$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal. You should see that there is a noticeable peak in the power spectrum at a nonzero value of k. Find the approximate value of k to which the peak corresponds. What is the period of the sine wave with this value of k?</p>
+<p>Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $$|c_k|^2$$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal. You should see that there is a noticeable peak in the power spectrum at a nonzero value of k. Find the approximate value of k to which the peak corresponds. What is the period of the sine wave with this value of k?</p>
 </li>
 </ol>
 <h2 id="documentation">Documentation</h2>
@@ -409,7 +432,7 @@ Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\p
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-      2023-02-12
+      2023-04-30
       
         
         

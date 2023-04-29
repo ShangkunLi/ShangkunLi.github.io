@@ -35,6 +35,24 @@
     </item>
     
     <item>
+      <title>旅游记Ⓒ2020</title>
+      <link>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/</guid>
+      <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
+    </item>
+    
+    <item>
+      <title>随想录</title>
+      <link>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/</guid>
+      <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
+    </item>
+    
+    <item>
       <title>可重构计算-第5章</title>
       <link>https://shangkunli.github.io/post/reconfigurable_computing/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97chapter5/</link>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
@@ -103,7 +121,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</guid>
-      <description>介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$ $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun</description>
+      <description>介绍 这一章节主要介绍傅立叶变换的相关算法 CompPhys: FFT 求解问题 题目说明 $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$$. Periodic potential $$V(x)=V(x+a)$$. Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x+1)$$ $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$ Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun</description>
     </item>
     
     <item>
@@ -112,7 +130,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/find_root/</guid>
-      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法） Computational Physics: Find Root 求解问题 题目说明 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:</description>
+      <description>介绍 这一章节主要介绍寻找方程根与函数极小值的方法（如梯度下降法） Computational Physics: Find Root 求解问题 题目说明 求解实系数方程$$𝑎𝑥^2+𝑏𝑥+𝑐+0$$的解。要</description>
     </item>
     
     <item>
@@ -121,7 +139,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</guid>
-      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等 Computational Physics: Interpolation 求解问题 题目说明 Newton interpolation of: (i) 10 equal spacing points of cos x within $[0, π]$, (ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$. Compare the results</description>
+      <description>介绍 这一章节主要介绍插值的相关算法，如牛顿插值法，样条插值法等 Computational Physics: Interpolation 求解问题 题目说明 Newton interpolation of: (i) 10 equal spacing points of cos x within $$[0, π]$$ (ii) 10 equal spacing points $$\frac{1}{1+25x^2}$$ within $$[-1,1]$$ Compare the results</description>
     </item>
     
     <item>
@@ -130,7 +148,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
-      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $O(N^3)$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
     </item>
     
     <item>
@@ -139,7 +157,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</guid>
-      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and</description>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Monte Carlo simulations 求解问题 题目说明 The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $$x_1^2+x_2^2+\dots+x_d^2\le1$$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $$d=2$$ and $$d=3$$ and</description>
     </item>
     
     <item>
@@ -157,7 +175,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
-      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $\rho(x,y)=0,\</description>
+      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $$\rho(x,y)=0,\</description>
     </item>
     
     <item>
@@ -167,24 +185,6 @@
       
       <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
       <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第1章 介绍</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC1%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
-      <description>CHAPTER 1 1.1 Vrilog介绍</description>
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第2章 基础语法及数据</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
-      <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，</description>
     </item>
     
   </channel>

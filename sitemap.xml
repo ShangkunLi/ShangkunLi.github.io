@@ -3,7 +3,7 @@
   
   <url>
     <loc>https://shangkunli.github.io/categories/</loc>
-    <lastmod>2023-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,28 +38,28 @@
   
   <url>
     <loc>https://shangkunli.github.io/post/</loc>
-    <lastmod>2023-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/</loc>
-    <lastmod>2023-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/tags/</loc>
-    <lastmod>2023-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -86,8 +86,8 @@
   </url>
   
   <url>
-    <loc>https://shangkunli.github.io/life/</loc>
-    <lastmod>2023-04-25T16:06:41+08:00</lastmod>
+    <loc>https://shangkunli.github.io/categories/life/</loc>
+    <lastmod>2023-04-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -109,6 +109,20 @@
   <url>
     <loc>https://shangkunli.github.io/categories/%E5%8F%AF%E9%87%8D%E6%9E%84%E8%AE%A1%E7%AE%97%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-02-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/</loc>
+    <lastmod>2023-04-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/</loc>
+    <lastmod>2023-04-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -164,63 +178,63 @@
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-differentiation-and-intergration/</loc>
-    <lastmod>2023-04-21T00:39:43+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-fft/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/find_root/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-interpolation/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-monte-carlo-simulations/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</loc>
-    <lastmod>2023-02-12T14:22:09+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://shangkunli.github.io/categories/computational-physics/</loc>
-    <lastmod>2023-04-21T00:39:43+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -241,7 +255,7 @@
   
   <url>
     <loc>https://shangkunli.github.io/tags/python/</loc>
-    <lastmod>2023-04-21T00:39:43+08:00</lastmod>
+    <lastmod>2023-04-30T00:09:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
