@@ -16,7 +16,9 @@ reward: false	 # 关闭打赏
 mathjax: true    # 打开 mathjax
 ---
 
-![](/imag/简介/IMG_0001.JPG "摄于云南大理")
+{{< figure src="/imag/简介/IMG_0001.JPG" title="摄于云南大理" >}}
+
+<!--more-->
 
 Hi! I am **Shangkun Li**, welcome to my homepage. I am an undergraduate student in the Department of Physics, Fudan University. Although my major is physics, my research interests are mainly in the field of digital circuit design. Through elective courses, auditing classes, reading books, and project practice, I have accumulated knowledge related to microelectronics. Currently, I am conducting research internships under the guidance of professors from the [School of Microelectronics](https://sme.fudan.edu.cn), Fudan University and the [ECE department](https://ece.hkust.edu.hk) of [HKUST](https://hkust.edu.hk). My research direction mainly focuses on EDA and reconfigurable computing.
 
