@@ -28,14 +28,14 @@ mathjax: true    # 打开 mathjax
 
 ## 题目说明
 
-1. 求解实系数方程$𝑎𝑥^2+𝑏𝑥+𝑐+0$的解。要求:系数𝑎, 𝑏, 𝑐为程序执行时键盘输入，𝑎, 𝑏, 𝑐为任意实数，所有的解均输出到屏幕。
+1. 求解实系数方程$$𝑎𝑥^2+𝑏𝑥+𝑐+0$$的解。要求:系数𝑎, 𝑏, 𝑐为程序执行时键盘输入，𝑎, 𝑏, 𝑐为任意实数，所有的解均输出到屏幕。
 2. 24 点游戏是儿时玩的主要益智类游戏之一，玩法为:从一副扑克中抽取 4 张牌，对 4 张牌使用加减乘除中的任何方法，使计算结果为 24。例如， 2,3,4,6，通过(((4+6)-2)*3) =24，最快算出24者胜。请 采用 Fortran90 编程求解 24 点游戏的解。
-3. Sketch the function $𝑥^2−5𝑥+3=0$:
+3. Sketch the function $$𝑥^2−5𝑥+3=0$$:
     (1) Determine the two positive roots to 4 decimal places using the bisection method.
     (2) Take the two roots that you found in the previous question (accurate to 4 decimals) and “polish them up” to 14 decimal places using the Newton-Raphson method.
     (3) Determine the two positive roots to 14 decimal places using the hybrid method.
 4. Search for the minimum of the function 𝑔(𝑥, 𝑦) = sin(𝑥 + 𝑦) + cos (𝑥 + 2𝑦) in the whole place
-5. Determine 𝑚(𝑡) the reduced magnetization as a function of reduced temperature for simple materials. $𝑚(𝑡) = 𝑡𝑎𝑛h(𝑚(𝑡)/𝑡)$
+5. Determine 𝑚(𝑡) the reduced magnetization as a function of reduced temperature for simple materials. $$𝑚(𝑡) = 𝑡𝑎𝑛h(𝑚(𝑡)/𝑡)$$
     For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.
 
 ## Documentation

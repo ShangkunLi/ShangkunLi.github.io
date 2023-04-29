@@ -37,19 +37,19 @@ mathjax: true    # 打开 mathjax
 
    from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with:
 
-   (a) $\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$
+   (a) $$\rho(x,y)=0,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=0,\ \phi(x,L_y)=1V,\ L_x=1m.\ L_y=1.5m$$
 
-   (b) $\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$
+   (b) $$\rho(x,y)/\epsilon_0=1V/m^2,\ \phi(0,y)=\phi(L_x,y)=\phi(x,0)=\phi(x,L_y)=0,\ L_x=1m.\ L_y=1m$$
 
 2. Solve the time-dependent Schrodinger equation using both the Crank–Nicolson scheme and stable explicit scheme. Consider the one-dimensional case and test it by applying it to the problem of a square well with a Gaussian initial state coming in from the left.
 
-   Gaussian initial state:$\Psi(x,0)=\sqrt{\frac{1}{\pi}}exp(ik_0x-\frac{(x-\xi)^2}{2})$
+   Gaussian initial state:$$\Psi(x,0)=\sqrt{\frac{1}{\pi}}exp(ik_0x-\frac{(x-\xi)^2}{2})$$
 
 3. Prove the stability condition of the explicit scheme of the 1D wave equation by performing Von Neumann stability analysis:
 
    $$\frac{\partial^2u}{\partial t^2}=c^2\frac{\partial^2u}{\partial x^2}$$
 
-   If $\frac{c\Delta t}{\Delta x}\le1$, the explicit scheme is stable.
+   If $$\frac{c\Delta t}{\Delta x}\le1$$, the explicit scheme is stable.
 
 ## Documentation
 

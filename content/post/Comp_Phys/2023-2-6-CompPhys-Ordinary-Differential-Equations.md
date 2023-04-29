@@ -36,11 +36,11 @@ mathjax: true    # 打开 mathjax
 
       $$  \left[-\frac{1}{2}\nabla^2+V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$
 
-   ​    (1) $V(r)=-\frac{1}{r}$ (hydrogen atom)
+   ​    (1) $$V(r)=-\frac{1}{r}$$ (hydrogen atom)
 
-   ​    (2) $Z_{ion}=0.4000000, C_1=-14.0093922$
+   ​    (2) $$Z_{ion}=0.4000000, C_1=-14.0093922$$
 
-   ​		 $C_2=9.5099073, C_3=-1.7532723, C_4=0.0834586$
+   ​		 $$C_2=9.5099073, C_3=-1.7532723, C_4=0.0834586$$
 
    ​        $$ V(r)=-\frac{Z_{ion}}{r}erf\left(\frac{r}{\sqrt{2}r_{loc}}\right)+exp\left[-\frac{1}{2}\left(\frac{r}{r_{loc}}\right)^2\right]$$
    

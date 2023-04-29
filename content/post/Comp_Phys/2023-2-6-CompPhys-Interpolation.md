@@ -32,17 +32,17 @@ mathjax: true    # 打开 mathjax
 
 1. Newton interpolation of:
 
-   (i) 10 equal spacing points of cos x within $[0, π]$,
+   (i) 10 equal spacing points of cos x within $$[0, π]$$
 
-   (ii) 10 equal spacing points $\frac{1}{1+25x^2}$ within $[-1,1]$. 
+   (ii) 10 equal spacing points $$\frac{1}{1+25x^2}$$ within $$[-1,1]$$
 
    Compare the results with the cubic spline interpolation.
 
 2. The table below gives the temperature T along a metal rod whose ends are kept at fixed constant temperature. The temperature is a function of the distance x along the rod.
 
-   (1)Compute a least-squares, straight-line fit to these data using$ T (x) = a + bx $
+   (1)Compute a least-squares, straight-line fit to these data using $$ T (x) = a + bx$$
 
-   (2)Compute a least-squares, parabolic-line fit to these data using$ T(x) = a+bx+cx^2$
+   (2)Compute a least-squares, parabolic-line fit to these data using $$ T(x) = a+bx+cx^2$$
 
 | x/cm | 1.0  | 2.0  | 3.0  | 4.0  | 5.0  | 6.0  | 7.0  | 8.0  | 9.0  |
 | :--: | :--: | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |

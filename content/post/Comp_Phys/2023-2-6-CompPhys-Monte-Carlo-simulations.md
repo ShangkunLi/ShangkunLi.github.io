@@ -32,7 +32,7 @@ mathjax: true    # 打开 mathjax
 
 ## 题目说明
 
-1. The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $x_1^2+x_2^2+\dots+x_d^2\le1$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $d=2$ and $d=3$ and then calculate the volume for $d=4$ and $d=5$, compare your results with the exact results. 
+1. The interior of a $d$-dimensional hypersphere of unit radius is defined by the condition $$x_1^2+x_2^2+\dots+x_d^2\le1$$. Write a program that finds the volume of a hypersphere using a Monte Carlo method. Test your program for $$d=2$$ and $$d=3$$ and then calculate the volume for $$d=4$$ and $$d=5$$, compare your results with the exact results. 
 
 2. Write a MC code for a 3D Face-Centered Cubic lattice using the Heisenberg spin model (adopt periodic boundary condition). Estimate the ferromagnetic Curie temperature. 
 

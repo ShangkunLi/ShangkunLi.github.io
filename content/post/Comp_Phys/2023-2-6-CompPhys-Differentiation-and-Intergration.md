@@ -33,7 +33,7 @@ mathjax: true    # 打开 mathjax
 
 2. Radial wave function of the 3s orbital is:
 
-   $R_{3s} = \frac{1}{9\sqrt3} ×(6−6\rho+\rho^2)×Z^{3/2}×e^{-\rho/2}$
+   $$R_{3s} = \frac{1}{9\sqrt3} ×(6−6\rho+\rho^2)×Z^{3/2}×e^{-\rho/2}$$
 
    · r = radius expressed in atomic units (1 Bohr radius = 52.9 pm)
 
@@ -43,13 +43,13 @@ mathjax: true    # 打开 mathjax
 
    · ρ = 2Zr/n where n is the principal quantum number (3 for the 3s orbital)
 
-   Compute $\int_0^{40}|R_{3s}|^2r^2dr $for Si atom (Z = 14) with Simpson’s rule using two different radial grids:
+   Compute $$\int_0^{40}|R_{3s}|^2r^2dr $$for Si atom (Z = 14) with Simpson’s rule using two different radial grids:
 
-   (1)Equalspacinggrids: $r[i]=(i−1)h$  ;  $i=1,···,N$ (trydifferentN)
+   (1)Equalspacinggrids: $$r[i]=(i−1)h$$  ;  $$i=1,···,N$$ (trydifferentN)
    
    (2) A nonuniform integration grid, more finely spaced at small r than at large r:
 
-   $r[i] = r_0(e^{t[i]} − 1)$; $t[i] = (i − 1)h$;$ i = 1,· · · , N$ (One typically choose$ r_0 = 0.0005$ a.u., try different N)
+   $$r[i] = r_0(e^{t[i]} − 1)$$; $$t[i] = (i − 1)h$$;$$ i = 1,· · · , N$$ (One typically choose$$ r_0 = 0.0005$$ a.u., try different N)
 
    (3) Find out which one is more eﬀicient, and discuss the reason.
 

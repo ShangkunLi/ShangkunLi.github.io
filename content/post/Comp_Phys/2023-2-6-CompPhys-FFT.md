@@ -29,14 +29,14 @@ mathjax: true    # 打开 mathjax
 
 ## 题目说明
 
-1. $\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$. Periodic potential $V(x)=V(x+a)$.
-    Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $\psi_i=\psi_i(x+1)$
+1. $$\hat H =-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} +V(x)$$. Periodic potential $$V(x)=V(x+a)$$.
+    Using FFT, find the lowest three eigenvalues of the eigenstates that satisfy $$\psi_i=\psi_i(x+1)$$
 
-   $U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$
+   $$U_0=2eV, L_w=0.9nm, L_B=0.1nm, a=1nm$$
 
 2. Download the file called sunspots.txt, which contains the observed number of sunspots on the Sun for each month since January 1749.
 
-   Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $|c_k|^2$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal. You should see that there is a noticeable peak in the power spectrum at a nonzero value of k. Find the approximate value of k to which the peak corresponds. What is the period of the sine wave with this value of k?
+   Write a program to calculate the Fourier transform of the sunspot data and then make a graph of the magnitude squared $$|c_k|^2$$ of the Fourier coeﬀicients as a function of k—also called the power spectrum of the sunspot signal. You should see that there is a noticeable peak in the power spectrum at a nonzero value of k. Find the approximate value of k to which the peak corresponds. What is the period of the sine wave with this value of k?
 
 ## Documentation
 
