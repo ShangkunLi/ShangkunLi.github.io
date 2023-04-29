@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EDA流程与概述</title>
+      <link>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</guid>
+      <description>EDA流程与概述 这一系列笔记主要是我学习知乎答主格律的文章的记录 强烈推荐阅读他的文章，我的记录只是根据我自己的理解写下的，方便我日后回顾 设计</description>
+    </item>
+    
     <item>
       <title>Hugo-Jane主题个性化记录</title>
       <link>https://shangkunli.github.io/post/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/2023-4-21-hugo-jane%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%B0%E5%BD%95/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC2%E7%AB%A0-%E4%BB%8B%E7%BB%8D/</guid>
       <description>CHAPTER 2 2.1 Verilog基础语法 代码格式 格式与C代码相近，以分号;结尾 注释 单行注释// 多行注释/* 与 */结合 标识符与关键词 标识符：由字母，数字，</description>
-    </item>
-    
-    <item>
-      <title>Verilog入门笔记：第3章 赋值与时延</title>
-      <link>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/verilog/2023-2-6-verilog%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0%E7%AC%AC3%E7%AB%A0-%E8%B5%8B%E5%80%BC%E4%B8%8E%E6%97%B6%E5%BB%B6/</guid>
-      <description>CHAPTER 3 3.1 Verilog连续赋值 连续赋值语句 用于对wire型变量进行赋值 1 assign LHS_target = RHS_expression ； 任何已声明的wire变量的连续赋值语句都是以assign开头</description>
     </item>
     
   </channel>

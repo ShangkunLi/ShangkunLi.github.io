@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EDA on Shangkun&#39;s Blog</title>
+    <link>https://shangkunli.github.io/tags/eda/</link>
+    <description>Recent content in EDA on Shangkun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/tags/eda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EDA流程与概述</title>
+      <link>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</guid>
+      <description>EDA流程与概述 这一系列笔记主要是我学习知乎答主格律的文章的记录 强烈推荐阅读他的文章，我的记录只是根据我自己的理解写下的，方便我日后回顾 设计</description>
+    </item>
+    
+  </channel>
+</rss>
