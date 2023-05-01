@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>书影档案</title>
+      <link>https://shangkunli.github.io/post/life/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/</guid>
+      <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
+    </item>
+    
     <item>
       <title>EDA流程与概述</title>
       <link>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</link>
@@ -14,6 +23,15 @@
       
       <guid>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</guid>
       <description>EDA流程与概述 这一系列笔记主要是我学习知乎答主格律的文章的记录 强烈推荐阅读他的文章，我的记录只是根据我自己的理解写下的，方便我日后回顾 设计</description>
+    </item>
+    
+    <item>
+      <title>旅游记Ⓒ2020</title>
+      <link>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B0/%E6%97%85%E6%B8%B8%E8%AE%B02020/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B0/%E6%97%85%E6%B8%B8%E8%AE%B02020/</guid>
+      <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
     </item>
     
     <item>
@@ -35,20 +53,11 @@
     </item>
     
     <item>
-      <title>旅游记Ⓒ2020</title>
-      <link>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/life/%E6%97%85%E6%B8%B8%E8%AE%B02020/</guid>
-      <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
-    </item>
-    
-    <item>
       <title>随想录</title>
-      <link>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/</link>
+      <link>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/%E9%9A%8F%E6%83%B3%E5%BD%95/</link>
       <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/</guid>
+      <guid>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/%E9%9A%8F%E6%83%B3%E5%BD%95/</guid>
       <description>闲下来总是喜欢出去走走 这里保存了我从2020年开始到过的地方的记录 Year Destination Brief Introduction Month/Year 2020 上海 趁着小长假去了海湾国家森林公园和上海中心大厦 10/2020 2021 重庆 有味道</description>
     </item>
     
@@ -148,7 +157,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
-      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$ Write a general code to transform a n×m matrix into the REDUCED ROW</description>
     </item>
     
     <item>
@@ -176,15 +185,6 @@
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
       <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $$\rho(x,y)=0,\</description>
-    </item>
-    
-    <item>
-      <title>Computational Physics Guide</title>
-      <link>https://shangkunli.github.io/post/comp_phys/comp_phys/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/comp_phys/comp_phys/</guid>
-      <description>说明 这是我个人学习Computational Physics的资料笔记整理 我的主要开发语言是Python及C/C++ 每一部分章节的内容包括对应</description>
     </item>
     
   </channel>

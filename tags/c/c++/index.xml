@@ -48,7 +48,7 @@
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-matrix/</guid>
-      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$. Write a general code to transform a n×m matrix into the REDUCED ROW</description>
+      <description>介绍 这一章节主要介绍矩阵的相关处理，消元，矩阵分解，特征值问题等 Computational Physics: Matrix 求解问题 题目说明 Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$ Write a general code to transform a n×m matrix into the REDUCED ROW</description>
     </item>
     
     <item>
