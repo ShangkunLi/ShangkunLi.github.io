@@ -16,6 +16,7 @@ toc: true       # 关闭文章目录
 contentCopyright: '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
 reward: false	 # 关闭打赏
 mathjax: true    # 打开 mathjax
+katex: true
 
 ---
 
@@ -29,12 +30,17 @@ mathjax: true    # 打开 mathjax
 
 ## 题目说明
 
-1. Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$.
+1. Prove that the time complexity of the Gaussian elimination algorithm is $$O(N^3)$$
+
 2. Write a general code to transform a n×m matrix into the REDUCED ROW ECHE-
 
     LON FORM, and use the code to obtain the RREF of the following matrix.
 
-3. Solve the 1D Schrodinger equation with the potential (i) $$V (x) = x^2$$; (ii) $$V (x) = x^4 − x^2 $$with the variational approach using a Gaussian basis (either fixed widths or fixed centers). Consider the three lowest energy eigenstates.
+3. Solve the 1D Schrodinger equation with the potential 
+
+     (i) $$V (x) = x^2$$
+
+     (ii) $$V (x) = x^4 − x^2 $$with the variational approach using a Gaussian basis (either fixed widths or fixed centers). Consider the three lowest energy eigenstates.
 
 ## Documentation
 

@@ -78,6 +78,7 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用fancybox（图片可点击）
   bootcdn = false           # In china. @Deprecated: use [params.publicCDN]             # 是否使用bootcdn(@Deprecated: 请使用[params.publicCDN])
   mathjax = true            # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+  katex = true             # see https://github.com/KaTeX/KaTeX
   linkToMarkDown = false    # if you config contentCopyright and hugo output .md files. # 是否在链接到markdown原始文件（如果你配置了下面的许可协议并允许hugo生成markdown文件）
   showMenuLanguageChooser = false
   #contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
