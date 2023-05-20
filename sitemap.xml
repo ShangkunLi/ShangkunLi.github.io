@@ -9,34 +9,6 @@
   </url>
   
   <url>
-    <loc>https://shangkunli.github.io/categories/life/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://shangkunli.github.io/post/</loc>
-    <lastmod>2023-05-03T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://shangkunli.github.io/</loc>
-    <lastmod>2023-05-03T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://shangkunli.github.io/post/life/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://shangkunli.github.io/tags/eda/</loc>
     <lastmod>2023-04-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -65,6 +37,20 @@
   </url>
   
   <url>
+    <loc>https://shangkunli.github.io/post/</loc>
+    <lastmod>2023-05-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://shangkunli.github.io/</loc>
+    <lastmod>2023-05-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://shangkunli.github.io/tags/</loc>
     <lastmod>2023-05-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -81,6 +67,13 @@
   <url>
     <loc>https://shangkunli.github.io/tags/life/</loc>
     <lastmod>2023-05-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://shangkunli.github.io/categories/life/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -109,6 +102,13 @@
   <url>
     <loc>https://shangkunli.github.io/tags/%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2023-04-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://shangkunli.github.io/post/life/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
