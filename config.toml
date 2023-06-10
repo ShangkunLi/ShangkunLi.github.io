@@ -57,7 +57,7 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
   since = "2023"            # Site creation time          # 站点建立时间
 
   # site info (option)                                    # 站点信息（可选）
-  logoTitle = "Shangkun's Bolg"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Shangkun's Blog"        # default: the title value    # 默认值: 上面设置的title值
   #keywords = ["linux", "emacs", "program", "journal", "贤民", "博客", "笔记"]
   #description = "这里是我写字的地方"
   rssFullContent = true
