@@ -560,6 +560,8 @@
       <guid>https://shangkunli.github.io/post/life/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/%E4%B9%A6%E5%BD%B1%E6%A1%A3%E6%A1%88/</guid>
       
         <description>&lt;h1 id=&#34;书影档案&#34;&gt;书影档案&lt;/h1&gt;
+&lt;p&gt;这里会记录我阅读过的一些书，有的会增加一些书评&lt;/p&gt;
+&lt;p&gt;To be added&amp;hellip;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -570,9 +572,9 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;to be added&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;jjjjjjjjjjjjjjjjjjjjnhkjhkhjkhjkhkj23&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;23e2ewdwd&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Book&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Score&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Comment&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
@@ -1079,12 +1081,12 @@
       &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://shangkunli.github.io/imag/%e7%ae%80%e4%bb%8b/IMG_0001.JPG&#34; /&gt;
     &lt;/div&gt;
     &lt;a href=&#34;https://shangkunli.github.io/imag/%e7%ae%80%e4%bb%8b/IMG_0001.JPG&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-      &lt;figcaption&gt;&lt;h4&gt;摄于云南大理&lt;/h4&gt;
+      &lt;figcaption&gt;&lt;h4&gt;Shot in Dali, Yunnan&lt;/h4&gt;
       &lt;/figcaption&gt;
   &lt;/figure&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Hi! I am &lt;strong&gt;Shangkun Li&lt;/strong&gt;, welcome to my homepage. I am an undergraduate student in the Department of Physics, Fudan University. Although my major is physics, my research interests are mainly in the field of digital circuit design. Through elective courses, auditing classes, reading books, and project practice, I have accumulated knowledge related to microelectronics. Currently, I am conducting research internships under the guidance of professors from the &lt;a href=&#34;https://sme.fudan.edu.cn&#34;&gt;School of Microelectronics&lt;/a&gt;, Fudan University and the &lt;a href=&#34;https://ece.hkust.edu.hk&#34;&gt;ECE department&lt;/a&gt; of &lt;a href=&#34;https://hkust.edu.hk&#34;&gt;HKUST&lt;/a&gt;. My research direction mainly focuses on EDA and reconfigurable computing.&lt;/p&gt;
+&lt;p&gt;Hi! I am &lt;strong&gt;Shangkun Li&lt;/strong&gt;, welcome to my homepage. I am an undergraduate student in the Department of Physics, Fudan University. Although my major is physics, my research interests are mainly in the field of digital circuit design. Through elective courses, auditing classes, reading books, and project practice, I have accumulated knowledge related to microelectronics. Currently, I am conducting research internships under the guidance of professors from the &lt;a href=&#34;https://sme.fudan.edu.cn&#34;&gt;School of Microelectronics&lt;/a&gt;, &lt;a href=&#34;https://www.fudan.edu.cn&#34;&gt;Fudan University&lt;/a&gt; and the &lt;a href=&#34;https://ece.hkust.edu.hk&#34;&gt;department of ECE&lt;/a&gt; , &lt;a href=&#34;https://hkust.edu.hk&#34;&gt;HKUST&lt;/a&gt;. My research interest mainly focuses on EDA and reconfigurable computing.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;This is my CV:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/%E7%AE%80%E4%BB%8B/%E4%B8%AD%E6%96%87%E7%89%88CV.pdf&#34;&gt;中文版简历&lt;/a&gt;&lt;/p&gt;
