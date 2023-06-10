@@ -16,7 +16,7 @@ reward: false	 # 关闭打赏
 mathjax: true    # 打开 mathjax
 ---
 
-{{< figure src="/imag/简介/IMG_0001.JPG" title="Shot in Dali, Yunnan" >}}
+{{< figure src="/imag/简介/IMG_0001.JPG" title="Photographed in Dali, Yunnan" >}}
 
 <!--more-->
 
