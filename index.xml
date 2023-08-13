@@ -6,10 +6,30 @@
     <description>Recent content on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2023 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://shangkunli.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>一些交流后的体会</title>
+      <link>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/2023-08-10-%E4%B8%80%E4%BA%9B%E4%BA%A4%E6%B5%81%E5%90%8E%E7%9A%84%E4%BD%93%E4%BC%9A/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/2023-08-10-%E4%B8%80%E4%BA%9B%E4%BA%A4%E6%B5%81%E5%90%8E%E7%9A%84%E4%BD%93%E4%BC%9A/</guid>
+      
+        <description>&lt;p&gt;值此升学申请之际，与许多人交谈了自己的经历与看法，当独自静下来的时候，就突然有了一些想法，遂记之。&lt;/p&gt;
+&lt;p&gt;我其实是一个会患得患失的人，可能是一贯的理科思维，让我认为生活中的所有计划、安排都一定会有最优解。现在看来，我在很多的选择中也的确会犹豫、纠结，如此反复。&lt;/p&gt;
+&lt;p&gt;所以在确定了自己未来的去向之后，在最初的狂热与欢喜退却之后，在真正坐在工位上为自己的前程思考之后，我也才终于开始思考，我这个选择，到底是不是所谓“&lt;strong&gt;最优解&lt;/strong&gt;”。我是不是值得去更好的地方，或者说，我应不应该去更好的地方。&lt;/p&gt;
+&lt;p&gt;答案是：&lt;strong&gt;“你要想清楚，你想要的是什么。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;感谢这段时间与我交谈的父母、姐姐、老王、小陈，lab的杜大师兄、雅姐、笑姐等等。我很感激我的家人对我无限的包容与理解，也很高兴我的朋友们总是支持我的决定。我找到了自己的答案，也开始想通了许多东西。&lt;/p&gt;
+&lt;p&gt;我才发现将曾经书本上的“最优解”搬到人生的难题上，这会有多么的可笑。因为个人价值的体现，以及让自己满意的生活，会远比所谓“最优解”重要得多。&lt;/p&gt;
+&lt;p&gt;的确，或许搏一搏能去美帝更好的学校，但那是不是真的是我想要的呢？我想要的无非就是完满的家庭（能够给我提供情感价值），舒适的社会生活环境（能让我有归属感和认同感），不一定富裕但足够的物质条件（能保证还不错的生活质量），还有自己健康的身体与心理（这是最基本的）。所以，如果只是因为我面前有几所很好的学校，无论选择哪一所都能满足我想要的东西，但是其中一所比另一所会更好一些，前提是我需要用6、7年的远走他乡、孤独无依、文化裂隙的客观存在、甚至最终心理上的不适作为筹码，来放手一搏，换来最后不知道好在哪里的东西。这真的是我想要的吗？&lt;/p&gt;
+&lt;p&gt;说实话，我能有多少个6年，与其天天蹲lab苦逼写本子，不如开始好好学学该怎么生活（life work balance）。&lt;/p&gt;
+&lt;p&gt;如果只是因为世俗的评价说：“那一个更好，你应该去那一个。”于是我去了，我到最后会觉得值得吗？当然不觉得，诚然这样是满足了虚荣心，但其中的痛苦也只会有我一人知道。与其随波逐流，不如提早想好自己想要的是什么，这样当我重新坐回桌前时，也会多几分心安与从容，少了几分焦虑和犹豫。&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>EDA流程与概述</title>
@@ -1700,41 +1720,6 @@ For a given 𝑡, solve 𝑚, plot 𝑚 as a function of 𝑡.&lt;/li&gt;
 &lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_09.pdf&#34;&gt;Monte Carlo simulations Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2009&#34;&gt;Monte Carlo simulations Source Code&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>CompPhys: Ordinary Differential Equations</title>
-      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
-      
-        <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
-&lt;p&gt;这一章节主要常微分方程的数值求解方法&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Computational_Physics-ODE-6.pdf&#34;&gt;CompPhys: Ordinary Differential Equations&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;求解问题&#34;&gt;求解问题&lt;/h1&gt;
-&lt;h2 id=&#34;题目说明&#34;&gt;题目说明&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as a function of time. Explain the results.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Write a code to numerically solves radial Schrödinger equation for:&lt;/p&gt;
-&lt;p&gt;$$  \left[-\frac{1}{2}\nabla^2+V(r)\right]\psi( r)=E\psi(r), V( r)=V(r)$$&lt;/p&gt;
-&lt;p&gt;​    (1) $$V(r)=-\frac{1}{r}$$ (hydrogen atom)&lt;/p&gt;
-&lt;p&gt;​    (2) $$Z_{ion}=0.4000000, C_1=-14.0093922$$&lt;/p&gt;
-&lt;p&gt;​		 $$C_2=9.5099073, C_3=-1.7532723, C_4=0.0834586$$&lt;/p&gt;
-&lt;p&gt;​        $$ V(r)=-\frac{Z_{ion}}{r}erf\left(\frac{r}{\sqrt{2}r_{loc}}\right)+exp\left[-\frac{1}{2}\left(\frac{r}{r_{loc}}\right)^2\right]$$&lt;/p&gt;
-&lt;p&gt;​					$$\times\left[C_1+C_2\left(\frac{r}{r_{loc}}\right)^2+C_3\left(\frac{r}{r_{loc}}\right)^4+C_4\left(\frac{r}{r_{loc}}\right)^6\right]\nonumber $$&lt;/p&gt;
-&lt;p&gt;​    Compute and plot the first three eigenstates.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;documentation&#34;&gt;Documentation&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://shangkunli.github.io/pdf/Comp_Phys/Assignment_07.pdf&#34;&gt;Ordinary Differential Equations Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;source-code&#34;&gt;Source Code&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/ShangkunLi/Computational_Physics/tree/main/Assignment%2007&#34;&gt;Ordinary Differential Equations Source Code&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>

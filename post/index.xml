@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Shangkun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://shangkunli.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些交流后的体会</title>
+      <link>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/2023-08-10-%E4%B8%80%E4%BA%9B%E4%BA%A4%E6%B5%81%E5%90%8E%E7%9A%84%E4%BD%93%E4%BC%9A/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://shangkunli.github.io/post/life/%E9%9A%8F%E6%83%B3%E5%BD%95/2023-08-10-%E4%B8%80%E4%BA%9B%E4%BA%A4%E6%B5%81%E5%90%8E%E7%9A%84%E4%BD%93%E4%BC%9A/</guid>
+      <description>值此升学申请之际，与许多人交谈了自己的经历与看法，当独自静下来的时候，就突然有了一些想法，遂记之。 我其实是一个会患得患失的人，可能是一贯的理</description>
+    </item>
+    
     <item>
       <title>EDA流程与概述</title>
       <link>https://shangkunli.github.io/post/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-2-6-eda%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%A6%82%E8%BF%B0/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-ordinary-differential-equations/</guid>
       <description>介绍 这一章节主要常微分方程的数值求解方法 CompPhys: Ordinary Differential Equations 求解问题 题目说明 Write a code to numerically solves the motion of a simple pendulum using Euler’s method, midpoint method, RK4, Euler-trapezoidal method (implement these methods by yourself). Plot the angle and total energy as</description>
-    </item>
-    
-    <item>
-      <title>CompPhys: Partial Differential Equations</title>
-      <link>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</link>
-      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://shangkunli.github.io/post/comp_phys/2023-2-6-compphys-partial-differential-equations/</guid>
-      <description>介绍 这一章节主要偏微分方程的数值求解方法 CompPhys: Partial Differential Equations 求解问题 题目说明 Consider the Poisson equation: ​ $$ \nabla^2\phi(x,y)=-\rho (x,y) / \epsilon_0 $$ from electrostatics on a rectangular geometry with $x\in[0,L_x]$ and $y\in[0,L_y]$. Write a program that solves this equation using the relaxation method. Test your program with: (a) $$\rho(x,y)=0,\</description>
     </item>
     
   </channel>
